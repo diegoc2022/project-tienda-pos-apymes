@@ -119,7 +119,8 @@
     }
 
     .content-int {
-        border: 1px solid white;
+        border: 1px solid #304772;
+        background: white;
         flex: 1;
         padding: 15px;
         display: flex;
@@ -132,10 +133,11 @@
     }
 
     .content-1 {
-        border: 1px solid white;
+        border: 2px solid #304772;
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
+        background: #304772;
     }
 
     .item-1 {
@@ -157,16 +159,20 @@
 
     .item-2-1 {
         margin-top: 0px;
-        height: 4.5vh;
+        height: 5.5vh;
         padding-left: 10px;
+        border-radius: 5px;
+        border: 1px solid #304772;
     }
 
     .content-3 {
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 6.8vh;
         border-radius: 5px;
-        border: 1px solid white;
+        padding: 5px;
+        border: 1px solid #304772;
     }
 
     .item-3 {
@@ -176,12 +182,12 @@
     .content-4 {
         display: flex;
         flex-direction: column;
-        background: white;
-        color: black;
+        background: #304772;
+        color: white;
         width: 100%;
         padding: 5px;
         border-radius: 5px;
-        min-height: 7vh;
+        min-height: 6vh;
     }
 
     .item-4 {
@@ -210,6 +216,7 @@
 
     :host ::ng-deep .p-inputtext {
         width: 100% !important;
+        border: 1px solid #304772;
     }
 }
 
@@ -226,7 +233,8 @@
     }
 
     .content-int {
-        border: 1px solid white;
+        border: 1px solid #304772;
+        background: white;
         flex: 1;
         padding: 15px;
         display: flex;
@@ -239,7 +247,8 @@
     }
 
     .content-1 {
-        border: 1px solid white;
+        background: #304772;
+        border: 2px solid #304772;
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
@@ -264,16 +273,20 @@
 
     .item-2-1 {
         margin-top: 0px;
-        height: 4.5vh;
+        height: 6vh;
         padding-left: 10px;
+        border: 1px solid #304772;
+        border-radius: 5px;
     }
 
     .content-3 {
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 7vh;
+        padding: 5px;
         border-radius: 5px;
-        border: 1px solid white;
+        border: 1px solid #304772;
     }
 
     .item-3 {
@@ -283,12 +296,13 @@
     .content-4 {
         display: flex;
         flex-direction: column;
-        background: white;
-        color: black;
+        background: #304772;
+        border: 2px solid #304772;
+        color: white;
         width: 100%;
         padding: 5px;
         border-radius: 5px;
-        min-height: 7vh;
+        min-height: 6vh;
     }
 
     .item-4 {
@@ -311,12 +325,13 @@
 
     .w-full {
         width: 100% !important;
-        height: 35px;
+        height: 36px;
         border-radius: 5px;
     }
 
     :host ::ng-deep .p-inputtext {
         width: 100% !important;
+        border: 1px solid #304772;
     }
 }
 
@@ -333,7 +348,8 @@
     }
 
     .content-int {
-        border: 1px solid white;
+        border: 1px solid #304772;
+        background: white;
         flex: 1;
         padding: 15px;
         display: flex;
@@ -346,10 +362,12 @@
     }
 
     .content-1 {
-        border: 1px solid white;
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
+        text-align: center;
+        background: #304772;
+        border: 2px solid #304772;
     }
 
     .item-1 {
@@ -373,14 +391,18 @@
         margin-top: 0px;
         height: 4.5vh;
         padding-left: 10px;
+        border: 1px solid #304772;
+        border-radius: 5px;
     }
 
     .content-3 {
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 6vh;
+        padding: 5px;
         border-radius: 5px;
-        border: 1px solid white;
+        border: 1px solid #304772;
     }
 
     .item-3 {
@@ -390,12 +412,13 @@
     .content-4 {
         display: flex;
         flex-direction: column;
-        background: white;
-        color: black;
+        color: white;
         width: 100%;
         padding: 5px;
         border-radius: 5px;
         min-height: 7vh;
+        background: #304772;
+        border: 2px solid #304772;
     }
 
     .item-4 {
@@ -405,8 +428,8 @@
     }
 
     :host ::ng-deep .p-image img {
-        width: 100%;
-        height: 29vh;
+        width: 12vw;
+        height: 25vh;
         border-radius: 5px;
     }
 
@@ -418,12 +441,13 @@
 
     .w-full {
         width: 100% !important;
-        height: 35px;
+        height: 40px;
         border-radius: 5px;
     }
 
     :host ::ng-deep .p-inputtext {
         width: 100% !important;
+        border: 1px solid #304772;
     }
 
 }
