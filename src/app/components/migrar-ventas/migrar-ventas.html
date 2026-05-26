@@ -1,0 +1,51 @@
+<p-toast></p-toast>
+<div class="conten-ppal">
+    <div class="row">
+        <div class="col-12 field">
+            <span class="pi pi-calculator span-enc">
+                Exportar ventas del día:
+            </span>
+        </div>
+    </div>
+
+    <div class="div-content-1">
+        <div class="item-1">
+            <p-table [columns]="products" sortMode="multiple" selectionMode="single" class="custom-table"
+                styleClass="p-datatable-sm" tableStyleClass="p-datatable-gridlines p-datatable-striped"
+                [value]="products" [scrollable]="true" [(selection)]="selectedProduct1" dataKey="id"
+                [tableStyle]="{'min-width': '50rem'}">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Item</th>
+                        <th>Código producto</th>
+                        <th>Descripción</th>
+                        <th>Existencia</th>
+                        <th>Precio venta</th>
+                        <th class="centered">Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Fecha registro</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData>
+                    <tr styleClass="ui-datatable-data">
+                        <td>{{rowData.id}}</td>
+                        <td>{{rowData.codProd}}</td>
+                        <td>{{rowData.descripcion}}</td>
+                        <td>{{rowData.existencia}}</td>
+                        <td>{{rowData.precio_venta}}</td>
+                        <td class="centered">{{rowData.cantidad}}</td>
+                        <td>{{rowData.subtotal}}</td>
+                        <td>{{rowData.fecha_registro}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+
+        <div class="div-content-2 mt-1">
+            <div class="item-2 mt-2">
+                <button pButton pRipple type="button" label="Migrar ventas del dia" class="p-button-success w-full"
+                    (click)="funct_migrar_ventas_del_dia_c();" icon="pi pi-save"></button>
+            </div>
+        </div>
+    </div>

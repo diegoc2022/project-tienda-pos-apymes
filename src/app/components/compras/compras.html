@@ -1,0 +1,309 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div-container">
+        <div class="row">
+            <div class="col-12 field">
+                <p class="pi pi-address-book"> Formulario de compras:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 field mt-0">
+                <span> Fecha:
+                    {{fecha_actual}}
+                </span>
+            </div>
+        </div>
+        <hr>
+        <form [formGroup]="formCompras">
+            <div class="content-1">
+                <div class="item-1">
+                    <div class="flex flex-col gap-2">
+                        <label for="factura">Digite factura</label>
+                        <input id="factura" type="text" pInputText formControlName="factura"
+                            (keyup.enter)="on_enter_factura($event)" autocomplete="off" autofocus />
+                    </div>
+                </div>
+                <div class="item-1">
+                    <div class="flex flex-col gap-2">
+                        <label for="varios">Elija concepto</label>
+                        <p-select #varios [(ngModel)]="seleccionado" [options]="tipo_compra" optionValue="code"
+                            optionLabel="name" [showClear]="true" formControlName="varios"
+                            (onChange)="on_codigo_producto()" />
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form [formGroup]="formCompras2">
+            <div class="content-2">
+                <div class="item-2">
+                    <div class="flex flex-col gap-2">
+                        <label for="codigo">Lea código producto</label>
+                        <input #codigo type="text" pInputText formControlName="codProd"
+                            (keyup.enter)="on_enter_codigo_producto($event);" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-2-1">
+                    <div class="flex flex-col gap-2">
+                        <label for="descrip">Descripción</label>
+                        <input id="descrip" type="text" pInputText formControlName="descrip" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="content-3">
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="miInputNumber">Digite precio unitario</label>
+                        <p-inputNumber #miInputNumber inputId="currency-us" mode="currency" currency="USD"
+                            locale="en-US" formControlName="precio_und" (keyup.enter)="on_enter_precio_unitario($event)"
+                            autocomplete="off" class="mi-numero" />
+                    </div>
+                </div>
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="cantidad">Digite cantidad</label>
+                        <input id="cantidad" type="number" pInputText formControlName="cantidad"
+                            (keyup.enter)="on_enter_cantidad($event)" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="costo_sin_iva">Subtotal sin iva</label>
+                        <p-inputNumber inputId="costo_sin_iva" mode="currency" currency="USD" locale="en-US"
+                            formControlName="costo_sin_iva" (keyup.enter)="on_enter_sub_total($event)"
+                            autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="desc">Digite descuento %</label>
+                        <input id="desc" type="number" pInputText formControlName="desc"
+                            (keyup.enter)="on_enter_descuento($event)" />
+                    </div>
+                </div>
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="total_desc">Total descuento</label>
+                        <p-inputNumber inputId="total_desc" mode="currency" currency="USD" locale="en-US"
+                            formControlName="total_desc" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-4">
+                <div class="item-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="iva">Digite iva %</label>
+                        <input id="iva" type="number" pInputText formControlName="iva"
+                            (keyup.enter)="on_enter_iva($event)" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="total_iva">Total iva</label>
+                        <p-inputNumber inputId="total_iva" mode="currency" currency="USD" locale="en-US"
+                            formControlName="totaliva" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="icui">Digite icui %</label>
+                        <input id="icui" type="number" pInputText formControlName="icui" class="mi-input-3"
+                            (keyup.enter)="on_enter_icui($event)" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="icui">total_icui</label>
+                        <p-inputNumber inputId="total_icui" mode="currency" currency="USD" locale="en-US"
+                            formControlName="totalicui" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="total_costo">Total costo</label>
+                        <p-inputNumber inputId="total_costo" mode="currency" currency="USD" locale="en-US"
+                            formControlName="total_costo" (keyup.enter)="on_enter_total_costo($event)"
+                            autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="content-5">
+                <div class="item-5">
+                    <div class="flex flex-col">
+                        <label for="costo_und">Costo unidad</label>
+                        <p-inputNumber inputId="costo_und" mode="currency" currency="USD" locale="en-US"
+                            formControlName="costo_und" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-5">
+                    <div class="flex flex-col">
+                        <label for="utilidad">Digite utilidad</label>
+                        <input id="utilidad" type="number" pInputText formControlName="utilidad"
+                            (keyup.enter)="on_enter_utilidad($event)" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-5">
+                    <div class="flex flex-col">
+                        <label for="precioVenta">Digite utilidad</label>
+                        <p-inputNumber id="precioVenta" inputId="currency-us" mode="currency" currency="USD"
+                            locale="en-US" formControlName="precioVenta" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <form [formGroup]="formCompras3">
+            <div class="content-6">
+                <div class="item-6">
+                    <div class="flex flex-col">
+                        <label for="subtotal_fact">Subtotal factura:</label>
+                        <p-inputNumber inputId="subtotal_fact" [(ngModel)]="sub_total_form_fact" mode="currency"
+                            currency="USD" locale="en-US" formControlName="sub_total" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-6">
+                    <div class="flex flex-col">
+                        <label for="total_desc">Total descuento:</label>
+                        <p-inputNumber inputId="total_desc" [(ngModel)]="total_form_desc" mode="currency" currency="USD"
+                            locale="en-US" formControlName="total_descuento" class="mi-numero" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-6">
+                    <div class="flex flex-col">
+                        <label for="total_iva">Total iva:</label>
+                        <p-inputNumber inputId="total_iva" [(ngModel)]="total_form_iva" mode="currency" currency="USD"
+                            locale="en-US" formControlName="total_iva" autocomplete="off" class="mi-numero" />
+                    </div>
+                </div>
+                <div class="item-6">
+                    <div class="flex flex-col">
+                        <label for="total_icui">Total icui:</label>
+                        <p-inputNumber inputId="total_icui" [(ngModel)]="total_form_icui" mode="currency" currency="USD"
+                            locale="en-US" formControlName="total_icui" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="item-6">
+                    <div class="flex flex-col">
+                        <label for="total_factura">Total factura:</label>
+                        <p-inputNumber inputId="total_factura" [(ngModel)]="total_form_factura" mode="currency"
+                            currency="USD" locale="en-US" formControlName="total_factura" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="content-button">
+                <div class="item-0">
+                    <button pButton pRipple type="button" label="Ver detalle compra" icon="pi pi-book"
+                        (click)="show_dialog()" class="p-button-warn w-full2"></button>
+                </div>
+                <div class="item-0">
+                    <button pButton pRipple type="button" [disabled]="habilitado" label="Agregar item compra"
+                        icon="pi pi-folder-open" class="p-button-success w-full2"
+                        (click)="funct_registra_compras();"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<p-dialog header="Item compras" [(visible)]="display" [modal]="true" [draggable]="true" [resizable]="true"
+    [position]="'center'" class="mi-dialogo">
+    <div class="content-center">
+        <div class="row">
+            <div class="col-12">
+                <p-table [columns]="products" sortMode="multiple" selectionMode="single" class="custom-table"
+                    styleClass="p-datatable-sm" tableStyleClass="p-datatable-gridlines p-datatable-striped"
+                    [value]="products" [scrollable]="true" [(selection)]="selectedProduct1" dataKey="cod_producto"
+                    [tableStyle]="{'min-width': '50rem'}">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Item</th>
+                            <th>Factura</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Precio base</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Descuento</th>
+                            <th>Valor iva</th>
+                            <th>Valor icui</th>
+                            <th>Costo und</th>
+                            <th>Precio venta</th>
+                            <th>Total item</th>
+                            <th>Acción</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData>
+                        <tr>
+                            <td>{{rowData.id}}</td>
+                            <td>{{rowData.num_factura}}</td>
+                            <td>{{rowData.cod_producto}}</td>
+                            <td>{{rowData.descripcion}}</td>
+                            <td>{{rowData.precio_unitario | currency}}</td>
+                            <td>{{rowData.cantidad}}</td>
+                            <td>{{rowData.subtotal | currency}}</td>
+                            <td>{{rowData.total_descuento | currency}}</td>
+                            <td>{{rowData.total_iva | currency}}</td>
+                            <td>{{rowData.total_icui | currency}}</td>
+                            <td>{{rowData.costo_unidad | currency}}</td>
+                            <td>{{rowData.precio_venta | currency}}</td>
+                            <td>{{rowData.total_compras | currency}}</td>
+                            <td>
+                                <button pButton pRipple type="button" icon="pi pi-trash"
+                                    class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2"
+                                    (click)="funct_elimina_item_compras(rowData.id);"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-detalle-f">
+        <div class="row">
+            <div class="col-3">
+                <span>
+                    Subtotal: {{sub_total_item_fact | currency}}
+                </span>
+            </div>
+            <div class="col-3">
+                <span>
+                    Descuento: {{total_item_desc | currency}}
+                </span>
+            </div>
+            <div class="col-2">
+                <span>
+                    Iva: {{total_item_iva | currency}}
+                </span>
+            </div>
+            <div class="col-2">
+                <span>
+                    Icui: {{total_item_icui | currency}}
+                </span>
+            </div>
+            <div class="col-2">
+                <span>
+                    Total: {{total_item_factura | currency}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-button">
+        <div class="item mt-1">
+            <form [formGroup]="formCompras5">
+                <p-select #varios class="dropdown-w mi-dropdown" [options]="option_inventario" optionValue="code"
+                    optionLabel="name" [showClear]="true" formControlName="optCompras" styleClass="mi-select"
+                    placeholder="¿Actualiza inventario?" />
+            </form>
+        </div>
+        <div class="item">
+            <button pButton pRipple icon="pi pi-times-circle" label="Salir" class="p-button-help w-full"
+                (click)="display = false"></button>
+        </div>
+        <div class="item">
+            <button pButton pRipple icon="pi pi-save" [disabled]="habilitado" label="Guardar"
+                class="p-button-success w-full" (click)="funct_registra_compras_historico();"></button>
+        </div>
+    </div>
+</p-dialog>

@@ -1,0 +1,72 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar consumos:</p>
+            <form [formGroup]="data">
+                <div class="content-1">
+                    <div class="item-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Cliente</label>
+                            <p-select [options]="clientes" [(ngModel)]="seleccionado" optionValue="codigo_cliente"
+                                optionLabel="nombre" placeholder="Elija cliente"
+                                [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
+                                formControlName="cliente" (onChange)="funct_retorna_one_cliente_c($event)" />
+                        </div>
+                    </div>
+                    <div class="item-1-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Id ventas</label>
+                            <input #codigo type="number" pInputText class="form-control" formControlName="codigo_venta"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-2 mt-3">
+                    <div class="item-2">
+                        <div class="flex flex-col">
+                            <button pButton pRipple label="Consultar" icon="pi pi-search"
+                                class="p-button-success w-full" (click)="funct_consuta_ventas_x_cliente();"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-12 field">
+                <p-table #dt2 [value]="productos" styleClass="p-datatable-sm p-datatable-striped" [scrollable]="true"
+                    class="custom-table">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Id cliente</th>
+                            <th>Nombre</th>
+                            <th class="centered">Id venta</th>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Precio v.</th>
+                            <th class="centered">Cant.</th>
+                            <th>Sub total</th>
+                            <th>Estado id venta</th>
+                            <th>Fecha reg.</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-dataVentas>
+                        <tr>
+                            <td>{{dataVentas.codigo_cliente_v}}</td>
+                            <td>{{nombre}}</td>
+                            <td class="centered">{{dataVentas.codigo_venta}}</td>
+                            <td>{{dataVentas.codProd}}</td>
+                            <td>{{dataVentas.descripcion}}</td>
+                            <td>{{dataVentas.precio_venta | currency: 'USD'}}</td>
+                            <td class="centered">{{dataVentas.cantidad}}</td>
+                            <td>{{dataVentas.subtotal | currency: 'USD'}}</td>
+                            <td>{{dataVentas.estado_venta}}</td>
+                            <td>{{dataVentas.fecha_registro}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>

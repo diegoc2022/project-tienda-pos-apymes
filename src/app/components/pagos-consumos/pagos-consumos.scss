@@ -1,0 +1,385 @@
+@media screen and (max-width: 1366px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 80vw;
+        height: 88vh;
+        left: 3px;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .content-int,
+    .content-int-2 {
+        position: relative;
+        border-radius: 5px;
+        width: 45vw;
+        height: 31vh;
+        left: 0px;
+        top: 0px;
+        padding: 20px;
+        border: 1px solid white;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .content-4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: right;
+        gap: 1rem;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .item-1-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .w-full2 {
+        width: 50% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .w-full3 {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 6.5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 100%;
+        height: 6.5vh !important;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 80vw;
+        height: 85vh;
+        left: 3px;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .content-int,
+    .content-int-2 {
+        position: relative;
+        border-radius: 5px;
+        width: 40vw;
+        height: 26vh;
+        left: 0px;
+        top: 0px;
+        padding: 20px;
+        border: 1px solid white;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .content-4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: right;
+        gap: 1rem;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .item-1-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .w-full2 {
+        width: 50% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .w-full3 {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 5.5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 100%;
+        height: 5.5vh !important;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 80vw;
+        height: 85vh;
+        left: 3px;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .content-int,
+    .content-int-2 {
+        position: relative;
+        border-radius: 5px;
+        width: 40vw;
+        height: 26vh;
+        left: 0px;
+        top: 0px;
+        padding: 20px;
+        border: 1px solid white;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .content-4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: right;
+        gap: 1rem;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .item-1-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .w-full2 {
+        width: 50% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .w-full3 {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 5.5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 100%;
+        height: 5.5vh !important;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 70vw;
+        height: 85vh;
+        left: 3px;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .content-int,
+    .content-int-2 {
+        position: relative;
+        border-radius: 5px;
+        width: 30vw;
+        height: 22vh;
+        left: 0px;
+        top: 0px;
+        padding: 20px;
+        border: 1px solid white;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .content-4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: right;
+        gap: 1rem;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .item-1-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 42%;
+    }
+
+    .w-full2 {
+        width: 50% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .w-full3 {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4.5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 100%;
+        height: 4.5vh !important;
+        font-size: 1.5rem;
+    }
+}
+
+.w-full {
+    width: 100% !important;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.example-additional-selection {
+    width: 300px;
+    font-size: 15px;
+    line-height: 1;
+}
+
+label {
+    color: white;
+    font-size: 14px;
+}
+
+p {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}
+
+hr {
+    border: 1px solid;
+    color: white;
+}
+
+.custom-table tr,
+td {
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(160, 154, 154) !important;
+    height: 5px !important;
+}
+
+.custom-table th {
+    background-color: rgb(211, 205, 205);
+    color: black;
+    border: 1px solid rgb(160, 154, 154) !important;
+    height: 5px !important;
+}
+
+.centered {
+    text-align: center;
+    vertical-align: middle;
+}

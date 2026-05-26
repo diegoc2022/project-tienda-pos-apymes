@@ -1,0 +1,315 @@
+@media screen and (max-width:1366px) {
+
+    .div-total-pago,
+    .div-cambio {
+        border-radius: 5px;
+        background: #e9e9e9;
+        padding: 2px;
+        width: 15vw;
+        max-height: 5vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font: bold;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 55vw !important;
+        height: 60vh !important;
+        border-radius: 10px;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .item-1 {
+        margin-top: 0;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        min-height: 6vh;
+        width: 100%;
+    }
+
+    .content-2-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        border: 1px solid white;
+        align-items: center;
+        padding-right: 5px;
+        min-height: 6vh;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 15vw;
+        height: 5vh !important;
+        font-size: 1.5rem;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width:1440px) {
+
+    .div-total-pago,
+    .div-cambio {
+        border-radius: 5px;
+        background: #e9e9e9;
+        padding: 2px;
+        width: 15vw;
+        max-height: 5vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font: bold;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 55vw !important;
+        height: 57vh !important;
+        border-radius: 10px;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .item-1 {
+        margin-top: 0;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        min-height: 6vh;
+        width: 100%;
+    }
+
+    .content-2-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        border: 1px solid white;
+        align-items: center;
+        padding-right: 5px;
+        min-height: 6vh;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 15vw;
+        height: 5vh !important;
+        font-size: 1.5rem;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width:1600px) {
+
+    .div-total-pago,
+    .div-cambio {
+        border-radius: 5px;
+        background: #e9e9e9;
+        padding: 2px;
+        width: 15vw;
+        max-height: 5vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font: bold;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 40% !important;
+        height: 57vh !important;
+        border-radius: 10px;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .item-1 {
+        margin-top: 0;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        min-height: 6vh;
+        width: 100%;
+    }
+
+    .content-2-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        border: 1px solid white;
+        align-items: center;
+        padding-right: 5px;
+        min-height: 6vh;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 15vw;
+        height: 5vh !important;
+        font-size: 1.5rem;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width:1920px) {
+
+    .div-total-pago,
+    .div-cambio {
+        border-radius: 5px;
+        background: #e9e9e9;
+        padding: 5px;
+        width: 15vw;
+        min-height: 5vh;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font: bold;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 40vw !important;
+        height: 48vh !important;
+        border-radius: 10px;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .item-1 {
+        margin-top: 0;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        min-height: 6vh;
+        width: 100%;
+    }
+
+    .content-2-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        border: 1px solid white;
+        align-items: center;
+        padding-right: 5px;
+        min-height: 6vh;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 15vw;
+        height: 5vh !important;
+        font-size: 1.5rem;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+}
+
+
+hr {
+    border: 1px solid white;
+}

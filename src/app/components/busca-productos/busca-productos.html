@@ -1,0 +1,48 @@
+<p-dialog header="Productos:" [(visible)]="visible" (visibleChange)="visibleChange.emit($event)"
+    styleClass="p-dialog mi-dialogo" maskStyleClass="backdrop-blur-sm" [closable]="false">
+    <div class="content-1">
+        <div class="card">
+            <div class="item-1">
+                <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" class="custom-table"
+                    [scrollable]="true" [(selection)]="selectedProduct1" dataKey="codProd" [rows]="10"
+                    (onRowSelect)="onRowSelect($event)" [paginator]="true" [showCurrentPageReport]="true"
+                    [tableStyle]="{ 'min-width':'50rem'}" styleClass="p-datatable-sm p-datatable-striped"
+                    [globalFilterFields]="['codigo', 'descripcion']">
+                    <ng-template #caption>
+                        <p-iconfield iconPosition="left">
+                            <p-inputicon>
+                                <i class="pi pi-search"></i>
+                            </p-inputicon>
+                            <input pInputText type="text" [(ngModel)]="globalFilter"
+                                (input)="dt1.filterGlobal(globalFilter, 'contains')"
+                                placeholder="Digite nombre producto" />
+                        </p-iconfield>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width: 100px;">Código</th>
+                            <th style="width: 400px;">Descripción</th>
+                            <th style="width: 50px;">Exist.</th>
+                            <th style="width: 150px;">Precio venta</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-dataProductos>
+                        <tr [pSelectableRow]="dataProductos">
+                            <td style="width: 100px;">{{dataProductos.codProd}}</td>
+                            <td style="width: 300px;">{{dataProductos.descripcion}}</td>
+                            <td style="width: 70px;">{{dataProductos.existencia}}</td>
+                            <td style="width: 150px;">{{dataProductos.precio_venta | currency}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-2 mt-3">
+        <div class="item-2">
+            <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="visible = false"
+                class="p-button-help w-full"></button>
+        </div>
+    </div>
+</p-dialog>

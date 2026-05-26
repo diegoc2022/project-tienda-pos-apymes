@@ -1,0 +1,644 @@
+@media screen and (max-width: 1366px) {
+    .div-container {
+        border-radius: 5px;
+        padding: 20px;
+        width: 50vw;
+        min-height: 50vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    .div-dialogo {
+        border-radius: 5px;
+        width: 100%;
+        height: 400px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-center {
+        width: 100%;
+        height: 66vh;
+        left: 0px;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    .div-detalle-f {
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+        width: 100%;
+        height: 35px;
+        color: white;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+
+    }
+
+    :host ::ng-deep .mi-dialogo .p-dialog {
+        width: 100% !important;
+        min-height: 99vh !important;
+        z-index: 1000 !important;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+    }
+
+    :host ::ng-deep .p-datatable {
+        max-width: 99.5%;
+        max-height: 70vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3,
+    .content-4,
+    .content-5,
+    .content-6 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .item,
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5,
+    .item-6 {
+        margin: 0 !important;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 61%;
+    }
+
+    .content-button {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        height: 8vh;
+    }
+
+    .item {
+        margin: 0;
+        width: 10vw;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    .mi-select {
+        border-color: black;
+        width: 100%;
+        height: 6vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 4vh !important;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 35px;
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .div-container {
+        border-radius: 5px;
+        padding: 20px;
+        width: 50vw;
+        min-height: 50vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    .div-dialogo {
+        border-radius: 5px;
+        width: 100%;
+        height: 400px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: #4568DC;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+        background: linear-gradient(to bottom, #B06AB3, #4568DC);
+    }
+
+    .content-center {
+        width: 100%;
+        height: 70vh;
+        left: 0px;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    .div-detalle-f {
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+        width: 100%;
+        height: 35px;
+        color: white;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    :host ::ng-deep .mi-dialogo .p-dialog {
+        width: 100% !important;
+        min-height: 99vh !important;
+        z-index: 1000 !important;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+    }
+
+    :host ::ng-deep .p-datatable {
+        max-width: 99.5%;
+        max-height: 70vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3,
+    .content-4,
+    .content-5,
+    .content-6 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .item,
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5,
+    .item-6 {
+        margin: 0 !important;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 61%;
+    }
+
+    .content-button {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        height: 9vh;
+    }
+
+    .item {
+        margin: 0;
+        width: 10vw;
+    }
+
+    .mi-select {
+        border-color: black;
+        width: 100%;
+        min-height: 5vh;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 4vh !important;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 35px;
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+    .div-container {
+        border-radius: 5px;
+        padding: 20px;
+        width: 50vw;
+        min-height: 50vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    .div-dialogo {
+        border-radius: 5px;
+        width: 100%;
+        height: 400px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: #4568DC;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+        background: linear-gradient(to bottom, #B06AB3, #4568DC);
+    }
+
+    .content-center {
+        width: 100%;
+        height: 71vh;
+        left: 0px;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    .div-detalle-f {
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+        width: 100%;
+        height: 35px;
+        color: white;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    :host ::ng-deep .mi-dialogo .p-dialog {
+        width: 100% !important;
+        min-height: 99vh !important;
+        z-index: 1000 !important;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+    }
+
+    :host ::ng-deep .p-datatable {
+        max-width: 99.5%;
+        max-height: 70vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3,
+    .content-4,
+    .content-5,
+    .content-6 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .item,
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5,
+    .item-6 {
+        margin: 0 !important;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 61%;
+    }
+
+    .content-button {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        height: 8vh;
+    }
+
+    .item {
+        margin: 0;
+        width: 10vw;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    .mi-select {
+        border-color: black;
+        width: 100%;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 4vh !important;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 35px;
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    .div-container {
+        border-radius: 5px;
+        padding: 20px;
+        width: 49vw;
+        min-height: 50vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    .div-dialogo {
+        border-radius: 5px;
+        width: 100%;
+        height: 400px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: #4568DC;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+        background: linear-gradient(to bottom, #B06AB3, #4568DC);
+    }
+
+    .div-detalle-f {
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+        width: 100%;
+        height: 35px;
+        color: white;
+        background: #304772;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    :host ::ng-deep .mi-dialogo .p-dialog {
+        width: 100% !important;
+        min-height: 98.5vh !important;
+        z-index: 1000 !important;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+    }
+
+    .content-center {
+        width: 100%;
+        background: #304772;
+        height: 76vh;
+        border: 1px solid white;
+        padding: 5px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        max-width: 99.5%;
+        max-height: 72.6vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .content-1,
+    .content-2,
+    .content-3,
+    .content-4,
+    .content-5,
+    .content-6 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5,
+    .item-6 {
+        margin: 0 !important;
+    }
+
+    .item-2-1 {
+        margin: 0 !important;
+        width: 61%;
+    }
+
+    .content-button {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        height: 6vh;
+    }
+
+    .item {
+        margin: 0;
+        width: 10vw;
+    }
+
+    .item-0 {
+        margin: 0;
+        width: 12vw;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    .mi-select {
+        border-color: black;
+        width: 100%;
+        min-height: 4.5vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 4vh !important;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    :host ::ng-deep .mi-boton .p-button {
+        width: 7vw !important;
+        max-height: 40px !important;
+    }
+
+}
+
+.w-full2 {
+    width: 100% !important;
+    height: 35px;
+    border-radius: 5px;
+}
+
+hr {
+    color: white;
+    border: 1px solid;
+}
+
+.custom-table {
+    padding: 2px;
+    left: 5px;
+}
+
+.custom-table td {
+    background: #304772;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    color: white;
+}
+
+.custom-table tH {
+    background: #d6d4d4;
+    color: black;
+    height: 5px;
+}
+
+.custom-table tr {
+    height: 10px;
+    border: 1px solid white;
+}
+
+.centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+h6 {
+    color: white;
+    font-size: 20px;
+}
+
+.button-w {
+    width: 100px;
+    float: inline-end;
+    margin-right: 40px;
+
+}
+
+span {
+    color: white
+}
+
+label {
+    color: white;
+    font-size: 14px;
+}
+
+p {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}
+
+:host ::ng-deep .p-button2 {
+    border-radius: 3px;
+    margin-right: .2rem;
+    color: white;
+    border-radius: 5px;
+    width: 5px;
+    height: 25px;
+}
+
+.label-title {
+    color: black;
+}

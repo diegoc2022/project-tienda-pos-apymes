@@ -1,0 +1,307 @@
+@media screen and (max-width: 1366px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 99.3vw;
+        height: 91.5vh;
+        margin-left: 3px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border: 1px solid white;
+    }
+
+    .w-full {
+        width: 17vw !important;
+        height: 40px;
+        border-radius: 5px;
+        margin-top: 2px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        max-width: 99.5%;
+        height: 71.5vh !important;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .div-content-1 {
+        border-radius: 5px;
+        width: 100%;
+        max-height: 74vh;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+        min-height: 73.5vh;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 9vh;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid white;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: right;
+        width: 100%;
+        height: 5.5vh;
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 99.4vw;
+        height: 92.6vh;
+        margin-left: 3px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border: 1px solid white;
+    }
+
+    .w-full {
+        width: 15vw !important;
+        height: 40px;
+        border-radius: 5px;
+        margin-top: 3px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 99.5%;
+        height: 76vh !important;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .div-content-1 {
+        border-radius: 5px;
+        width: 100%;
+        height: 78vh !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item-1 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+        min-height: 78vh;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 8vh;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid white;
+        margin-top: 1px;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: right;
+        width: 100%;
+        height: 5.5vh;
+    }
+
+}
+
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1600px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 99.5vw;
+        height: 92.6vh;
+        margin-left: 3px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid white;
+    }
+
+    .w-full {
+        width: 15vw !important;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 99.5%;
+        height: 75.5vh !important;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .div-content-1 {
+        border-radius: 5px;
+        width: 100%;
+        max-height: 78vh;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+        min-height: 77vh;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 7.5vh;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid white
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        align-items: center;
+        text-align: right;
+        width: 100%;
+        height: 6vh;
+    }
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1920px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 99.4vw;
+        height: 94vh;
+        margin-left: 3px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid white;
+    }
+
+    .w-full {
+        width: 12vw !important;
+        height: 45px;
+        border-radius: 5px;
+        padding-top: 1px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 99.5%;
+        height: 79.5vh !important;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+    .div-content-1 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 82vh;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+        min-height: 81vh;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 6.5vh;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid white;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: right;
+        width: 100%;
+        height: 5vh;
+    }
+
+}
+
+label {
+    color: white;
+}
+
+.custom-table {
+    padding: 2px;
+    left: 5px;
+}
+
+.custom-table td {
+    background: #304772;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    color: white;
+}
+
+.custom-table tH {
+    background: #d6d4d4;
+    color: black;
+    height: 5px;
+
+}
+
+.custom-table tr {
+    height: 10px;
+    border: 1px solid white;
+}
+
+.centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+:host ::ng-deep .p-toast-message {
+    border-radius: 5px;
+    height: 100px;
+    padding: 10px;
+    background: #f7f799 !important;
+    color: rgb(107, 100, 100);
+    font: bold;
+}
+
+.span-enc {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}

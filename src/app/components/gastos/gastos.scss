@@ -1,0 +1,204 @@
+@media screen and (max-width: 1366px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 30vw;
+        height: 65vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        flex-direction: column;
+        border: 1px solid white;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 6vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 6vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 6vh !important;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 27vw;
+        height: 55vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        flex-direction: column;
+        border: 1px solid white;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 5vh !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 27vw;
+        height: 55vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        flex-direction: column;
+        border: 1px solid white;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 5vh !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .conten-ppal {
+        position: absolute;
+        border-radius: 5px;
+        width: 22vw;
+        height: 45vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        flex-direction: column;
+        border: 1px solid white;
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100%;
+        height: 4vh;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 4vh !important;
+    }
+
+}
+
+.content-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-1 {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.content-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-2 {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.content-3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-3 {
+    margin: 0 !important;
+    width: 100%;
+}
+
+
+.w-full {
+    width: 100% !important;
+    height: 40px;
+    border-radius: 5px;
+}
+
+label {
+    color: white;
+    font-size: 14px;
+}
+
+p {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}
+
+hr {
+    border: 2px solid;
+    color: white;
+}
+
+span {
+    color: white;
+}

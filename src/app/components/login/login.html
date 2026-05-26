@@ -1,0 +1,82 @@
+<p-toast class="p-toast-icon-close" [closable]="false"></p-toast>
+<div class="content-ppal">
+    <div class="content-int">
+        <div class="content-1">
+            <div class="item-1">
+                <p-image src="assets/img/img7.PNG" alt="Image" />
+            </div>
+        </div>
+        <form [formGroup]="formLogin">
+            <div class="content-2">
+                <div class="item-2">
+                    <div class="card flex justify-center">
+                        <p-iftalabel>
+                            <p-iconfield>
+                                <p-inputicon class="pi pi-user" />
+                                <input type="text" #username pInputText formControlName="user" autocomplete="false"
+                                    class="full-width" (keydown)="onEnterPressed($event)">
+                            </p-iconfield>
+                            <label for="username">Username</label>
+                        </p-iftalabel>
+                    </div>
+                </div>
+                <div class="item-2">
+                    <div class="card flex justify-center">
+                        <p-iftalabel>
+                            <p-iconfield>
+                                <p-inputicon class="pi pi-lock" />
+                                <input type="password" #password pInputText class="full-width" formControlName="passw"
+                                    autocomplete="false">
+                            </p-iconfield>
+                            <label for="username">Password</label>
+                        </p-iftalabel>
+                    </div>
+                </div>
+                <div class="item-2-1">
+                    <div class="flex flex-wrap justify-center gap-4 mt-2">
+                        <p-checkbox [binary]="true" inputId="ingredient1" formControlName="acceso"
+                            (onChange)="onCheckboxChange($event)" />
+                        <label for="ingredient1" class="ml-2 label-checbo"> Acceso móvil </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="content-3">
+            <div class="item-3">
+                <div class="item-2">
+                    <div class="card flex flex-col items-center gap-4">
+                        <button pButton pRipple icon="pi pi pi-user " label=" Iniciar sesión"
+                            (click)="func_inicia_sesion()" class="p-button-success w-full"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-4">
+            <div class="item-4">
+                <i>Activación servicio: <br> Desde: 02-01-2025 hasta el 02-01-2026</i>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<p-toast key="confirm" position="bottom-center" styleClass="login-toast">
+    <ng-template pTemplate="message" let-message>
+        <div class="item">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </ng-template>
+</p-toast>

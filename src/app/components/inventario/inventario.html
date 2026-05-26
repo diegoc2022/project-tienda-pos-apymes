@@ -1,0 +1,124 @@
+<p-toast position="bottom-center"></p-toast>
+<div class="conten-ppal">
+    <div class="content">
+        <div id="qr-reader" style="width:100%;"></div>
+        <div class="flex flex-col gap-2">
+            <h5 class="pi pi-pen-to-square"> Realizar inventario:</h5>
+        </div>
+        <div class="flex flex-col gap-2 mt-1">
+            <form [formGroup]="formCodigo">
+                <input type="text" pInputText class="codigo-input" placeholder="Lea código producto"
+                    [(ngModel)]="codigo_data" (keydown.enter)="funct_retorna_producto()" autofocus
+                    formControlName="codigo" />
+            </form>
+        </div>
+        <div class="flex flex-col gap-2 d-block d-md-none mt-1">
+            <button class="w-full4" *ngIf="!scannerRunning" (click)="activarScanner()">
+                <i class="pi pi-camera"> Activar cámara</i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-2 mt-1">
+            <div class="card">
+                <p-table [columns]="data" sortMode="multiple" selectionMode="single" class="custom-table"
+                    styleClass="p-datatable-sm" tableStyleClass="p-datatable-gridlines p-datatable-striped"
+                    [value]="data" [scrollable]="true" [(selection)]="selectedProduct1" dataKey="id"
+                    [tableStyle]="{'min-width': '25rem'}">
+
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="d-none d-md-block">Código</th>
+                            <th>Descripción</th>
+                            <th>Existencia</th>
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="body" let-rowData>
+                        <tr>
+                            <td class="d-none d-md-block">{{rowData[0].producto.codProd}}</td>
+                            <td>{{rowData[0].producto.descripcion}}</td>
+                            <td> {{rowData[0].producto.existencia}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2 mt-1">
+            <form [formGroup]="formTipo">
+                <p-select [options]="opciones" [(ngModel)]="opcionSeleccionado" optionLabel="label" optionValue="value"
+                    placeholder="Elija tipo ajuste" styleClass="dropdown-responsive" appendTo="body"
+                    (onChange)="onOpcionChange($event)" formControlName="tipo" class="dropdown" />
+            </form>
+        </div>
+        <div class="flex flex-col gap-2 mt-1">
+            <button class="w-full" (click)="showDialog()">
+                <i class="pi pi-search"> Buscar producto</i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <button class="w-full3" (click)="limpiarPantalla()">
+                <i class="pi pi-desktop"> Limpiar pantalla</i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-2">
+            <button class="w-full2" (click)="funct_actualiza_inventario()">
+                <i class="pi pi-save"> Actualizar inventario</i>
+            </button>
+        </div>
+    </div>
+</div>
+<p-dialog header={{name_ajuste}} [(visible)]="visible2" styleClass="mi-dialogo" [closable]="false">
+    <div class="card">
+        <div class="caja-2">
+            <div class="row">
+                <div class="field col-12">
+                    <label for="titulo">Digite cantidad física</label>
+                    <form [formGroup]="formAjuste">
+                        <input #ajuste type="number" pInputText [style]="{'width':'100%','height':'5vh'}"
+                            formControlName="ajuste" autocomplete="off" autofocus />
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="field col-12">
+                    <button pButton pRipple label="Guardar" icon="pi pi-save" (click)="funct_agrega_ajuste();"
+                        class="p-button-success b-full"></button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="field col-12">
+                    <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="closeDialog();"
+                        class="p-button-help b-full"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-dialog>
+
+
+<p-dialog header="Buscar producto" [modal]="true" [(visible)]="visible">
+    <div class="row align-items-start">
+        <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single"
+            styleClass="p-datatable-sm p-datatable-striped" [scrollable]="false" scrollHeight="40vh"
+            [(selection)]="selectedProduct2" dataKey="codProd" [rows]="10" (onRowSelect)="onRowSelect($event)"
+            [paginator]="true" [rowsPerPageOptions]="[50,100]" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" class="custom-table">
+
+            <ng-template pTemplate="caption">
+                <p-columnFilter type="text" field="descripcion" [showMenu]="false"
+                    [matchMode]="'contains'"></p-columnFilter>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width:300px;">Descripción</th>
+                    <th style="width: 50px;">Existencia</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dataProductos>
+                <tr [pSelectableRow]="dataProductos">
+                    <td style="width: 50px;">{{dataProductos.descripcion}}</td>
+                    <td style="width: 100px;">{{dataProductos.existencia}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</p-dialog>

@@ -1,0 +1,20 @@
+/* PrimeIcons */
+@import 'primeicons/primeicons.css';
+
+html {
+    height: 99.9vh;
+    padding: 0;
+    margin: 0;
+    border: 2px solid white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #1e3c72;
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+    background: linear-gradient(to right, #2a5298, #1e3c72);
+}

@@ -1,0 +1,78 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar fcturas:</p>
+            <br>
+            <span> Fecha:
+                {{fecha_actual}}
+            </span>
+            <hr>
+            <form [formGroup]="data">
+                <div class="content">
+                    <div class="item">
+                        <div class="flex flex-col gap-2">
+                            <label for="codigo">Digite factura</label>
+                            <input pInputText #codigo type="text" formControlName="factura" autocomplete="off"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flex flex-col gap-2">
+                            <label for="codigo">.</label>
+                            <button pButton pRipple label="Consultar facturas" icon="pi pi-search"
+                                class="p-button-success w-full"
+                                (click)="funct_retorna_facturas_historico_c();"></button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="flex flex-col gap-2">
+                            <label for="codigo">.</label>
+                            <button pButton pRipple type="button" label="Eliminar facturas" icon="pi pi-times-circle"
+                                class="p-button-danger w-full" (click)="funct_elimina_factura_compras_c();"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="content-int-2">
+            <p class="pi pi-book"> Detalle facturas:</p>
+            <div class="row mt-2">
+                <div class="col-12 field">
+                    <p-table #dt2 [value]="factura_detalle" scrollable="true" selectionMode="single"
+                        styleClass="p-datatable-sm p-datatable-striped" class="custom-table">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Precio unit.</th>
+                                <th class="centered">Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Desc.</th>
+                                <th>Iva</th>
+                                <th>Icui</th>
+                                <th>Total fact.</th>
+                                <th>Fecha reg.</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-dataFactura>
+                            <tr>
+                                <td>{{dataFactura.cod_producto}}</td>
+                                <td>{{dataFactura.descripcion}}</td>
+                                <td>{{dataFactura.precio_unitario | currency: 'USD'}}</td>
+                                <td class="centered">{{dataFactura.cantidad}}</td>
+                                <td>{{dataFactura.subtotal | currency: 'USD'}}</td>
+                                <td>{{dataFactura.total_descuento | currency: 'USD'}}</td>
+                                <td>{{dataFactura.total_iva | currency: 'USD'}}</td>
+                                <td>{{dataFactura.total_icui | currency: 'USD'}}</td>
+                                <td>{{dataFactura.total_compras | currency: 'USD'}}</td>
+                                <td>{{dataFactura.fecha_registro}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

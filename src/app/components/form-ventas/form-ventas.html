@@ -1,0 +1,246 @@
+<p-toast position="bottom-left"></p-toast>
+<div class="conten-ppal">
+    <div class="div-content-0">
+        <div class="item-0">
+            <span class="pi pi-calculator p-date">
+                Facturación:
+            </span>
+        </div>
+        <div class="item-0">
+            <span class="pi pi-user p-date">
+                Usuario: {{user}}
+            </span>
+        </div>
+        <div class="item-0">
+            <span class="pi pi-calendar-times p-date">
+                Fecha apertura: {{fecha_apertura}}
+            </span>
+        </div>
+    </div>
+    <div class="div-content-1">
+        <div class="item-1-0">
+            <form [formGroup]="data">
+                <input #inputText type="text" pInputText formControlName="codProducto" autocomplete="off" autofocus
+                    placeholder="Lea código producto" (keydown.enter)="funct_retorna_producto()">
+            </form>
+        </div>
+        <div class="item-1-1">
+            <div class="flex items-center">
+                <p-checkbox [(ngModel)]="isChecked" inputId="check" [binary]="true"
+                    (onChange)="on_checkbox_change($event)" [disabled]="habilitado" class="label-checbox" />
+                <label for="check" class="ml-2 label-check"> Ventas por cobrar</label>
+            </div>
+        </div>
+
+        <div class="item-1-2">
+            <button pButton pRipple type="button" icon="pi pi-print" class="p-button-rounded p-button-contrast"
+                title="Reimprimir facturas" (click)="funct_dialog_reimprimir_factura();"></button>
+        </div>
+        <div class="item-1-2">
+            <p-button icon="pi pi-search" severity="info" title="Buscar productos"
+                (click)="funt_dialog_busca_productos()" />
+        </div>
+        <div class="item-1-2">
+            <button pButton pRipple type="button" icon="pi pi-cart-plus" class="p-button-rounded p-button-success"
+                title="Otras ventas" (click)="funct_dialog_otras_ventas();"></button>
+        </div>
+        <div class="item-1-2">
+            <button pButton pRipple type="button" icon="pi pi-save" class="p-button-rounded p-button-help"
+                title="Guardar e Imprimir" (click)="funct_dialog_detalle_factura();"></button>
+        </div>
+        <div class="item-1-2">
+            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+                title="Limpiar pantalla" (click)="funct_elimina_id_ventas();"></button>
+        </div>
+    </div>
+    <div class="div-content-2">
+        <div class="item-2">
+            <div class="card">
+                <p-table [columns]="products" sortMode="multiple" selectionMode="single" class="custom-table"
+                    styleClass="p-datatable-sm" tableStyleClass="p-datatable-gridlines p-datatable-striped"
+                    [value]="products" [scrollable]="true" [(selection)]="selectedProduct1" dataKey="id"
+                    [tableStyle]="{'min-width': '40rem'}">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="id">Item <p-sortIcon field="code"></p-sortIcon></th>
+                            <th style="display:none;">Id venta</th>
+                            <th>Código producto</th>
+                            <th>Descripción</th>
+                            <th>Existencia</th>
+                            <th>Precio venta</th>
+                            <th class="centered">Cantidad</th>
+                            <th>Subtotal</th>
+                            <th class="centered">Acción</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData *ngIf="total_articulos > 0">
+                        <tr styleClass="ui-datatable-data" [ngClass]="{'row-accessories': rowData.existencia === 0}">
+                            <td>{{rowData.id}}</td>
+                            <td>{{rowData.codProd}}</td>
+                            <td>{{rowData.descripcion}}</td>
+                            <td>
+                                <div [ngClass]="rowData.existencia < '5' ? 'red-cell' : 'green-cell'">
+                                    {{rowData.existencia}}
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    [ngClass]=" rowData.precio_compra > rowData.precio_venta ? 'red-cell' : 'green-cell'">
+                                    {{rowData.precio_venta | currency:'$'}}
+                                </div>
+                            </td>
+                            <td pEditableColumn class="centered">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input">
+                                        <form [formGroup]="data2">
+                                            <input type="number" pInputText [(ngModel)]="rowData.cantidad"
+                                                class="input-cantidad" formControlName="cantidad"
+                                                (keydown.enter)="funct_edita_cantidad_venta(rowData)"
+                                                (blur)="funct_edita_cantidad_venta(rowData)" />
+                                        </form>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{rowData.cantidad}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td>{{rowData.subtotal | currency}}</td>
+                            <td style="flex: 5rem 5rem 5rem" class="centered">
+                                <button pButton pRipple type="button" icon="pi pi-trash"
+                                    class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2"
+                                    (click)="functEliminaItemVentas(rowData);"></button>
+                                <button pButton pRipple type="button" icon="pi pi-eye" *ngIf="rowData.venta_por_und"
+                                    class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2"
+                                    (click)="funct_show_dualog(rowData);"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr class="tr2">
+                            <td colspan="100%">
+                                <div class="div-content-2-1">
+                                    <div class="item-2-1">
+                                        <div *ngIf="total_articulos == 0">
+                                            <img src="../assets/img/carrito5.png" alt="img-login"
+                                                class="img-carrito-vacio">
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+    <div class="div-content-3">
+        <div class="div-content-3-1">
+            <div class="item-3-1">
+                <div class="div-total-pago">
+                    <span class="badge bg span-background" size="large">Total a pagar: {{total_venta |
+                        currency}}</span>
+                </div>
+            </div>
+            <div class="item-3-1">
+                <div class="div-factura">
+                    <span class="badge bg span-background" size="large">Num ticket: {{factura}}</span>
+                </div>
+            </div>
+            <div class="item-3-1">
+                <div class="div-total_artic">
+                    <span class="badge bg span-background" size="large">Artículos: {{total_articulos}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-busca-productos [visible]="mostrarDialog"></app-busca-productos>
+<app-otras-ventas [visible]="mostrarDialog2"></app-otras-ventas>
+<app-detalle-factura [visible]="mostrarDialog5"></app-detalle-factura>
+
+<p-dialog header="Producto unidad:" [(visible)]="mostrarDialog3" [closable]="false">
+    <div class="div-dialogo">
+        <div class="card">
+            <div class="row align-items-start">
+                <p-table #dt2 [value]="producto_unidad" selectionMode="single"
+                    styleClass="p-datatable-sm p-datatable-striped" [scrollable]="true" scrollHeight="44vh"
+                    [(selection)]="selectedProduct2" dataKey="codProd" (onRowSelect)="onRowSelect($event)"
+                    [showCurrentPageReport]="true" [paginator]="false"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Existencia</th>
+                            <th>Precio venta</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-dataProductos>
+                        <tr [pSelectableRow]="dataProductos">
+                            <td>{{dataProductos.codProd}}</td>
+                            <td>{{dataProductos.descripcion}}</td>
+                            <td>{{dataProductos.existencia}}</td>
+                            <td>{{dataProductos.precio_venta | currency}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</p-dialog>
+
+<p-dialog header="Reimprimir factura:" [(visible)]="mostrarDialog4" styleClass="mi-dialogo" [closable]="false">
+    <div class="row">
+        <div class="field col-12">
+            <label for="titulo">Digite Num. ticket</label>
+            <form [formGroup]="formFactura">
+                <input #factura2 type="text" pInputText [style]="{'width':'100%','height':'5vh'}"
+                    formControlName="factura" autocomplete="off" autofocus />
+            </form>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="field col-12">
+            <button pButton pRipple label="Reimprimir" icon="pi pi-print" class="p-button-success w-full"
+                (click)="funct_reimprime_facturas();"></button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="field col-12">
+            <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="mostrarDialog4 = false"
+                class="p-button-help w-full"></button>
+        </div>
+    </div>
+</p-dialog>
+
+<p-dialog header="Ventas x cobrar" [(visible)]="mostrarDialog6" styleClass="mi-dialogo2" (onHide)="on_gialog_hide()"
+    [closable]="false">
+    <form [formGroup]="data3">
+        <div class="row">
+            <div class="field col-12">
+                <label for="titulo">Elija cliente</label>
+                <p-select [options]="clientes" optionValue="codigo_cliente" optionLabel="nombre" [showClear]="true"
+                    formControlName="cliente" appendTo="body" (onChange)="funct_retorna_one_cliente_c($event)"
+                    panelStyleClass="mi-panel-dropdown" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="field col-12">
+                <label for="codigo">Id venta</label>
+                <p-inputnumber inputI="codigo" formControlName="codigo_venta" readonly />
+            </div>
+        </div>
+    </form>
+    <div class="row mt-4">
+        <div class="col-6">
+            <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="mostrarDialog6 = false"
+                class="p-button-help w-full"></button>
+        </div>
+        <div class="col-6">
+            <button pButton pRipple label="Guardar" icon="pi pi-users" [disabled]="habilitado"
+                (click)="funct_registra_ventas_x_cobrar_c();" class="p-button-success w-full"></button>
+        </div>
+    </div>
+</p-dialog>

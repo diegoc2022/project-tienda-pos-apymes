@@ -1,0 +1,90 @@
+@media screen and (max-width: 1366px) {
+    .div-conten {
+        border-radius: 5px;
+        width: 350px;
+        height: 60vh;
+        margin-left: 0px;
+        margin-top: 15px;
+        padding: 25px;
+        border: 1px solid white;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .div-conten {
+        border-radius: 5px;
+        width: 350px;
+        height: 50vh;
+        margin-left: 0px;
+        margin-top: 15px;
+        padding: 25px;
+        border: 1px solid white;
+    }
+}
+
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1600px) {
+    .div-conten {
+        border-radius: 5px;
+        width: 320px;
+        height: 50vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 25px;
+        border: 1px solid white;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .div-conten {
+        border-radius: 5px;
+        width: 320px;
+        height: 40vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 25px;
+        border: 1px solid white;
+    }
+
+    :host ::ng-deep .p-inputnumber {
+        border-color: black;
+        width: 100%;
+    }
+
+    :host ::ng-deep .p-inputnumber-input {
+        height: 4vh !important;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.w-full {
+    width: 100% !important;
+    height: 40px;
+    border-radius: 5px;
+}
+
+span {
+    color: white;
+}
+
+label {
+    color: white;
+    font-size: 14px;
+}
+
+p {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}
+
+hr {
+    color: white;
+    border: 2px solid;
+}

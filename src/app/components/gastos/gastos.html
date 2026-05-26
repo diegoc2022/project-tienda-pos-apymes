@@ -1,0 +1,62 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <p class="pi pi-address-book"> Registrar gastos operativos:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <hr>
+        <form [formGroup]="data">
+            <div class="content-1">
+                <div class="item-1">
+                    <div class="flex flex-wrap">
+                        <div class="flex-auto">
+                            <label class="block" for="vGastos">Ingrese valor gasto</label>
+                            <p-inputNumber inputId="vGastos" currency="USD" locale="en-US"
+                                formControlName="valor_gastos" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item-1">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="codigo">Concepto</label>
+                        <p-select [(ngModel)]="seleccionado" [options]="tipo_gastos" optionValue="code"
+                            placeholder="Elija un concepto" optionLabel="name"
+                            [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
+                            formControlName="tipo_concepto" />
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="item-2">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="titulo">Elija mes</label>
+                        <p-select #dropdown [(ngModel)]="seleccionado2" placeholder="Elija mes" [options]="option_m"
+                            optionValue="value" optionLabel="nombre" [showClear]="true" formControlName="num_mes" />
+                    </div>
+                </div>
+                <div class="item-2">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="titulo">Elija año</label>
+                        <p-select #dropdown [(ngModel)]="seleccionado3" placeholder="Elija año" [options]="option_y"
+                            optionValue="value" optionLabel="nombre" [showClear]="true" formControlName="num_year" />
+                    </div>
+                </div>
+            </div>
+            <div class="content-3">
+                <div class="item-3">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="observ">Detalle</label>
+                        <input type="text" id="observ" pInputText formControlName="observ" autocomplete="off"
+                            placeholder="Agregue un detalle corto" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 mt-4">
+                <button pButton pRipple label="Guardar" icon="pi pi-save" class="p-button-success w-full"
+                    (click)="funct_registra_gastos_operativos_c();"></button>
+            </div>
+
+        </form>
+    </div>

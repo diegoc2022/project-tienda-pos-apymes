@@ -1,0 +1,55 @@
+<p-toast></p-toast>
+<p-dialog header="Total a pagar:" [(visible)]="visible" (visibleChange)="visibleChange.emit($event)" [modal]="true"
+    styleClass="mi-dialogo" [closable]="false" (onShow)="funct_consulta_ventas_temp()">
+    <div class="content-1">
+        <div class="item-1">
+            <div class="flex flex-col">
+                <label for="currency-us">Total a pagar:</label>
+                <div class="div-total-pago">
+                    {{venta_total | currency}}
+                </div>
+            </div>
+        </div>
+
+        <div class="item-1">
+            <div class="flex flex-col">
+                <label for="efectivo">Efectivo:</label>
+                <form [formGroup]="form">
+                    <p-inputnumber inputId="efectivo" formControlName="efectivo"
+                        (keydown.enter)="funct_calcula_efectivo()" autofocus mode="currency" currency="USD"
+                        locale="en-US" [minFractionDigits]="0" [maxFractionDigits]="0" />
+                </form>
+            </div>
+        </div>
+
+        <div class="item-1">
+            <div class="flex flex-col gap-2">
+                <label for="currency-us">Cambio:</label>
+                <div class="div-cambio">
+                    {{total_cambio | currency}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="content-2">
+        <div class="content-2-1">
+            <div class="item-2-1">
+                <button pButton pRipple label="Guardar" icon="pi pi-save" (click)="funct_close_detalle_factura();"
+                    class="p-button-success w-full"></button>
+            </div>
+            <div class="item-2-1">
+                <button pButton pRipple label="Cerrar" icon="pi pi-times-circle"
+                    (click)="funt_close_dialog_detalle_factura();" class="p-button-help w-full"></button>
+            </div>
+            <div class="item-2-1">
+                <button pButton pRipple label="Imprimir" icon="pi pi-print" (click)="functImprimeFacturas()"
+                    class="p-button-warn w-full"></button>
+            </div>
+            <div class="item-2-1">
+                <button pButton pRipple label="Imprimir FE" icon="pi pi-file-pdf" (click)="functImprimeFacturas()"
+                    class="p-button-info w-full"></button>
+            </div>
+        </div>
+    </div>
+</p-dialog>

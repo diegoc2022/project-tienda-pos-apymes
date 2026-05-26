@@ -1,0 +1,80 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar nómina:</p>
+            <form [formGroup]="data2">
+                <div class="content-1">
+                    <div class="item-1">
+                        <div class="flex flex-col gap-2">
+                            <label for="codigo">Elija empleado</label>
+                            <p-select [(ngModel)]="seleccionado3" [options]="data_empleados" optionValue="cedula"
+                                placeholder="Elija empleado" optionLabel="nombre_empleado"
+                                [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
+                                formControlName="cedula" (onChange)="funct_onchange($event);" />
+                        </div>
+                    </div>
+                    <div class="item-1-2">
+                        <div class="flex flex-col gap-2">
+                            <label for="titulo">Elija mes</label>
+                            <p-select #dropdown [(ngModel)]="seleccionado4" placeholder="Elija mes" [options]="option_m"
+                                optionValue="value" optionLabel="nombre" [showClear]="true" formControlName="num_mes"
+                                (onChange)="funct_onchange_m();" />
+                        </div>
+                    </div>
+                    <div class="item-1-2">
+                        <div class="flex flex-col gap-2 mt-1">
+                            <label for="titulo">Elija año</label>
+                            <p-select #dropdown [(ngModel)]="seleccionado5" placeholder="Elija año" [options]="option_y"
+                                optionValue="value" optionLabel="nombre" [showClear]="true"
+                                formControlName="num_year" />
+                        </div>
+                    </div>
+                    <div class="item-1-2">
+                        <div class="flex flex-col gap-2 mt-1">
+                            <label for="titulo">.</label>
+                            <button pButton pRipple label="Consultar" icon="pi pi-search"
+                                (click)="funct_retorna_pago_nomina_c();" class="p-button-success w-full"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="content-int-2">
+            <p class="pi pi-book"> Nómina detalles:</p>
+            <br>
+            <span> Fecha:
+                {{fecha_actual}}
+            </span>
+            <hr>
+            <div class="content-2">
+                <div class="item-2">
+                    <p-table #dt2 [value]="pago_nomina" selectionMode="single"
+                        styleClass="p-datatable-sm p-datatable-striped" class="custom-table" [scrollable]="true">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Cédula</th>
+                                <th>Nombre</th>
+                                <th>Concepto</th>
+                                <th>Valor pago</th>
+                                <th>Fecha desde</th>
+                                <th>Fecha hasta</th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-dataNomina>
+                            <tr>
+                                <td>{{dataNomina.cedula}}</td>
+                                <td>{{nombre}}</td>
+                                <td>{{dataNomina.concepto}}</td>
+                                <td>{{dataNomina.valor_pago | currency: 'USD'}}</td>
+                                <td>{{dataNomina.fecha_desde}}</td>
+                                <td>{{dataNomina.fecha_hasta}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

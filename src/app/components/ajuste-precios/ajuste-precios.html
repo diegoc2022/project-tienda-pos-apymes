@@ -1,0 +1,37 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div-conten grid p-fluid">
+        <p class="pi pi-dollar"> Ajustar precios:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <br>
+        <hr>
+        <div class="content">
+            <form [formGroup]="data">
+                <div class="flex flex-col gap-2 mt-1">
+                    <label for="titulo">Ajustar precio compra</label>
+                    <div class="field-checkbox">
+                        <p-checkbox [(ngModel)]="onChecked" [binary]="true" inputId="binary"
+                            (onChange)="onCheckboxChange($event)" formControlName="check"></p-checkbox>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 mt-2">
+                    <label for="codigo">{{placeholder}}</label>
+                    <input type="text" #codigo pInputText formControlName="codigo" (keydown)="onEnterPressed($event)"
+                        autocomplete="off">
+                </div>
+                <div class="flex flex-col gap-2 mt-1">
+                    <label for="precio">{{placeholder2}}</label>
+                    <p-inputnumber #precio formControlName="precio" mode="currency" currency="USD" locale="en-US"
+                        [minFractionDigits]="0" [maxFractionDigits]="0" />
+                </div>
+                <div class="flex flex-col gap-2 mt-4">
+                    <button pButton pRipple type="button" [disabled]="habilitado" label="Guardar" icon="pi pi-save"
+                        iconPos="left" class="p-button-success w-full" (click)="funct_edita_precios_c();"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

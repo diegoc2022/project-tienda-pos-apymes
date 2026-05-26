@@ -1,0 +1,87 @@
+@media screen and (max-width: 1366px) {
+    .div_v {
+        border-radius: 5px;
+        width: 20vw;
+        height: 70vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .div_v {
+        border-radius: 5px;
+        width: 20vw;
+        height: 60vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+}
+
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (mIN-width: 1600px) {
+    .div_v {
+        border-radius: 5px;
+        width: 18vw;
+        height: 60vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (mIN-width: 1920px) {
+    .div_v {
+        border-radius: 5px;
+        width: 17vw;
+        height: 50vh;
+        margin-left: 7px;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+}
+
+:host ::ng-deep .p-inputtext {
+    border-color: black;
+    width: 100%;
+    height: 5vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.w-full {
+    width: 100% !important;
+    height: 40px;
+    border-radius: 5px;
+}
+
+span {
+    color: white
+}
+
+hr {
+    border: 2px solid white;
+}
+
+label {
+    color: white;
+    font-size: 14px;
+}
+
+p {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}

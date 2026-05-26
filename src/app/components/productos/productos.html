@@ -1,0 +1,36 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div-container">
+        <p class="pi pi-apple"> Nuevo producto:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <br>
+        <hr>
+        <div class="content">
+            <form [formGroup]="formProductos">
+                <div class="flex flex-col gap-2">
+                    <label for="codigo">Lea código producto</label>
+                    <input id="codigo" type="text" pInputText formControlName="codProd"
+                        (keyup.enter)="on_enter_codigo_producto($event)" />
+                </div>
+                <div class="flex flex-col gap-2 mt-2">
+                    <label for="nombre-p">Nombre producto</label>
+                    <input id="nombre-p" type="text" pInputText formControlName="nombre"
+                        (keyup.enter)="on_enter_nombres_producto($event)">
+                </div>
+                <div class="flex flex-col gap-2 mt-2">
+                    <label for="mySelect">Proveedor</label>
+                    <p-select #mySelect class="w-full md:w-56" [(ngModel)]="seleccionado" placeholder="Elija proveedor"
+                        [options]="data_proveedor" optionValue="nit" optionLabel="nombre" [showClear]="true"
+                        formControlName="codProv" />
+                </div>
+                <div class="flex flex-col gap-2 mt-4">
+                    <button pButton pRipple type="button" icon="pi pi-save" label="Guardar"
+                        class="p-button-success w-full" (click)="functGuardarNuevoProducto()"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

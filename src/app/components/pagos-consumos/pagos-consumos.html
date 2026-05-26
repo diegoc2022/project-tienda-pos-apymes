@@ -1,0 +1,109 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar pagos pendientes:</p>
+            <form [formGroup]="data">
+                <div class="content-1">
+                    <div class="item-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Elija cliente</label>
+                            <p-select [options]="clientes" [(ngModel)]="seleccionado" optionValue="codigo_cliente"
+                                optionLabel="nombre" [showClear]="true"
+                                [panelStyle]="{'max-height': '520px', 'overflow-x': 'auto'}" formControlName="cliente"
+                                (onChange)="funct_retorna_one_cliente_c($event)" />
+                        </div>
+                    </div>
+                    <div class="item-1-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Id ventas</label>
+                            <input #codigo type="number" pInputText formControlName="codigo_venta" autocomplete="off"
+                                class="form-control" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-2 mt-3">
+                    <div class="item-2">
+                        <div class="flex flex-col">
+                            <button pButton pRipple label="Imprimir" icon="pi pi-print" class="p-button-warn w-full3"
+                                (click)="funct_imprime_factura_detalle();"></button>
+                        </div>
+                    </div>
+                    <div class="item-2-1">
+                        <div class="flex flex-col">
+                            <button pButton pRipple label="Consultar" icon="pi pi-search"
+                                class="p-button-success w-full" (click)="funct_consulta_ventas_x_cliente();"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-12 field">
+                <p-table #dt2 [value]="ventas" selectionMode="single" styleClass="p-datatable-sm p-datatable-striped"
+                    [scrollable]="true" scrollHeight="60vh" [(selection)]="selectedProduct2" dataKey="codProd"
+                    [showCurrentPageReport]="true"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                    class="custom-table">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Id cliente</th>
+                            <th>Nombre cliente</th>
+                            <th class="centered">Id venta</th>
+                            <th>Estado id ventas</th>
+                            <th>Consumo</th>
+                            <th class="centered">Num pagos</th>
+                            <th>Total pagos realiz.</th>
+                            <th>Debe</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-dataVentas>
+                        <tr>
+                            <td>{{dataVentas.id_cliente}}</td>
+                            <td>{{dataVentas.nombre}}</td>
+                            <td class="centered">{{dataVentas.id_venta}}</td>
+                            <td>{{dataVentas.estado}}</td>
+                            <td>{{dataVentas.monto | currency: 'USD'}}</td>
+                            <td class="centered">{{num_pagos}}</td>
+                            <td>{{pagos | currency: 'USD'}}</td>
+                            <td>{{monto_restante | currency: 'USD'}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <hr>
+        <div class="content-int-2 mt-3">
+            <p class="pi pi-dollar"> Realizar pagos:</p>
+            <form [formGroup]="data2">
+                <div class="content-3">
+                    <div class="item-3">
+                        <div class="flex flex-col">
+                            <label for="codigo">Digite valor a pagar</label>
+                            <p-inputnumber inputId="codigo" formControlName="valor_pago" autocomplete="off" autofocus
+                                mode="currency" currency="USD" locale="en-US" [minFractionDigits]="0"
+                                [maxFractionDigits]="0" />
+                        </div>
+                    </div>
+                    <div class="item-3">
+                        <div class="flex flex-col">
+                            <label for="codigo">Elija concepto</label>
+                            <p-select [options]="tipo_pago" [(ngModel)]="seleccionado2" optionValue="code"
+                                optionLabel="name" [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}"
+                                [showClear]="true" formControlName="cod_tipo_pago" />
+                        </div>
+                    </div>
+                </div>
+                <div class="content-4 mt-3">
+                    <div class="item-4">
+                        <div class="flex flex-col">
+                            <button pButton pRipple label="Guardar pago" icon="pi pi-save"
+                                class="p-button-success w-full2" (click)="funct_registra_pagos_c();"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

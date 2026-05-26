@@ -1,0 +1,65 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div-container">
+        <p class="pi pi-user"> Nuevo empleado:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <hr>
+        <form [formGroup]="data">
+            <div class="content-1">
+                <div class="item-1">
+                    <div class="flex flex-col gap-2">
+                        <label for="nit">Cédula empleado:</label>
+                        <input id="nit" type="text" pInputText formControlName="cedula" class="form-control"
+                            (keyup.enter)="on_enter_codigo_empleado($event)">
+                    </div>
+                </div>
+                <div class="item-1">
+                    <div class="flex flex-col gap-2">
+                        <label for="nombre">Nombre empleado</label>
+                        <input id="nombre" type="text" pInputText formControlName="nombre" class="form-control"
+                            (keyup.enter)="on_enter_nombre_empleado($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="item-2">
+                    <div class="flex flex-col gap-2">
+                        <label for="usuario">Usuario</label>
+                        <input id="usuario" type="text" pInputText formControlName="usuario" class="form-control"
+                            (keyup.enter)="on_enter_usuario($event)">
+                    </div>
+                </div>
+                <div class="item-2">
+                    <div class="flex flex-col gap-2">
+                        <label for="dirEmp">Dirección</label>
+                        <input id="dirEmp" type="text" pInputText formControlName="dirEmp" class="form-control"
+                            (keyup.enter)="on_enter_dir_empleado($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="content-3">
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="telEmp">Teléfono</label>
+                        <input id="telEmp" type="text" pInputText formControlName="telEmp" class="form-control"
+                            (keyup.enter)="on_enter_tel_empleado($event)">
+                    </div>
+                </div>
+                <div class="item-3">
+                    <div class="flex flex-col gap-2">
+                        <label for="mySelect">Elija ciudad</label>
+                        <p-select #mySelect [(ngModel)]="seleccionado" [options]="options" optionValue="value"
+                            optionLabel="nombre" [showClear]="true" formControlName="ciudad" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 mt-4">
+                <button pButton pRipple type="button" icon="pi pi-save" label="Guardar" class="p-button-success w-full"
+                    (click)="funct_registra_empleados();"></button>
+            </div>
+        </form>
+    </div>
+</div>

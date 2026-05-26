@@ -1,0 +1,73 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar Pagos:</p>
+            <form [formGroup]="data">
+                <div class="content-1">
+                    <div class="item-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Elija cliente</label>
+                            <p-select [options]="clientes" [(ngModel)]="seleccionado" optionValue="codigo_cliente"
+                                placeholder="Elija cliente" optionLabel="nombre" [showClear]="true"
+                                [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" formControlName="cliente"
+                                (onChange)="funct_onchange($event);" />
+                        </div>
+                    </div>
+                    <div class="item-1-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Id ventas</label>
+                            <input pInputText class="form-control" #codigo type="text" formControlName="codigo_venta"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-2 mt-3">
+                    <div class="item-2">
+                        <div class="flex flex-col">
+                            <button pButton pRipple label="Consultar" icon="pi pi-search"
+                                (click)="funct_retornar_pagos_detalles();" class="p-button-success w-full"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-12 field">
+                <p-table #dt2 [value]="pagos_detalle" styleClass="p-datatable-sm p-datatable-striped"
+                    class="custom-table" [tableStyle]="{ 'min-width':'50rem' }" [scrollable]="true" scrollHeight="68vh"
+                    [sortOrder]="1">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Id cliente</th>
+                            <th class="centered">Id venta</th>
+                            <th>Consumo actual</th>
+                            <th>Otros pagos realiz.</th>
+                            <th>Último pago realiz.</th>
+                            <th>Total pagos realiz.</th>
+                            <th>Debe</th>
+                            <th>Tipo pago</th>
+                            <th>Estado id ventas</th>
+                            <th>Fecha ult. pago</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-pagos>
+                        <tr>
+                            <td>{{pagos.cedula}}</td>
+                            <td class="centered">{{pagos.codigo_venta}}</td>
+                            <td>{{consumo_actual | currency: 'USD'}}</td>
+                            <td>{{pagos.otros_pagos | currency: 'USD'}}</td>
+                            <td>{{pagos.ultimo_pago | currency: 'USD'}}</td>
+                            <td>{{pagos.total_pagos | currency: 'USD'}}</td>
+                            <td>{{pagos.saldo_restante | currency: 'USD'}}</td>
+                            <td>{{pagos.tipo_pago }}</td>
+                            <td>{{pagos.estado }}</td>
+                            <td>{{pagos.fecha }}
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div-container">
+        <p class="pi pi-user-plus"> Nuevo proveedor:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <br>
+        <hr>
+        <div class="content">
+            <form [formGroup]="formProveedor">
+                <div class="flex flex-col gap-2">
+                    <label for="nit">Nit proveedor:</label>
+                    <input id="nit" type="text" pInputText formControlName="nit"
+                        (keyup.enter)="on_enter_codigo_proveedor($event)">
+                </div>
+                <div class="flex flex-col gap-2 mt-1">
+                    <label for="prov">Nombre proveedor</label>
+                    <input id="prov" type="text" pInputText formControlName="nombreProv"
+                        (keyup.enter)="on_enter_nombre_proveedor($event)">
+                </div>
+                <div class="flex flex-col gap- mt-1">
+                    <label for="dir">Dirección</label>
+                    <input id="dir" type="text" pInputText formControlName="dirProv"
+                        (keyup.enter)="on_enter_dir_proveedor($event)">
+                </div>
+                <div class="flex flex-col gap-2 mt-1">
+                    <label for="tel">Teléfono</label>
+                    <input id="tel" type="text" pInputText formControlName="telProv"
+                        (keyup.enter)="on_enter_tel_proveedor($event)">
+                </div>
+                <div class="flex flex-col gap-2 mt-1">
+                    <label for="mySelect">Ciudad</label>
+                    <p-select id="mySelect" [(ngModel)]="seleccionado" placeholder="Elija ciudad" [options]="options"
+                        optionValue="value" optionLabel="nombre" [showClear]="true" formControlName="ciudad" />
+                </div>
+                <div class="flex flex-col gap-2 mt-4">
+                    <button pButton pRipple type="button" icon="pi pi-save" label="Guardar"
+                        class="p-button-success w-full" (click)="funct_registra_ptoverdor();"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

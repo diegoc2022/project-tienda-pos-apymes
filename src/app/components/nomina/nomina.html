@@ -1,0 +1,69 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <p class="pi pi-desktop"> Pago nómina:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <hr>
+        <form [formGroup]="data">
+            <div class="content-1">
+                <div class="item-1">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="codigo">Empleado</label>
+                        <p-select [(ngModel)]="seleccionado" [options]="data_empleados" optionValue="cedula"
+                            placeholder="Elija empleado" optionLabel="nombre_empleado"
+                            [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
+                            formControlName="ced_empleado" />
+                    </div>
+                </div>
+                <div class="item-1">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="codigo">Valor a pagar</label>
+                        <p-inputNumber #gastos inputId="currency-us" currency="USD" locale="en-US"
+                            formControlName="valor_pago" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="item-2">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="fecha_desde">Fecha desde</label>
+                        <p-datepicker formControlName="fecha_desde" placeholder="Seleccione una fecha"
+                            dateFormat="dd-mm-yy" [showClear]="true" showIcon iconDisplay="input"
+                            (onSelect)="onDateSelect($event, 'fecha_desde')" inputId="fecha_desde"
+                            [showOnFocus]="false" />
+                    </div>
+                </div>
+                <div class="item-2">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="fecha_hasta">Fecha hasta</label>
+                        <p-datepicker formControlName="fecha_hasta" placeholder="Seleccione una fecha"
+                            dateFormat="dd-mm-yy" [showClear]="true" showIcon iconDisplay="input"
+                            (onSelect)="onDateSelect($event, 'fecha_hasta')" inputId="fecha_hasta"
+                            [showOnFocus]="false" />
+                    </div>
+                </div>
+            </div>
+            <div class="content-3">
+                <div class="item-3">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="codigo">Concepto</label>
+                        <p-select [(ngModel)]="seleccionado2" [options]="tipo_concepto" optionValue="code"
+                            placeholder="Elija un concepto" optionLabel="name"
+                            [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
+                            formControlName="tipo_concepto" />
+                    </div>
+                </div>
+                <div class="item-3">
+                    <div class="flex flex-col gap-2 mt-1">
+                        <label for="codigo">.</label>
+                        <button pButton pRipple label="Guardar" icon="pi pi-save" class="p-button-success w-full"
+                            (click)="funct_registra_nomina_c();"></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,75 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar gastos operativos:</p>
+            <form [formGroup]="data2">
+                <div class="content">
+                    <div class="item">
+                        <div class="flex flex-col gap-2">
+                            <label for="titulo">Elija mes</label>
+                            <p-select #dropdown [(ngModel)]="seleccionado4" placeholder="Elija mes" [options]="option_m"
+                                optionValue="value" optionLabel="nombre" [showClear]="true" formControlName="num_mes"
+                                (onChange)="funct_onchange();" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flex flex-col gap-2 mt-1">
+                            <label for="titulo">Elija año</label>
+                            <p-select #dropdown [(ngModel)]="seleccionado5" placeholder="Elija año" [options]="option_y"
+                                optionValue="value" optionLabel="nombre" [showClear]="true"
+                                formControlName="num_year" />
+                        </div>
+                    </div>
+                </div>
+                <div class="content-2 mt-3">
+                    <div class="item-2">
+                        <div class="flex flex-col gap-2">
+                            <button pButton pRipple label="Consultar" icon="pi pi-save" class="p-button-success w-full"
+                                (click)="funct_retorna_gastos_operativos_c();"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="content-int-2">
+            <p class="pi pi-book"> Gastos detalles:</p>
+            <br>
+            <span> Fecha:
+                {{fecha_actual}}
+            </span>
+            <hr>
+            <div class="row mt-2">
+                <div class="col-12 field">
+                    <p-table #dt2 [value]="gastos_data" selectionMode="single"
+                        styleClass="p-datatable-sm p-datatable-striped" class="custom-table" [scrollable]="true"
+                        scrollHeight="28vh">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Id</th>
+                                <th>Tipo concepto</th>
+                                <th>Detalle concepto</th>
+                                <th>Número mes</th>
+                                <th>Año actual</th>
+                                <th>Total gastos</th>
+                                <th>Fecha registro</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-gastos>
+                            <tr>
+                                <td>{{gastos.id}}</td>
+                                <td>{{gastos.tipo_concepto}}</td>
+                                <td>{{gastos.observacion}}</td>
+                                <td>{{gastos.num_mes}}</td>
+                                <td>{{gastos.num_year}}</td>
+                                <td>{{gastos.valor_gastos | currency: 'USD'}}</td>
+                                <td>{{gastos.fecha_registro}}</td>
+
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

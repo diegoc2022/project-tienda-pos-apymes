@@ -1,0 +1,41 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div_v">
+        <p class="pi pi-arrow-right-arrow-left"> Asociar o eliminar vínculos:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <br>
+        <hr>
+        <div class="content">
+            <form [formGroup]="data">
+                <div class="flex flex-col gap-2 mt-1">
+                    <label for="titulo">Activar asociación por unidad</label>
+                    <div class="field-checkbox">
+                        <p-checkbox [(ngModel)]="onChecked" [binary]="true" inputId="binary"
+                            (onChange)="onCheckboxChange($event)" formControlName="activaAsoc"></p-checkbox>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 mt-2">
+                    <label for="codigoInic">{{placeholder}}</label>
+                    <input type="text" id="codigoInic" pInputText formControlName="codigoInic"
+                        (keydown)="onEnterPressed($event)" autocomplete="off">
+                </div>
+                <div class="flex flex-col gap-2 mt-2">
+                    <label for="codigoVinc">{{placeholder2}}</label>
+                    <input type="text" id="codigoVinc" pInputText formControlName="codigoVinc"
+                        (keyup.enter)="on_enter_codigo_producto($event);" autocomplete="off">
+                </div>
+                <div class="flex flex-col gap-2 mt-3">
+                    <button pButton pRipple type="button" label="Asociar producto" icon="pi pi-check-circle"
+                        iconPos="left" class="p-button-success w-full" (click)="funcRegistraVinculos();"></button>
+                </div>
+                <div class="flex flex-col gap-2 mt-3">
+                    <button pButton pRipple type="button" label="Eliminar asociación" icon="pi pi-trash" iconPos="left"
+                        class="p-button-danger w-full" (click)=" funct_elimina_vinculos();"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

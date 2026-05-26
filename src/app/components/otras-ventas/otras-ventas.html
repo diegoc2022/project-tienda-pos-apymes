@@ -1,0 +1,62 @@
+<p-dialog header="Otras ventas:" [(visible)]="visible" (visibleChange)="visibleChange.emit($event)"
+    styleClass="mi-dialogo" [modal]="true" [closable]="false">
+    <div class="content-1">
+        <div class="item-1">
+            <form [formGroup]="data" (ngSubmit)="funct_retorna_producto()">
+                <label for="codigoProd" class="block">Digite código</label>
+                <input #codigoProd type="text" pInputText class="p-inputtext-sm"
+                    [style]="{'width':'8vw','height':'5vh'}" formControlName="dlCodProducto" autofocus
+                    autocomplete="off">
+            </form>
+        </div>
+    </div>
+    <form [formGroup]="data2">
+        <div class="content-2 mt-2">
+            <div class="content-2-1">
+                <div class="item-2">
+                    <div class="flex flex-col">
+                        <label for="inputText1" class="block">Código</label>
+                        <input id="inputText1" type="text" pInputText formControlName="codProd"
+                            [style]="{'width':'100%','height':'5vh','background-color':'lightgray'}" readonly="true">
+                    </div>
+                </div>
+                <div class="item-2">
+                    <div class="flex flex-col">
+                        <label for="inputText2">Descripción</label>
+                        <input #inputText2 type="text" pInputText formControlName="descripcion"
+                            [style]="{'width':'100%','height':'5vh','background-color':'lightgray'}" readonly="true">
+                    </div>
+                </div>
+                <div class="item-2">
+                    <div class="flex flex-col">
+                        <label for="inputText3" class="block">Existencia</label>
+                        <input #inputText3 type="text" pInputText formControlName="existencia"
+                            [style]="{'width':'100%','height':'5vh','background-color':'lightgray'}" readonly="true">
+                    </div>
+                </div>
+                <div class="item-2">
+                    <label for="inputText3" class="block">Cantidad</label>
+                    <input #inputText4 type="text" pInputText formControlName="cant"
+                        [style]="{'width':'100%','height':'5vh','background-color':'lightgray'}" readonly="true">
+                </div>
+                <div class="item-2">
+                    <div class="flex flex-col">
+                        <label for="precio_venta" class="block">Agregue total</label>
+                        <p-inputnumber #precio_venta formControlName="precio_venta"
+                            (keydown.enter)="functRegistraVenta();" mode="currency" currency="USD" locale="en-US"
+                            [minFractionDigits]="0" [maxFractionDigits]="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-3 mt-3">
+            <div class="item-3">
+                <div class="flex btn-position">
+                    <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="visible = false"
+                        class="p-button-help w-full"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</p-dialog>

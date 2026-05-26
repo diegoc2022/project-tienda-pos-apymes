@@ -1,0 +1,73 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <p class="pi pi-calendar-clock"> Movimientos por mes:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual}}
+        </span>
+        <hr>
+        <div class="content">
+            <div class="item">
+                <div class="flex flex-col gap-2">
+                    <label for="titulo">Elija mes</label>
+                    <p-select #dropdown class="dropdown-w" [(ngModel)]="seleccionado" placeholder="Elija mes"
+                        [options]="option_m" optionValue="value" optionLabel="nombre" [showClear]="true"
+                        (onChange)="on_input_select_mes($event)" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="flex flex-col gap-2">
+                    <label for="titulo">Elija año</label>
+                    <p-select #dropdown class="dropdown-w" [(ngModel)]="seleccionado2" placeholder="Elija año"
+                        [options]="option_y" optionValue="value" optionLabel="nombre" [showClear]="true"
+                        (onChange)="on_input_select_year($event)" />
+                </div>
+            </div>
+        </div>
+        <div class="content-2 mt-3">
+            <div class="item-2">
+                <div class="flex flex-col gap-2">
+                    <button pButton pRipple label="Consultar" icon="pi pi-save" class="p-button-info w-full"
+                        (click)="funct_retorna_movimientos_c();"></button>
+                </div>
+            </div>
+            <div class="item-2 mt-3">
+                <div class="flex flex-col gap-2">
+                    <button pButton pRipple label="Imprimir movimientos" icon="pi pi-save" class="p-button-warn w-full"
+                        (click)="funct_imprime_movimeintos_c();"></button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="card" *ngIf="visible">
+            <p-progressBar mode="indeterminate" styleClass="my-custom-style" [style]="{'width':'100%'}"></p-progressBar>
+
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 field">
+                <p-table #dt2 [value]="data_movimientos" selectionMode="single"
+                    styleClass="p-datatable-sm p-datatable-striped" class="custom-table">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Total ventas</th>
+                            <th>Total compras</th>
+                            <th>Total gastos</th>
+                            <th>Total nómina</th>
+                            <th>Utilidad</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-movimentos>
+                        <tr>
+                            <td>{{movimentos.ventas | currency: 'USD'}}</td>
+                            <td>{{movimentos.compras | currency: 'USD'}}</td>
+                            <td>{{movimentos.gastos | currency: 'USD'}}</td>
+                            <td>{{movimentos.nomina | currency: 'USD'}}</td>
+                            <td>{{movimentos.utilidad | currency: 'USD'}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>

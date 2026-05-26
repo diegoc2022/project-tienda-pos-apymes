@@ -1,0 +1,282 @@
+@media screen and (max-width: 1366px) {
+    :host ::ng-deep .p-dialog {
+        width: 65% !important;
+        height: 50vh !important;
+        border: 1px solid white;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+
+    .content-2-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .content-3 {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin-top: 0;
+        width: 25vh;
+    }
+
+    .item-2,
+    .item-3 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    :host ::ng-deep .p-dialog {
+        width: 65% !important;
+        height: 41vh !important;
+        border: 1px solid white;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+
+    .content-2-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .content-3 {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin-top: 0;
+        width: 25vh;
+    }
+
+    .item-2,
+    .item-3 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.5rem;
+    }
+
+    .input_ventas {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1600px) {
+    :host ::ng-deep .p-dialog {
+        width: 60% !important;
+        height: 41vh !important;
+        border: 1px solid white;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+
+    .content-2-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .content-3 {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin-top: 0;
+        width: 25vh;
+    }
+
+    .item-2,
+    .item-3 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.5rem;
+    }
+
+    .input_ventas {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.1rem;
+    }
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1920px) {
+    :host ::ng-deep .p-dialog {
+        width: 60% !important;
+        height: 35vh !important;
+        border: 1px solid white;
+        overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid white;
+    }
+
+    .content-2-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .content-3 {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .item-1 {
+        margin-top: 0;
+        width: 25vh;
+    }
+
+    .item-2,
+    .item-3 {
+        margin-top: 0;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.2rem;
+    }
+
+    .input_ventas {
+        border-color: black;
+        width: 11vw;
+        height: 4vh !important;
+        font-size: 1.2rem;
+    }
+
+}
+
+.w-full {
+    width: 15% !important;
+    height: 42px !important;
+    border-radius: 5px;
+}
+
+hr,
+label {
+    color: white;
+}

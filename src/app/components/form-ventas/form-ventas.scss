@@ -1,0 +1,1041 @@
+@media screen and (max-width: 1366px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 100%;
+        max-height: 89vh !important;
+        min-height: 89vh !important;
+        margin-left: 0px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 100%;
+        height: 70vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+
+    .div-content-0 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        min-height: 4vh;
+        background: #e7e5e5;
+        border-radius: 5px;
+        color: black;
+        border: 1px solid black;
+        font: bold;
+    }
+
+    .item-0 {
+        margin: 0 !important;
+        width: 33%;
+    }
+
+    .div-content-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        min-height: 5.5vh;
+        background: #e7e5e5;
+        border-radius: 7px;
+        gap: 5px;
+    }
+
+    .item-1-0 {
+        margin: 0 !important;
+        width: 70%;
+    }
+
+    .item-1-1,
+    .item-1-2 {
+        border-radius: 5px;
+        background: #e7e5e5;
+        margin: 0 !important;
+        padding-left: 5px;
+        border-radius: 5px;
+    }
+
+    .item-1-1 {
+        border: 1px solid;
+        width: 30vh;
+        height: 4.8vh;
+        padding: 0px;
+    }
+
+    .item-1-2 {
+        height: 4.5vh;
+        width: 2vw;
+        text-align: center;
+        padding: 0px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 29px !important;
+        height: 27px !important;
+        border-radius: 5px;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 72vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+    }
+
+    .div-content-2-1 {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100% !important;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+        margin: 2% auto;
+    }
+
+    .div-content-3 {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        min-height: 6vh;
+        border-radius: 5px;
+        background: #e7e5e5;
+    }
+
+    .div-content-3-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-right: 5px;
+        width: 100%;
+        gap: 5px;
+        background: #e7e5e5;
+        min-height: 6.2vh;
+        border-radius: 5px;
+
+    }
+
+    .item-3-1 {
+        margin: 0 !important;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        background: white;
+        border-color: black;
+        width: 100%;
+        height: 4.8vh !important;
+    }
+
+
+    .div-total-pago {
+        border-radius: 5px;
+        width: 320px;
+        max-height: 5.3vh;
+        background: #304772;
+        color: white;
+        margin-top: 1px;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .div-total_artic {
+        border-radius: 5px;
+        width: 200px;
+        max-height: 5.3vh;
+        background: #304772;
+        color: white;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1px;
+
+    }
+
+    .div-factura {
+        width: 270px;
+        max-height: 5.3vh;
+        background: #304772;
+        color: white;
+        border-radius: 5px;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1px;
+    }
+
+    span {
+        margin-top: 1px;
+        font-size: 17px;
+        margin-left: 0px;
+    }
+
+    .img-carrito-vacio {
+        border-radius: 10px;
+        width: 230px;
+        height: 230px
+    }
+
+    .label-checbox {
+        margin-top: 0px;
+        color: black;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 18% !important;
+        height: 47vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .input-cantidad {
+        width: 5vw;
+        height: 4px;
+        border-radius: 5px;
+        border: 1px red solid;
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 100%;
+        max-height: 91vh !important;
+        min-height: 91vh !important;
+        margin-left: 0px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 100%;
+        height: 73.5vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+
+    .div-content-0 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        min-height: 4vh;
+        background: #e7e5e5;
+        border-radius: 5px;
+        color: black;
+        border: 1px solid black;
+        font: bold;
+    }
+
+    .item-0 {
+        margin: 0 !important;
+        width: 33%;
+    }
+
+    .div-content-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        min-height: 4.8vh;
+        background: #e7e5e5;
+        border-radius: 7px;
+        gap: 5px;
+    }
+
+    .item-1-0 {
+        margin: 0 !important;
+        width: 70%;
+    }
+
+    .item-1-1,
+    .item-1-2 {
+        border-radius: 5px;
+        background: #e7e5e5;
+        margin: 0 !important;
+        padding-left: 5px;
+        border-radius: 5px;
+    }
+
+    .item-1-1 {
+        border: 1px solid;
+        width: 30vh;
+        height: 4vh;
+        padding: 0px;
+    }
+
+    .item-1-2 {
+        height: 4vh;
+        width: 2vw;
+        text-align: center;
+        padding: 0px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 30px !important;
+        height: 28px !important;
+        border-radius: 5px;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 74.7vh;
+        display: flex;
+        flex-direction: column;
+        background: #e7e5e5;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+    }
+
+    .div-content-2-1 {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100% !important;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+        margin: 5% auto;
+    }
+
+    .div-content-3 {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        min-height: 6vh;
+        border-radius: 5px;
+        background: #e7e5e5;
+    }
+
+    .div-content-3-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-right: 5px;
+        width: 100%;
+        gap: 5px;
+        background: #e7e5e5;
+        height: 5.7vh;
+        border-radius: 5px;
+
+    }
+
+    .item-3-1 {
+        margin: 0 !important;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        background: white;
+        border-color: black;
+        width: 100%;
+        height: 4vh !important;
+    }
+
+
+    .div-total-pago {
+        border-radius: 5px;
+        width: 320px;
+        max-height: 5vh;
+        background: #304772;
+        color: white;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .div-total_artic {
+        border-radius: 5px;
+        width: 200px;
+        max-height: 5vh;
+        background: #304772;
+        color: white;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1px;
+
+    }
+
+    .div-factura {
+        width: 270px;
+        max-height: 5vh;
+        background: #304772;
+        color: white;
+        border-radius: 5px;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1px;
+    }
+
+    span {
+        margin-top: 1px;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+
+    .img-carrito-vacio {
+        border-radius: 10px;
+        width: 240px;
+        height: 240px
+    }
+
+    .label-checbox {
+        margin-top: 0px;
+        color: black;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 17% !important;
+        height: 39vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .input-cantidad {
+        width: 4.5vw;
+        height: 6px;
+        border-radius: 5px;
+        border: 1px red solid;
+        border-radius: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 100%;
+        max-height: 91vh !important;
+        min-height: 91vh !important;
+        margin-left: 0px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 100%;
+        height: 74vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+
+    .div-content-0 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        min-height: 4vh;
+        background: #e7e5e5;
+        border-radius: 5px;
+        color: black;
+        border: 1px solid black;
+        font: bold;
+    }
+
+    .item-0 {
+        margin: 0 !important;
+        width: 33%;
+    }
+
+    .div-content-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        min-height: 4.8vh;
+        background: #e7e5e5;
+        border-radius: 7px;
+        gap: 5px;
+    }
+
+    .item-1-0 {
+        margin: 0 !important;
+        width: 70%;
+    }
+
+    .item-1-1,
+    .item-1-2 {
+        border-radius: 5px;
+        background: #e7e5e5;
+        margin: 0 !important;
+        padding-left: 5px;
+        border-radius: 5px;
+    }
+
+    .item-1-1 {
+        border: 1px solid;
+        width: 30vh;
+        height: 4vh;
+        padding: 0px;
+    }
+
+    .item-1-2 {
+        height: 4vh;
+        width: 2vw;
+        text-align: center;
+        padding: 0px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 30px !important;
+        height: 28px !important;
+        border-radius: 5px;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 75.5vh;
+        display: flex;
+        flex-direction: column;
+        background: #e7e5e5;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+    }
+
+    .div-content-2-1 {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100% !important;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+        margin: 5% auto;
+    }
+
+    .div-content-3 {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        min-height: 6vh;
+        border-radius: 5px;
+    }
+
+    .div-content-3-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-right: 5px;
+        width: 100%;
+        gap: 5px;
+        background: #e7e5e5;
+        min-height: 5.7vh;
+        border-radius: 5px;
+
+    }
+
+    .item-3-1 {
+        margin: 0 !important;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        background: white;
+        border-color: black;
+        width: 100%;
+        height: 4vh !important;
+    }
+
+
+    .div-total-pago {
+        border-radius: 5px;
+        width: 320px;
+        max-height: 5vh;
+        background: #304772;
+        color: white;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .div-total_artic {
+        border-radius: 5px;
+        width: 200px;
+        max-height: 5vh;
+        background: #304772;
+        color: white;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1px;
+
+    }
+
+    .div-factura {
+        width: 270px;
+        max-height: 5vh;
+        background: #304772;
+        color: white;
+        border-radius: 5px;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1px;
+    }
+
+    span {
+        margin-top: 1px;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+
+    .img-carrito-vacio {
+        border-radius: 10px;
+        width: 240px;
+        height: 240px
+    }
+
+    .label-checbox {
+        margin-top: 0px;
+        margin-left: 5px;
+        color: black;
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 15% !important;
+        height: 39vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .input-cantidad {
+        width: 4vw;
+        height: 4px;
+        border-radius: 5px;
+        border: 1px red solid;
+        border-radius: 5px;
+    }
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1920px) {
+    .conten-ppal {
+        border-radius: 5px;
+        width: 100%;
+        max-height: 92vh !important;
+        min-height: 92vh !important;
+        margin-left: 0px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        width: 100%;
+        height: 75.4vh;
+        overflow-x: auto;
+        background: #304772;
+    }
+
+
+    .div-content-0 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        min-height: 4vh;
+        border-radius: 5px;
+        font: bold;
+        background: #e7e5e5;
+        color: black;
+        border: 1px solid black;
+    }
+
+    .item-0 {
+        margin: 0 !important;
+        width: 33%;
+    }
+
+    .div-content-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        min-height: 4.8vh;
+        background: #e7e5e5;
+        border-radius: 7px;
+        gap: 5px;
+    }
+
+    .item-1-0 {
+        margin: 0 !important;
+        width: 70%;
+    }
+
+    .item-1-1,
+    .item-1-2 {
+        border-radius: 5px;
+        background: #e7e5e5;
+        margin: 0 !important;
+        padding-left: 5px;
+        border-radius: 5px;
+    }
+
+    .item-1-1 {
+        border: 1px solid;
+        width: 30vh;
+        height: 4vh;
+        padding: 4px;
+    }
+
+    .item-1-2 {
+        height: 4vh;
+        width: 2vw;
+        text-align: center;
+        padding: 0px;
+        border: 1px solid black;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 36px !important;
+        height: 33px !important;
+        border-radius: 5px;
+    }
+
+    .div-content-2 {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 76.5vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item-2 {
+        margin: 0 !important;
+        padding: 5px;
+        border-radius: 5px;
+        background: #e7e5e5;
+    }
+
+    .div-content-2-1 {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100% !important;
+    }
+
+    .item-2-1 {
+        margin-top: 0;
+        margin: 7% auto;
+    }
+
+    .div-content-3 {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        min-height: 6vh;
+        background: #e7e5e5;
+        border-radius: 5px;
+    }
+
+    .div-content-3-1 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-right: 5px;
+        width: 100%;
+        gap: 5px;
+        background: #e7e5e5;
+        min-height: 5.5vh;
+        border-radius: 5px;
+
+    }
+
+    .item-3-1 {
+        margin: 0 !important;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        background: white;
+        border-color: black;
+        width: 100%;
+        height: 4vh !important;
+    }
+
+
+    .div-total-pago {
+        border-radius: 5px;
+        width: 320px;
+        max-height: 5.5vh;
+        background: #304772;
+        color: white;
+        margin-top: 2px;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .div-total_artic {
+        border-radius: 5px;
+        width: 200px;
+        max-height: 5.5vh;
+        background: #304772;
+        color: white;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 2px;
+
+    }
+
+    .div-factura {
+        width: 270px;
+        max-height: 5.5vh;
+        background: #304772;
+        color: white;
+        border-radius: 5px;
+        padding: 2px;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 2px;
+    }
+
+    span {
+        margin-top: 5px;
+        font-size: 20px;
+        margin-left: 0px;
+    }
+
+    .img-carrito-vacio {
+        border-radius: 10px;
+        width: 280px;
+        height: 280px;
+    }
+
+    .label-checbox {
+        margin-top: 0px;
+        margin-left: 5px;
+        color: black;
+    }
+
+
+    :host ::ng-deep .mi-dialogo {
+        width: 15% !important;
+        height: 33vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .mi-dialogo2 {
+        width: 17% !important;
+        height: 35vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .p-select {
+        border-color: black;
+        width: 100%;
+        height: 4.5vh;
+    }
+
+    :host ::ng-deep .p-inputnumber input {
+        border-color: black;
+        width: 100%;
+        height: 5vh !important;
+        font-size: 1.5rem;
+    }
+
+    .input-cantidad {
+        width: 3.5vw;
+        height: 3px;
+        border-radius: 5px;
+        border: 1px red solid;
+        border-radius: 5px;
+    }
+
+}
+
+.w-full {
+    width: 100% !important;
+    min-height: 45px;
+    border-radius: 5px;
+}
+
+label {
+    color: white;
+}
+
+.span-background {
+    background: #304772;
+
+}
+
+:host ::ng-deep .p-button2 {
+    border-radius: 3px;
+    margin-right: .2rem;
+    color: #e7e5e5;
+    border-radius: 5px;
+    width: 5px;
+    height: 25px;
+}
+
+:host ::ng-deep .p-button2:hover {
+    border-radius: 5px;
+    margin-right: .2rem;
+    background-color: white;
+    color: red;
+    font: bold;
+}
+
+:host ::ng-deep .p-checkbox {
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.name-label {
+    color: black;
+}
+
+.red-cell {
+    background-color: rgb(247, 119, 119) !important;
+    color: #e7e5e5;
+    text-align: center;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    padding-top: 2px;
+
+}
+
+.green-cell {
+    background: #304772;
+    color: #e7e5e5;
+    text-align: center;
+    padding-top: 2px;
+    width: 90px;
+    height: 32px;
+}
+
+.custom-table td {
+    background: #304772;
+    color: #e7e5e5;
+    min-height: 7px !important;
+}
+
+.custom-table tH {
+    background: #d6d4d4;
+    color: black;
+    height: 5px;
+    border-top-left-radius: 5px;
+    font: bold;
+
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    padding: 0.2rem 0.4rem;
+}
+
+.custom-table tr {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 5px;
+}
+
+.tr2 {
+    border: none !important;
+}
+
+.centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.p-date {
+    font-size: 16px;
+}
+
+.row2 {
+    background: white;
+}
+
+:host ::ng-deep .p-checkbox .p-checkbox-box {
+    border: 1px solid black;
+}
+
+.label-check {
+    color: black;
+    margin-left: 5px;
+}
