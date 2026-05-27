@@ -217,30 +217,27 @@
 
 <p-dialog header="Ventas x cobrar" [(visible)]="mostrarDialog6" styleClass="mi-dialogo2" (onHide)="on_gialog_hide()"
     [closable]="false">
-    <form [formGroup]="data3">
-        <div class="row">
-            <div class="field col-12">
+    <div class="div-content-4">
+        <form [formGroup]="data3">
+            <div class="item-4">
                 <label for="titulo">Elija cliente</label>
                 <p-select [options]="clientes" optionValue="codigo_cliente" optionLabel="nombre" [showClear]="true"
                     formControlName="cliente" appendTo="body" (onChange)="funct_retorna_one_cliente_c($event)"
                     panelStyleClass="mi-panel-dropdown" />
             </div>
-        </div>
-        <div class="row mt-2">
-            <div class="field col-12">
+            <div class="item-4">
                 <label for="codigo">Id venta</label>
                 <p-inputnumber inputI="codigo" formControlName="codigo_venta" readonly />
             </div>
-        </div>
-    </form>
-    <div class="row mt-4">
-        <div class="col-6">
+        </form>
+        <div class="item-4">
             <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="mostrarDialog6 = false"
                 class="p-button-help w-full"></button>
         </div>
-        <div class="col-6">
-            <button pButton pRipple label="Guardar" icon="pi pi-users" [disabled]="habilitado"
+        <div class="item-4">
+            <button pButton pRipple label="Guardar venta" icon="pi pi-users" [disabled]="habilitado"
                 (click)="funct_registra_ventas_x_cobrar_c();" class="p-button-success w-full"></button>
         </div>
     </div>
+
 </p-dialog>

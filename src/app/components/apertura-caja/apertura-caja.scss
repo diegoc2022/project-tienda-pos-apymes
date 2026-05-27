@@ -12,11 +12,9 @@
     :host ::ng-deep .p-inputnumber {
         border-color: black;
         width: 100%;
-    }
-
-    :host ::ng-deep .p-inputnumber-input {
         height: 5vh !important;
     }
+
 }
 
 @media screen and (min-width: 1440px) {

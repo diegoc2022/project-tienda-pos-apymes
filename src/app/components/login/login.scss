@@ -3,7 +3,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 99vh;
+        height: 99.5vh;
         border-radius: 5px;
         background: #373B44;
         background: -webkit-linear-gradient(to top, #4286f4, #373B44);
@@ -11,23 +11,26 @@
     }
 
     .content-int {
-        border: 1px solid white;
+        border: 1px solid #304772;
+        background: white;
         flex: 1;
         padding: 15px;
         display: flex;
         flex-direction: column;
         width: 19vw;
         max-height: 90vh;
-        margin: 5% auto;
-        gap: 5px;
+        margin: 3% auto;
+        gap: 3px;
         border-radius: 10px;
     }
 
     .content-1 {
-        border: 1px solid white;
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
+        border: 2px solid #304772;
+        background: #304772;
+        text-align: center;
     }
 
     .item-1 {
@@ -49,49 +52,48 @@
 
     .item-2-1 {
         margin-top: 0px;
-        height: 4.5vh;
-        padding-left: 10px;
-    }
-
-    .content-3 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        border-radius: 5px;
-        border: 1px solid white;
-    }
-
-    .item-3 {
-        margin-top: 0;
-    }
-
-    .content-4 {
-        display: flex;
-        flex-direction: column;
-        background: white;
-        color: black;
-        width: 100%;
-        padding: 5px;
-        border-radius: 5px;
-        min-height: 7vh;
-    }
-
-    .item-4 {
-        margin-top: 0;
-        font-size: 11px;
         height: 7vh;
+        padding-left: 10px;
+        border-radius: 5px;
+        border: 1px solid #304772;
     }
 
-    :host ::ng-deep .p-image img {
-        width: 100%;
-        height: 29vh;
+    .item-2-2 {
+        margin-top: 0px;
+        padding: 10px;
         border-radius: 5px;
+        border: 1px solid #304772;
+    }
+
+    .item-2-3 {
+        margin-top: 0;
+        font-size: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        background: #304772;
+        border: 2px solid #304772;
+        margin-top: 5px;
     }
 
     .label-checbox {
         margin-top: 0px;
-        margin-left: 5px;
+        margin-left: 10px;
         color: black;
+    }
+
+    :host ::ng-deep .p-checkbox {
+        border: 2px solid #304772 !important;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+
+    :host ::ng-deep .p-image img {
+        width: 13vw;
+        height: 29vh;
+        border-radius: 5px;
     }
 
     .w-full {
@@ -102,6 +104,7 @@
 
     :host ::ng-deep .p-inputtext {
         width: 100% !important;
+        border: 1px solid #304772;
     }
 
 }
@@ -111,7 +114,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 99.2vh;
+        height: 99.5vh;
         border-radius: 5px;
         background: #373B44;
         background: -webkit-linear-gradient(to top, #4286f4, #373B44);
@@ -125,19 +128,20 @@
         padding: 15px;
         display: flex;
         flex-direction: column;
-        width: 18vw;
-        max-height: 80vh;
-        margin: 7% auto;
-        gap: 5px;
+        width: 19vw;
+        max-height: 78vh;
+        margin: 5% auto;
+        gap: 3px;
         border-radius: 10px;
     }
 
     .content-1 {
-        border: 2px solid #304772;
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
+        border: 2px solid #304772;
         background: #304772;
+        text-align: center;
     }
 
     .item-1 {
@@ -165,47 +169,42 @@
         border: 1px solid #304772;
     }
 
-    .content-3 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 6.8vh;
+    .item-2-2 {
+        margin-top: 0px;
+        padding: 10px;
         border-radius: 5px;
-        padding: 5px;
         border: 1px solid #304772;
     }
 
-    .item-3 {
+    .item-2-3 {
         margin-top: 0;
-    }
-
-    .content-4 {
-        display: flex;
-        flex-direction: column;
-        background: #304772;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 5px;
         color: white;
-        width: 100%;
-        padding: 5px;
-        border-radius: 5px;
-        min-height: 6vh;
-    }
-
-    .item-4 {
-        margin-top: 0;
-        font-size: 11px;
-        min-height: 7vh;
-    }
-
-    :host ::ng-deep .p-image img {
-        width: 100%;
-        height: 29vh;
-        border-radius: 5px;
+        background: #304772;
+        border: 2px solid #304772;
+        margin-top: 5px;
     }
 
     .label-checbox {
         margin-top: 0px;
-        margin-left: 5px;
+        margin-left: 10px;
         color: black;
+    }
+
+    :host ::ng-deep .p-checkbox {
+        border: 2px solid #304772 !important;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+
+    :host ::ng-deep .p-image img {
+        width: 14vw;
+        height: 29vh;
+        border-radius: 5px;
     }
 
     .w-full {
@@ -240,9 +239,9 @@
         display: flex;
         flex-direction: column;
         width: 16.5vw;
-        max-height: 80vh;
-        margin: 7% auto;
-        gap: 5px;
+        max-height: 85vh;
+        margin: 5% auto;
+        gap: 3px;
         border-radius: 10px;
     }
 
@@ -252,6 +251,7 @@
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
+        text-align: center;
     }
 
     .item-1 {
@@ -279,48 +279,42 @@
         border-radius: 5px;
     }
 
-    .content-3 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 7vh;
-        padding: 5px;
+    .item-2-2 {
+        margin-top: 0px;
+        padding: 10px;
         border-radius: 5px;
         border: 1px solid #304772;
     }
 
-    .item-3 {
+    .item-2-3 {
         margin-top: 0;
-    }
-
-    .content-4 {
-        display: flex;
-        flex-direction: column;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
         background: #304772;
         border: 2px solid #304772;
-        color: white;
-        width: 100%;
-        padding: 5px;
-        border-radius: 5px;
-        min-height: 6vh;
-    }
-
-    .item-4 {
-        margin-top: 0;
-        font-size: 11px;
-        min-height: 7vh;
-    }
-
-    :host ::ng-deep .p-image img {
-        width: 100%;
-        height: 29vh;
-        border-radius: 5px;
+        margin-top: 5px;
     }
 
     .label-checbox {
         margin-top: 0px;
-        margin-left: 5px;
+        margin-left: 10px;
         color: black;
+    }
+
+    :host ::ng-deep .p-checkbox {
+        border: 2px solid #304772 !important;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+
+    :host ::ng-deep .p-image img {
+        width: 13vw;
+        height: 29vh;
+        border-radius: 5px;
     }
 
     .w-full {
@@ -354,10 +348,10 @@
         padding: 15px;
         display: flex;
         flex-direction: column;
-        width: 17vw;
-        max-height: 65vh;
+        width: 16vw;
+        max-height: 66vh;
         margin: 8% auto;
-        gap: 5px;
+        gap: 3px;
         border-radius: 10px;
     }
 
@@ -389,54 +383,47 @@
 
     .item-2-1 {
         margin-top: 0px;
-        height: 4.5vh;
+        height: 5vh;
         padding-left: 10px;
         border: 1px solid #304772;
         border-radius: 5px;
     }
 
-    .content-3 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 6vh;
-        padding: 5px;
+    .item-2-2 {
+        margin-top: 0px;
+        padding: 10px;
         border-radius: 5px;
         border: 1px solid #304772;
     }
 
-    .item-3 {
-        margin-top: 0;
-    }
-
-    .content-4 {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        width: 100%;
-        padding: 5px;
-        border-radius: 5px;
-        min-height: 7vh;
-        background: #304772;
-        border: 2px solid #304772;
-    }
-
-    .item-4 {
+    .item-2-3 {
         margin-top: 0;
         font-size: 14px;
-        min-height: 7vh;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        background: #304772;
+        border: 2px solid #304772;
+        margin-top: 5px;
+    }
+
+    .label-checbox {
+        margin-top: 0px;
+        margin-left: 10px;
+        color: black;
+    }
+
+    :host ::ng-deep .p-checkbox {
+        border: 2px solid #304772 !important;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 10px;
     }
 
     :host ::ng-deep .p-image img {
         width: 12vw;
         height: 25vh;
         border-radius: 5px;
-    }
-
-    .label-checbox {
-        margin-top: 0px;
-        margin-left: 5px;
-        color: black;
     }
 
     .w-full {
@@ -466,13 +453,13 @@
     }
 
     .content-int {
-        border: 1px solid white;
-        flex: 1;
+        border: 1px solid #304772;
+        background: white;
         padding: 15px;
         display: flex;
         flex-direction: column;
         width: 80vw;
-        max-height: 80vh;
+        max-height: 85vh;
         margin: 8% auto;
         gap: 5px;
         border-radius: 10px;
@@ -483,7 +470,9 @@
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
-        background: white;
+        background: #304772;
+        border: 2px solid #304772;
+        text-align: center;
     }
 
     .item-1 {
@@ -506,58 +495,58 @@
 
     .item-2-1 {
         margin-top: 0px;
-        height: 4.5vh;
-        padding-left: 10px;
-    }
-
-    .content-3 {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+        padding: 10px;
         border-radius: 5px;
-        border: 1px solid white;
+        border: 1px solid #304772;
     }
 
-    .item-3 {
-        margin-top: 0;
-    }
-
-    .content-4 {
-        display: flex;
-        flex-direction: column;
-        background: white;
-        color: black;
-        width: 100%;
-        padding: 5px;
+    .item-2-2 {
+        margin-top: 0px;
+        padding: 10px;
         border-radius: 5px;
+        border: 1px solid #304772;
     }
 
-    .item-4 {
+    .item-2-3 {
         margin-top: 0;
         font-size: 14px;
-    }
-
-    :host ::ng-deep .p-image img {
-        width: 100%;
-        height: 29vh;
+        padding: 10px;
         border-radius: 5px;
+        color: white;
+        background: #304772;
+        border: 2px solid #304772;
+        margin-top: 5px;
     }
 
     .label-checbox {
         margin-top: 0px;
-        margin-left: 5px;
+        margin-left: 10px;
         color: black;
+    }
+
+    :host ::ng-deep .p-checkbox {
+        border: 2px solid #304772 !important;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    :host ::ng-deep .p-image img {
+        width: 50vw;
+        height: 29vh;
+        border-radius: 5px;
     }
 
     .w-full {
         width: 100% !important;
-        height: 35px;
+        height: 50px;
         border-radius: 5px;
     }
 
     :host ::ng-deep .p-inputtext {
         width: 100% !important;
+        border: 2px solid #304772;
     }
+
 }
 
 :host ::ng-deep {

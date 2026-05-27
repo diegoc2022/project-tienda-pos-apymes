@@ -6,8 +6,9 @@
                 <p-image src="assets/img/img6.png" alt="Image" />
             </div>
         </div>
-        <form [formGroup]="formLogin">
-            <div class="content-2">
+
+        <div class="content-2">
+            <form [formGroup]="formLogin">
                 <div class="item-2">
                     <div class="card flex justify-center">
                         <p-iftalabel>
@@ -33,29 +34,24 @@
                     </div>
                 </div>
                 <div class="item-2-1">
-                    <div class="flex flex-wrap justify-center gap-4 mt-2">
+                    <div class="flex flex-wrap justify-center">
                         <p-checkbox [binary]="true" inputId="ingredient1" formControlName="acceso"
-                            (onChange)="onCheckboxChange($event)" />
-                        <label for="ingredient1" class="ml-2 label-checbo"> Acceso móvil </label>
+                            (onChange)="onCheckboxChange($event)" styleClass="custom-checkbox" />
+                        <label for="ingredient1" class="ml-2 label-checbox"> Acceso móvil </label>
                     </div>
                 </div>
-            </div>
-        </form>
-        <div class="content-3">
-            <div class="item-3">
-                <div class="card flex flex-col items-center gap-4">
+            </form>
+            <div class="item-2-2">
+                <div class="card flex flex-col items-center">
                     <button pButton pRipple icon="pi pi pi-user " label=" Iniciar sesión" (click)="func_inicia_sesion()"
                         class="p-button-warn w-full"></button>
                 </div>
             </div>
-        </div>
-        <div class="content-4">
-            <div class="item-4">
+            <div class="item-2-3">
                 <i>Activación servicio: <br> Desde: 02-01-2025 hasta el 02-01-2026</i>
             </div>
         </div>
     </div>
-
 </div>
 
 <p-toast key="confirm" position="bottom-center" styleClass="login-toast">
