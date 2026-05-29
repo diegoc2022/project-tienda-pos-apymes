@@ -14,6 +14,8 @@ import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { ProductosService } from '../productos/services/productos.service';
 import { FormVentas } from '../form-ventas/form-ventas';
+import { ToastModule } from 'primeng/toast';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-busca-productos',
@@ -29,7 +31,8 @@ import { FormVentas } from '../form-ventas/form-ventas';
     InputTextModule,
     FormsModule,
     InputIconModule,
-    IconFieldModule
+    IconFieldModule,
+    ToastModule
   ],
   providers: [MessageService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -51,6 +54,9 @@ export class BuscaProductos {
   codigo: string = '';
   user: any;
   globalFilter = ''
+  fecha_apertura: any = '';
+  fecha_actual: any = ''
+  date: Date = new Date
 
 
   constructor(
@@ -67,11 +73,11 @@ export class BuscaProductos {
     this.user = localStorage.getItem('user');
     this.funct_retorna_productos();
     this.cdr.detectChanges();
+    this.fecha_apertura = localStorage.getItem('fecha_apertura');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
   }
 
-  ngAfterViewInit() {
-    //this.venta_forms.funct_retorna_ventas();
-  }
+
 
   funct_retorna_productos() {
     this.productos.funct_retorna_full_productos().subscribe({
@@ -85,41 +91,39 @@ export class BuscaProductos {
   }
 
   onRowSelect(event: any) {
+    if (this.fecha_apertura != this.fecha_actual) {
+      this.message.add({ severity: 'warn', summary: 'Advertencia:', detail: 'Para realizar una venta, primero debe crear apertura de caja', life: 5000 });
+      return;
+    }
+
     this.vinculos.funct_retorna_vinculo_productos(event.data.codProd).subscribe({
       next: (result: any) => {
-        if (result[0].producto != null) {
-          let factura = localStorage.getItem('factura');
-          this.apertura.funct_retorna_apertura_caja(this.user).subscribe({
-            next: (data: any) => {
-              const obj = JSON.parse(JSON.stringify(data));
-              this.ventas.funct_registra_ventas_temp(result[0].producto, this.origen_ventas, this.openventas, obj.id_caja, factura).subscribe({
-                next: (resp: any) => {
-                  this.formventas.funct_retorna_ventas();
-                  this.formventas.functInpuFocus();
-                  this.visible = false;
-                  this.message.add({ severity: 'info', summary: 'Product Selected', detail: 'Acaba de agregar un producto mas en la lista de compras', life: 3000 });
-                }, error: (any: any) => {
-                  console.log("Error: error");
-                }
-              });
-            }
-          })
-          this.cdr.detectChanges();
-
-        } else {
-          this.message.add({ severity: 'error', summary: 'Product Selected', detail: 'El producto que intenta vender no existe en base de datos', life: 3000 });
+        if (result.statusCode == 404) {
+          this.message.clear();
+          this.message.add({ severity: 'error', summary: 'Error:', detail: 'El producto que intenta vender no existe o no se encuentra asociado', life: 3000 });
+          return;
         }
+
+        let factura = localStorage.getItem('factura');
+        this.apertura.funct_retorna_apertura_caja(this.user).subscribe({
+          next: (data: any) => {
+            const obj = JSON.parse(JSON.stringify(data));
+            this.ventas.funct_registra_ventas_temp(result[0].producto, this.origen_ventas, this.openventas, obj.id_caja, factura).subscribe({
+              next: (resp: any) => {
+                this.formventas.funct_retorna_ventas();
+                this.formventas.functInpuFocus();
+                this.visible = false;
+                this.message.clear();
+                this.message.add({ severity: 'info', summary: 'Product Selected', detail: 'Acaba de agregar un producto mas en la lista de compras', life: 3000 });
+              }, error: (any: any) => {
+                console.log("Error: error");
+              }
+            });
+          }
+        })
+        this.cdr.detectChanges();
       }
-
     });
-  }
-
-  clear(table: Table) {
-    table.clear();
-  }
-
-  ngOnDestroy(): void {
-    this.dataService$?.unsubscribe();
   }
 
 }

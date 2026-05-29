@@ -3,7 +3,7 @@
         position: absolute;
         border-radius: 5px;
         width: 30vw;
-        height: 65vh;
+        height: 55vh;
         margin-left: 7px;
         margin-top: 10px;
         padding: 10px;
@@ -39,7 +39,7 @@
         position: absolute;
         border-radius: 5px;
         width: 27vw;
-        height: 55vh;
+        height: 45vh;
         margin-left: 7px;
         margin-top: 10px;
         padding: 10px;
@@ -74,7 +74,7 @@
         position: absolute;
         border-radius: 5px;
         width: 27vw;
-        height: 55vh;
+        height: 45vh;
         margin-left: 7px;
         margin-top: 10px;
         padding: 10px;
@@ -109,7 +109,7 @@
         position: absolute;
         border-radius: 5px;
         width: 22vw;
-        height: 45vh;
+        height: 37vh;
         margin-left: 7px;
         margin-top: 10px;
         padding: 10px;
@@ -166,9 +166,8 @@
 
 .content-3 {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: row;
+    text-align: right;
 }
 
 .item-3 {
@@ -178,7 +177,7 @@
 
 
 .w-full {
-    width: 100% !important;
+    width: 50% !important;
     height: 40px;
     border-radius: 5px;
 }

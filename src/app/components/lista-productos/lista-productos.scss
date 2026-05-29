@@ -1,0 +1,95 @@
+@media screen and (max-width: 1366px) {
+    .div-container {
+        border: 2px solid #d4d4d4;
+        border-radius: 5px;
+        padding: 20px;
+        width: 37vw;
+        height: 75vh;
+        margin-left: -8px;
+        margin-top: 5px;
+        background: #4568DC;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #4568DC);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+}
+
+@media screen and (mIN-width: 1600px) {
+    .div-container {
+        border: 2px solid #d4d4d4;
+        border-radius: 5px;
+        padding: 20px;
+        width: 37vw;
+        height: 63vh;
+        margin-left: -8px;
+        margin-top: 5px;
+        background: #4568DC;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #4568DC);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+}
+
+@media screen and (mIN-width: 1600px) {
+    .div-container {
+        border: 2px solid #d4d4d4;
+        border-radius: 5px;
+        padding: 20px;
+        width: 37vw;
+        height: 58vh;
+        margin-left: -8px;
+        margin-top: 5px;
+        background: #4568DC;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #4568DC);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+}
+
+span {
+    color: white
+}
+
+label {
+    color: white;
+    font-size: 14px;
+}
+
+p {
+    color: white;
+    font: bold;
+    font-size: 18px;
+}
+
+hr {
+    color: white;
+    border: 2px solid;
+}
+
+
+.dropdown-w {
+    width: 50px;
+    height: 28px;
+}
+
+.margin-top {
+    margin: 1% auto;
+    margin-bottom: 5%;
+}
+
+.button-w {
+    width: 100px;
+}
+
+label {
+    color: white;
+}

@@ -7,6 +7,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ToastModule } from 'primeng/toast';
 import { AperturaCajaService } from './services/apertura-caja.service';
 import { Router } from '@angular/router';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-apertura-caja',
@@ -44,8 +45,9 @@ export class AperturaCaja {
     this.formId = this.fb.group({
       base: [null, Validators.required]
     });
-    this.fecha_actual = localStorage.getItem('fecha_apertura');
+
     this.user = localStorage.getItem('user');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
   }
 
   funcAperturaCaja() {
@@ -58,8 +60,6 @@ export class AperturaCaja {
         this.apertura.funct_apertura_caja(id, id_caja, this.formId.value.base).subscribe({
           next: (obj: any) => {
             const data = JSON.parse(JSON.stringify(obj));
-            this.fecha_actual = '';
-            this.fecha_actual = data.fecha_registro.substring(0, 10)
             localStorage.setItem('id_caja', data.id_caja);
             localStorage.setItem('fecha_apertura', this.fecha_actual);
             this.formId.setValue({ base: 0 });

@@ -32,11 +32,13 @@ export class CierreCajaService {
         doc.setFontSize(14);
         doc.setFont("Courier", "Bold");
         doc.text(data[0].razon_social, 12, 10);
-        doc.setFontSize(9)
-        //doc.text(data[0].nombre_titular, 30, 15);
+        doc.setFontSize(10)
+        doc.text(data[0].direcion, 25, 26);
         doc.setFontSize(10)
         doc.text('NIT: ' + data[0].nit, 32, 21);
-        doc.text(data[0].direcion, 25, 26);
+        doc.setFontSize(10)
+        doc.text(data[0].nombre_titular, 30, 15);
+        doc.setFontSize(10)
         doc.text('TEL: ' + data[0].Celular, 32, 31);
         doc.setFont("Courier", " ");
         doc.text('=======================================================', 3, 40);

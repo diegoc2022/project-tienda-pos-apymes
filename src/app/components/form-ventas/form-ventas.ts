@@ -25,6 +25,7 @@ import { BadgeModule } from 'primeng/badge';
 import { OverlayBadgeModule } from 'primeng/overlaybadge';
 import { DetalleFactura } from '../detalle-factura/detalle-factura';
 import { ImprimeService } from '../detalle-factura/services/imprime.service';
+import { format } from 'date-fns';
 
 
 @Component({
@@ -89,8 +90,8 @@ export class FormVentas implements OnInit {
   mostrarDialog4: boolean = false;
   mostrarDialog5: boolean = false;
   mostrarDialog6: boolean = false;
-
-
+  fecha_actual: any = '';
+  date: Date = new Date();
 
 
   constructor(
@@ -141,7 +142,9 @@ export class FormVentas implements OnInit {
     this.total_articulos = 1;
     this.habilitado = false;
     this.fecha_apertura = localStorage.getItem('fecha_apertura');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
     this.factura = localStorage.getItem('factura');
+
   }
 
   funct_genera_factura_c() {
@@ -183,6 +186,14 @@ export class FormVentas implements OnInit {
     const codigo = this.data.value.codProducto;
 
     if (!codigo) {
+      return;
+    }
+
+    if (this.fecha_apertura != this.fecha_actual) {
+      this.message.add({ severity: 'warn', summary: 'Advertencia:', detail: 'Para realizar una venta, primero debe crear apertura de caja', life: 5000 });
+      this.data.patchValue({
+        codProducto: ''
+      });
       return;
     }
 
@@ -290,15 +301,10 @@ export class FormVentas implements OnInit {
 
   }
 
-
   funct_dialog_detalle_factura() {
     this.mostrarDialog5 = false;
     this.cdr.detectChanges();
     this.mostrarDialog5 = true;
-  }
-
-  funct_dialog_ventas_x_cobrar() {
-    ///this.behaviorSubject.setData({ origen: 'encabezado', visible: true });
   }
 
   funt_dialog_busca_productos() {

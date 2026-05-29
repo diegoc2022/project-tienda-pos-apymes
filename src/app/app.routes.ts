@@ -25,6 +25,7 @@ import { PagosConsumos } from './components/pagos-consumos/pagos-consumos';
 import { ConsultarPagos } from './components/consultar-pagos/consultar-pagos';
 import { ConsultarConsumos } from './components/consultar-consumos/consultar-consumos';
 import { FormVentas } from './components/form-ventas/form-ventas';
+import { ListaProductos } from './components/lista-productos/lista-productos';
 
 export const routes: Routes = [
     { path: '', title: 'login', component: Login },
@@ -100,6 +101,9 @@ export const routes: Routes = [
             },
             {
                 path: 'facturar', title: 'Facturación', component: FormVentas
+            },
+            {
+                path: 'productos', title: 'Productos BD', component: ListaProductos,
             },
         ]
     }

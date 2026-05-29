@@ -20,6 +20,10 @@ export class ProductosService {
     return this.http.get(`${this.URL}/${this.API}`)
   }
 
+  funct_elimina_productos_s(data: any): Observable<any> {
+    return this.http.delete(`${this.URL}/${this.API}/${data}`)
+  }
+
   funct_crea_productos(products: any): Observable<any> {
     return this.http.post<any>(`${this.URL}/${this.API}`, {
       "codProd": products.codProd.toUpperCase(),

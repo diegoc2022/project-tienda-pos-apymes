@@ -55,8 +55,8 @@ export class Gastos {
       valor_gastos: [0, Validators.required],
       tipo_concepto: ['', Validators.required],
       observ: ['', Validators.required],
-      num_mes: ['', Validators.required],
-      num_year: ['', Validators.required],
+      num_mes: [null],
+      num_year: [null],
     });
 
     this.tipo_gastos = [
@@ -111,8 +111,8 @@ export class Gastos {
       valor_gastos: this.data.value.valor_gastos,
       tipo_concepto: this.data.value.tipo_concepto,
       observacion: this.data.value.observ,
-      num_mes: this.data.value.num_mes,
-      num_year: this.data.value.num_year,
+      num_mes: this.num_mes,
+      num_year: this.num_year,
       fecha_registro: this.fecha_actual,
       hora_registro: this.hora_actual
     });

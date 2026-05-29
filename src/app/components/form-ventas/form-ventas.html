@@ -46,7 +46,7 @@
         </div>
         <div class="item-1-2">
             <button pButton pRipple type="button" icon="pi pi-save" class="p-button-rounded p-button-help"
-                title="Guardar e Imprimir" (click)="funct_dialog_detalle_factura();"></button>
+                title="Guardar e Imprimir" [disabled]="habilitado" (click)="funct_dialog_detalle_factura();"></button>
         </div>
         <div class="item-1-2">
             <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"

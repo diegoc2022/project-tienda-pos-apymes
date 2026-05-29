@@ -11,6 +11,7 @@ import { VentasSerivice } from '../form-ventas/services/ventas.serivice';
 import { AperturaCajaService } from '../apertura-caja/services/apertura-caja.service';
 import { VinculosService } from '../vinculos/services/vinculos.service';
 import { InputNumber, InputNumberModule } from 'primeng/inputnumber';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-otras-ventas',
@@ -45,6 +46,9 @@ export class OtrasVentas {
   idVentas: number = 0;
   factura: number = 0;
   user: any;
+  fecha_apertura: any = '';
+  fecha_actual: any = ''
+  date: Date = new Date
 
   constructor(
     private message: MessageService,
@@ -70,10 +74,16 @@ export class OtrasVentas {
       precio_compra: 1
     });
     this.user = localStorage.getItem('user');
+    this.fecha_apertura = localStorage.getItem('fecha_apertura');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
     this.cdr.detectChanges();
   }
 
   funct_retorna_producto() {
+    if (this.fecha_apertura != this.fecha_actual) {
+      this.message.add({ severity: 'warn', summary: 'Advertencia:', detail: 'Para realizar una venta, primero debe crear apertura de caja', life: 5000 });
+      return;
+    }
     this.vinculos.funct_retorna_vinculo_productos(this.data.value.dlCodProducto).subscribe({
       next: (result: any) => {
         this.objData.length = 0;
@@ -101,12 +111,10 @@ export class OtrasVentas {
     })
   }
 
-  functRegistraVenta() {
+  funct_registra_ventas() {
     let factura = localStorage.getItem('factura');
     this.apertura.funct_retorna_apertura_caja(this.user).subscribe({
       next: (data: any) => {
-        console.log("Data", this.data2.value);
-
         this.ventas.funct_registra_ventas_temp(this.data2.value, this.origen_venta, this.openventas, data.id_caja, factura).subscribe({
           next: datar => {
             this.objData.length = 0;

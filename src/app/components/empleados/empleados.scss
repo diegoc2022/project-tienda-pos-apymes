@@ -59,7 +59,7 @@
         border-radius: 5px;
         padding: 20px;
         width: 30vw;
-        height: 50vh;
+        height: 45vh;
         margin-left: 7px;
         margin-top: 10px;
     }
@@ -113,8 +113,19 @@
     width: 100%;
 }
 
+.content-4 {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+
+.item-4 {
+    margin: 0 !important;
+    width: 100%;
+}
+
 .w-full {
-    width: 100% !important;
+    width: 48% !important;
     height: 40px;
     border-radius: 5px;
 }
