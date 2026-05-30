@@ -1,33 +1,22 @@
 <p-toast></p-toast>
 <div class="container-fluid">
-    <div class="conten-ppal">
-        <div class="row">
-            <div class="field col-2">
-                <p>Productos:</p>
-            </div>
-            <div class="field col-8"></div>
-
-            <div class="field col-2">
-                <button pButton pRipple type="button" [disabled]="habilitado" label="Consultar" icon="pi pi-search"
-                    iconPos="left" class="p-button-success" [style]="{'width':'15vw','height':'6vh'}"
-                    (click)="funct_retorna_productos();"></button>
-            </div>
-        </div>
-        <hr>
-        <div class="card" *ngIf="visible">
-            <p-progressBar mode="indeterminate" styleClass="my-custom-style" [style]="{'width':'100%'}"></p-progressBar>
-        </div>
-        <div class="row mt-2">
-            <div class="field col-12">
-                <p-table [value]="data" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
-                    class="custom-table" [tableStyle]="{ 'min-width':'50rem'}" [scrollable]="true" scrollHeight="67vh"
-                    dataKey="codProd" [paginator]="false" [rows]="10" [rowsPerPageOptions]="[50,100]"
-                    [showCurrentPageReport]="true"
-                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                    selectionMode="single">
-                    <ng-template pTemplate="caption">
-                        <p-columnFilter type="text" field="descripcion" [showMenu]="true"
-                            [matchMode]="'contains'"></p-columnFilter>
+    <div class="div-container">
+        <p class="pi pi-objects-column mt-2"> Productos:</p>
+        <div class="content-2">
+            <div class="item-2">
+                <p-table #dt1 [value]="data" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
+                    class="custom-table" [tableStyle]="{ 'min-width':'50rem'}" [scrollable]="true" dataKey="codProd"
+                    [paginator]="true" [rows]="50" [rowsPerPageOptions]="[50]" [showCurrentPageReport]="true"
+                    [globalFilterFields]="['codProd', 'descripcion']" selectionMode="single">
+                    <ng-template #caption class="custom-iconfield">
+                        <p-iconfield iconPosition="left" class="custom-iconfield">
+                            <p-inputicon>
+                                <i class="pi pi-search"></i>
+                            </p-inputicon>
+                            <input pInputText type="text" [(ngModel)]="globalFilter"
+                                (input)="dt1.filterGlobal(globalFilter, 'contains')"
+                                placeholder="Digite nombre producto" />
+                        </p-iconfield>
                     </ng-template>
                     <ng-template pTemplate="header">
                         <tr>

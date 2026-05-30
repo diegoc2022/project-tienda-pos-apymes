@@ -1,0 +1,58 @@
+<p-toast></p-toast>
+<div class="div-ppal">
+    <div class="content-1">
+        <div class="item-1">
+            <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" [scrollable]="true" class="custom-table"
+                [(selection)]="selectedProduct1" dataKey="codProd" (onRowSelect)="onRowSelect($event)"
+                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']" [scrollable]="true"
+                [tableStyle]="{'min-width': '40rem'}" [rows]="30" [rowsPerPageOptions]="[30]">
+                <ng-template #caption class="custom-iconfield">
+                    <p-iconfield iconPosition="left" class="custom-iconfield">
+                        <p-inputicon>
+                            <i class="pi pi-search"></i>
+                        </p-inputicon>
+                        <input pInputText type="text" [(ngModel)]="globalFilter"
+                            (input)="dt1.filterGlobal(globalFilter, 'contains')" placeholder="Digite nombre producto" />
+                    </p-iconfield>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 100px;">Código</th>
+                        <th style="width: 400px;">Descripción</th>
+                        <th style="width: 50px;" class="centered">Exist.</th>
+                        <th style="width: 150px;">Precio venta</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-dataProductos>
+                    <tr [pSelectableRow]="dataProductos">
+                        <td style="width: 100px;">{{dataProductos.codProd}}</td>
+                        <td style="width: 400px;">{{dataProductos.descripcion}}</td>
+                        <td style="width: 50px;" class="centered">{{dataProductos.existencia}}</td>
+                        <td style="width: 150px;">{{dataProductos.precio_venta | currency}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+
+    <form [formGroup]="formData">
+        <div class="content-2">
+            <div class="item-2">
+                <input id="codInit" type="text" pInputText readonly formControlName="codInicial" />
+            </div>
+            <div class="item-2">
+                <input id="codNuevo" type="text" pInputText formControlName="codNuevo"
+                    (keyup.enter)="onEnterCodigoProducto($event);" autocomplete="off" />
+            </div>
+            <div class="item-3">
+                <input id="nombre" type="text" pInputText formControlName="nombreProd"
+                    (keyup.enter)="onEnterCodigoProducto($event);" autocomplete="off" />
+            </div>
+            <div class="item-2">
+                <button pButton pRipple type="button" label="Editar" icon="pi pi-save" class="p-button-success w-full"
+                    (click)="functEditaCodigo();"></button>
+            </div>
+        </div>
+    </form>
+</div>

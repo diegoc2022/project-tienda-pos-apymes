@@ -58,7 +58,6 @@ export class BuscaProductos {
   fecha_actual: any = ''
   date: Date = new Date
 
-
   constructor(
     private message: MessageService,
     private vinculos: VinculosService,
@@ -72,7 +71,6 @@ export class BuscaProductos {
   ngOnInit() {
     this.user = localStorage.getItem('user');
     this.funct_retorna_productos();
-    this.cdr.detectChanges();
     this.fecha_apertura = localStorage.getItem('fecha_apertura');
     this.fecha_actual = format(this.date, 'yyyy-MM-dd');
   }
@@ -92,6 +90,7 @@ export class BuscaProductos {
 
   onRowSelect(event: any) {
     if (this.fecha_apertura != this.fecha_actual) {
+      this.message.clear();
       this.message.add({ severity: 'warn', summary: 'Advertencia:', detail: 'Para realizar una venta, primero debe crear apertura de caja', life: 5000 });
       return;
     }

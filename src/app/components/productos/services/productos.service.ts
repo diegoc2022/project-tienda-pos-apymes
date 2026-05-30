@@ -9,11 +9,12 @@ import { Observable } from 'rxjs';
 export class ProductosService {
   private URL?: string;
   private API?: string
+  private API2?: string
 
   constructor(private http: HttpClient) {
     this.URL = Environment.endpoint;
     this.API = 'venta-producto';
-
+    this.API2 = 'editar';
   }
 
   funct_retorna_full_productos(): Observable<any> {
@@ -37,6 +38,18 @@ export class ProductosService {
       "icui": 0,
       "utilidad": 0,
       "venta_por_und": false
+    });
+  }
+
+  funct_edita_codigo_producto_s(data: any) {
+    return this.http.patch(`${this.URL}/${this.API}/codigo/${data.codInicial}`, {
+      "codProd": data.codNuevo.toUpperCase()
+    });
+  }
+
+  funct_edita_nombre_producto_s(data: any) {
+    return this.http.patch(`${this.URL}/${this.API}/producto/${data.codInicial}`, {
+      "descripcion": data.codNuevo.toUpperCase()
     });
   }
 

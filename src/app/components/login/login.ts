@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, signal, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './service/login';
@@ -11,6 +11,7 @@ import { ImageModule } from 'primeng/image';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { IftaLabelModule } from 'primeng/iftalabel';
+import { EncabezadosServices } from '../encabezados/encabezados';
 
 @Component({
   selector: 'app-login',
@@ -36,6 +37,7 @@ import { IftaLabelModule } from 'primeng/iftalabel';
 export class Login {
   @ViewChild('username') username?: ElementRef;
   @ViewChild('password') password?: ElementRef;
+  private message = inject(MessageService);
   formLogin: FormGroup = new FormGroup({});
   data: any[] = [];
   onChecked: boolean = false;
@@ -43,12 +45,16 @@ export class Login {
   visible: boolean = false;
   progress = signal(0);
   interval: any = null;
-  private message = inject(MessageService);
+  fecha_desde: any = '';
+  fecha_hasta: any = '';
+
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private enc: EncabezadosServices,
+    private cdr: ChangeDetectorRef
 
   ) { }
 
@@ -60,8 +66,20 @@ export class Login {
       acceso: [false]
     });
 
+    this.funct_retorna_fecha_contrato();
+
   }
 
+
+  funct_retorna_fecha_contrato() {
+    this.enc.funt_retorna_razon_social_encabezado().subscribe({
+      next: (data: any) => {
+        this.fecha_desde = data[0].fecha_desde;
+        this.fecha_hasta = data[0].fecha_hasta
+        this.cdr.detectChanges();
+      }
+    })
+  }
 
   async func_inicia_sesion() {
     const logindata = {
@@ -92,7 +110,7 @@ export class Login {
           localStorage.setItem('token', dataObj.data.toke);
           this.router.navigate(['/inventario-web']);
         }
-
+        this.cdr.detectChanges();
       }, error: (err) => {
         this.message.clear('confirm');
         this.message.add({ severity: 'error', summary: 'Error:', detail: 'Credenciales incorrectas', life: 3000 });

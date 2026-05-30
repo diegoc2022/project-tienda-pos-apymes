@@ -26,6 +26,8 @@ import { ConsultarPagos } from './components/consultar-pagos/consultar-pagos';
 import { ConsultarConsumos } from './components/consultar-consumos/consultar-consumos';
 import { FormVentas } from './components/form-ventas/form-ventas';
 import { ListaProductos } from './components/lista-productos/lista-productos';
+import { EditaProductos } from './components/edita-productos/edita-productos';
+
 
 export const routes: Routes = [
     { path: '', title: 'login', component: Login },
@@ -104,6 +106,9 @@ export const routes: Routes = [
             },
             {
                 path: 'productos', title: 'Productos BD', component: ListaProductos,
+            },
+            {
+                path: 'edita-productos', title: 'Editar código', component: EditaProductos
             },
         ]
     }

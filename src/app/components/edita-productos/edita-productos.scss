@@ -1,0 +1,203 @@
+@media screen and (max-width: 1366px) {
+    .div-dialogo {
+        border-radius: 5px;
+        width: 98.7%;
+        height: 77vh;
+        margin-left: 5px;
+        margin-top: 5px;
+        background: #1e3c72;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 20px;
+    }
+
+    .caja-2 {
+        border-radius: 5px;
+        width: 98.7%;
+        height: 75px;
+        margin-left: 5px;
+        margin-top: 5px;
+        background: #1e3c72;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding-top: 2px;
+        padding-left: 15px;
+    }
+
+    :host ::ng-deep .p-datatable {
+        max-width: 100%; // Establece el ancho máximo
+        //max-height: 365px;
+        //overflow-x: auto; // Habilita el desplazamiento horizontal 
+    }
+
+    .label-checbox {
+        margin-top: 0px;
+        margin-left: 5px;
+        color: black;
+    }
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1600px) {
+    .div-dialogo {
+        border-radius: 5px;
+        width: 98.7%;
+        height: 79vh;
+        margin-left: 5px;
+        margin-top: 5px;
+        padding: 20px;
+        background: #1e3c72;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    .caja-2 {
+        border-radius: 5px;
+        width: 98.7%;
+        height: 85px;
+        margin-left: 5px;
+        margin-top: 5px;
+        padding-top: 2px;
+        padding-left: 15px;
+        background: #1e3c72;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #B06AB3, #1e3c72);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    :host ::ng-deep .mi-checkbox .p-checkbox-box {
+        border: 2px solid blue;
+        /* Ajusta el color y el grosor del borde */
+        border-radius: 4px;
+        /* Opcional: ajusta el radio de los bordes */
+    }
+
+    :host ::ng-deep .custom-table {
+        max-width: 100%; // Establece el ancho máximo
+        height: 69.5vh !important;
+        //overflow-x: auto; // Habilita el desplazamiento horizontal 
+    }
+
+}
+
+/* Estilos para pantallas medianas y pequeñas (hasta 1600px de ancho) */
+@media screen and (min-width: 1920px) {
+    .div-ppal {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 100%;
+        height: 93vh;
+        margin-top: 10px;
+        padding: 10;
+        gap: 7px;
+    }
+
+    .content-1 {
+        border-radius: 5px;
+        width: 100%;
+        height: 84vh;
+        padding: 10px;
+    }
+
+    .item-1 {
+        margin: 0;
+        width: 100%;
+        height: 82vh;
+        border: 1px solid white;
+    }
+
+    .content-2 {
+        display: flex;
+        flex-direction: row;
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .item-2 {
+        margin: 0;
+        width: 10vw;
+    }
+
+    .item-3 {
+        margin: 0;
+        width: 20vw;
+    }
+
+    :host ::ng-deep .p-inputtext {
+        border-color: black;
+        width: 100% !important;
+        height: 5vh;
+    }
+
+    :host ::ng-deep .custom-table {
+        width: 100%;
+        height: 80vh !important;
+        overflow-x: auto;
+    }
+
+    .w-full {
+        width: 100% !important;
+        height: 45px;
+        border-radius: 5px;
+    }
+}
+
+label {
+    color: white;
+}
+
+.titulo {
+    color: black;
+}
+
+
+
+.custom-table tr {
+    color: white;
+    border: 1px solid white !important;
+    height: 5px !important;
+    background: #304772;
+}
+
+.custom-table th {
+    background: #304772;
+    color: white;
+    height: 5px !important;
+    text-align: left;
+}
+
+:host ::ng-deep .p-paginator {
+    background: #304772;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-page,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-prev {
+    background-color: aliceblue;
+    border-radius: 5px;
+    color: black;
+}
+
+.centered {
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    vertical-align: middle;
+    /* Centra el texto verticalmente */
+}

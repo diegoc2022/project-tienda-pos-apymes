@@ -29,7 +29,6 @@
         max-height: 30vh;
         border-radius: 5px;
         border: 2px solid #304772;
-        background: #304772;
         text-align: center;
     }
 
@@ -70,8 +69,8 @@
         font-size: 10px;
         padding: 10px;
         border-radius: 5px;
-        color: white;
-        background: #304772;
+        color: black;
+        background: white;
         border: 2px solid #304772;
         margin-top: 5px;
     }
@@ -91,7 +90,7 @@
 
 
     :host ::ng-deep .p-image img {
-        width: 13vw;
+        width: 100%;
         height: 29vh;
         border-radius: 5px;
     }
@@ -100,6 +99,7 @@
         width: 100% !important;
         height: 35px;
         border-radius: 5px;
+        border: 1px solid #304772;
     }
 
     :host ::ng-deep .p-inputtext {
@@ -139,9 +139,8 @@
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
-        border: 2px solid #304772;
-        background: #304772;
         text-align: center;
+        border: 2px solid #304772;
     }
 
     .item-1 {
@@ -181,8 +180,8 @@
         font-size: 12px;
         padding: 10px;
         border-radius: 5px;
-        color: white;
-        background: #304772;
+        color: black;
+        background: white;
         border: 2px solid #304772;
         margin-top: 5px;
     }
@@ -202,7 +201,7 @@
 
 
     :host ::ng-deep .p-image img {
-        width: 14vw;
+        width: 100%;
         height: 29vh;
         border-radius: 5px;
     }
@@ -211,6 +210,7 @@
         width: 100% !important;
         height: 35px;
         border-radius: 5px;
+        border: 1px solid #304772;
     }
 
     :host ::ng-deep .p-inputtext {
@@ -246,7 +246,6 @@
     }
 
     .content-1 {
-        background: #304772;
         border: 2px solid #304772;
         width: 100%;
         max-height: 30vh;
@@ -291,8 +290,8 @@
         font-size: 12px;
         padding: 10px;
         border-radius: 5px;
-        color: white;
-        background: #304772;
+        color: black;
+        background: white;
         border: 2px solid #304772;
         margin-top: 5px;
     }
@@ -312,7 +311,7 @@
 
 
     :host ::ng-deep .p-image img {
-        width: 13vw;
+        width: 100%;
         height: 29vh;
         border-radius: 5px;
     }
@@ -321,6 +320,7 @@
         width: 100% !important;
         height: 36px;
         border-radius: 5px;
+        border: 2px solid #304772;
     }
 
     :host ::ng-deep .p-inputtext {
@@ -360,7 +360,6 @@
         max-height: 30vh;
         border-radius: 5px;
         text-align: center;
-        background: #304772;
         border: 2px solid #304772;
     }
 
@@ -401,8 +400,8 @@
         font-size: 14px;
         padding: 10px;
         border-radius: 5px;
-        color: white;
-        background: #304772;
+        color: black;
+        background: white;
         border: 2px solid #304772;
         margin-top: 5px;
     }
@@ -421,8 +420,8 @@
     }
 
     :host ::ng-deep .p-image img {
-        width: 12vw;
-        height: 25vh;
+        width: 100%;
+        height: 27vh;
         border-radius: 5px;
     }
 
@@ -430,6 +429,7 @@
         width: 100% !important;
         height: 40px;
         border-radius: 5px;
+        border: 2px solid #304772;
     }
 
     :host ::ng-deep .p-inputtext {
@@ -470,7 +470,6 @@
         width: 100%;
         max-height: 30vh;
         border-radius: 5px;
-        background: #304772;
         border: 2px solid #304772;
         text-align: center;
     }
@@ -512,8 +511,8 @@
         font-size: 14px;
         padding: 10px;
         border-radius: 5px;
-        color: white;
-        background: #304772;
+        color: black;
+        background: white;
         border: 2px solid #304772;
         margin-top: 5px;
     }
@@ -531,7 +530,7 @@
     }
 
     :host ::ng-deep .p-image img {
-        width: 50vw;
+        width: 100%;
         height: 29vh;
         border-radius: 5px;
     }
@@ -540,6 +539,7 @@
         width: 100% !important;
         height: 50px;
         border-radius: 5px;
+        border: 2px solid #304772;
     }
 
     :host ::ng-deep .p-inputtext {

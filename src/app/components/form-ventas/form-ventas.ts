@@ -510,10 +510,10 @@ export class FormVentas implements OnInit {
     ).subscribe({
       next: () => {
 
-        //this.funct_actualiza_data_indexieBD();
         this.funct_retorna_factura_c();
-        this.visible3 = false;
+        this.mostrarDialog6 = false;
         this.functInpuFocus();
+        this.cdr.detectChanges();
 
         setTimeout(() => {
           this.funct_retorna_ventas();
