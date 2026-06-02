@@ -41,15 +41,10 @@ export class ProductosService {
     });
   }
 
-  funct_edita_codigo_producto_s(data: any) {
-    return this.http.patch(`${this.URL}/${this.API}/codigo/${data.codInicial}`, {
-      "codProd": data.codNuevo.toUpperCase()
-    });
-  }
-
-  funct_edita_nombre_producto_s(data: any) {
-    return this.http.patch(`${this.URL}/${this.API}/producto/${data.codInicial}`, {
-      "descripcion": data.codNuevo.toUpperCase()
+  funct_edita_productos_s(data: any) {
+    return this.http.patch(`${this.URL}/${this.API2}/codigo/${data.codInicial}`, {
+      "codProd": data.codNuevo.toUpperCase(),
+      "descripcion": data.nombreProd.toUpperCase()
     });
   }
 

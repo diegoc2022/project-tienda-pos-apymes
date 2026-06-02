@@ -11,7 +11,7 @@
                         <p-inputicon>
                             <i class="pi pi-search"></i>
                         </p-inputicon>
-                        <input pInputText type="text" [(ngModel)]="globalFilter"
+                        <input pInputText #filtro type="text" [(ngModel)]="globalFilter"
                             (input)="dt1.filterGlobal(globalFilter, 'contains')" placeholder="Digite nombre producto" />
                     </p-iconfield>
                 </ng-template>
@@ -46,12 +46,11 @@
                     (keyup.enter)="onEnterCodigoProducto($event);" autocomplete="off" />
             </div>
             <div class="item-3">
-                <input id="nombre" type="text" pInputText formControlName="nombreProd"
-                    (keyup.enter)="onEnterCodigoProducto($event);" autocomplete="off" />
+                <input id="nombre" type="text" pInputText formControlName="nombreProd" autocomplete="off" />
             </div>
             <div class="item-2">
                 <button pButton pRipple type="button" label="Editar" icon="pi pi-save" class="p-button-success w-full"
-                    (click)="functEditaCodigo();"></button>
+                    (click)="funct_edita_producto_c();"></button>
             </div>
         </div>
     </form>

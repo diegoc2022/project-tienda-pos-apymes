@@ -95,7 +95,7 @@ export class BuscaProductos {
       return;
     }
 
-    this.vinculos.funct_retorna_vinculo_productos(event.data.codProd).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(event.data.codProd).subscribe({
       next: (result: any) => {
         if (result.statusCode == 404) {
           this.message.clear();

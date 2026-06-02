@@ -187,7 +187,7 @@ export class Compras {
 
   on_enter_codigo_producto(event: any): void {
     if (event.key == 'Enter' || event.code == 'Enter') {
-      this.retornaVinculos.funct_retorna_vinculos(this.formCompras2.value.codProd).subscribe({
+      this.retornaVinculos.funct_retorna_codigo_inicial(this.formCompras2.value.codProd).subscribe({
         next: (data: any) => {
           const objData = JSON.stringify(data);
           const obj = JSON.parse(objData);

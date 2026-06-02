@@ -66,7 +66,7 @@ export class Home {
             { label: 'Consultar gastos op', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-gastos'] },
             { label: 'Consultar nómina emp', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-nomina'] },
             { label: 'Productos BD', icon: 'pi pi-fw pi-caret-right', routerLink: ['productos'] },
-            //{ label: 'Edita productos', icon: 'pi pi-fw pi-caret-right', routerLink: ['edita-productos'] },
+            { label: 'Edita productos', icon: 'pi pi-fw pi-caret-right', routerLink: ['edita-productos'] },
           ]
         },
         {

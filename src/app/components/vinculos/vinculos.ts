@@ -36,6 +36,7 @@ export class Vinculos {
   placeholder: string = 'Lea código nuevo';
   placeholder2: string = 'Lea código existente';
   codigosVinculos: any[] = [];
+  dataVinculos: any[] = [];
 
   constructor(
     private vinculos: VinculosService,
@@ -54,7 +55,7 @@ export class Vinculos {
 
   on_enter_codigo_producto(event: any): void {
     if (event.code == "Enter") {
-      this.vinculos.funct_retorna_vinculos(this.data.value.codigoVinc).subscribe({
+      this.vinculos.funct_retorna_codigo_inicial(this.data.value.codigoVinc).subscribe({
         next: (data: any) => {
           const objData = JSON.stringify(data);
           const obj = JSON.parse(objData);
@@ -83,11 +84,16 @@ export class Vinculos {
       this.message.add({ severity: 'warn', summary: 'Advertencia:', detail: 'Para asociar un producto, debe completar todos los campos' });
       return;
     }
+    this.dataVinculos = [];
+    this.dataVinculos.push({
+      codigoInicial: this.data.value.codigoInic,
+      codigoVinculo: this.data.value.codigoVinc
+    })
 
     if (this.onChecked == true) {
       this.vinculos.func_activa_asociacion_unidad_s(this.data.value.codigoInic, this.onChecked).subscribe({
         next: (data: any) => {
-          this.vinculos.funct_registra_vinculos_s(this.data.value).subscribe({
+          this.vinculos.funct_registra_vinculos_s(this.dataVinculos).subscribe({
             next: (obj2: any) => {
               if (obj2.code != 409) {
                 this.data.get('codigoInic')?.setValue('');
@@ -104,7 +110,7 @@ export class Vinculos {
         }
       })
     } else {
-      this.vinculos.funct_registra_vinculos_s(this.data.value).subscribe({
+      this.vinculos.funct_registra_vinculos_s(this.dataVinculos).subscribe({
         next: (obj2: any) => {
           if (obj2.code != 409) {
             this.data.get('codigoInic')?.setValue('');

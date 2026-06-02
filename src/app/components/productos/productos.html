@@ -13,12 +13,12 @@
                 <div class="flex flex-col gap-2">
                     <label for="codigo">Lea código producto</label>
                     <input id="codigo" type="text" pInputText formControlName="codProd"
-                        (keyup.enter)="on_enter_codigo_producto($event)" />
+                        (keyup.enter)="on_enter_codigo_producto($event)" autocomplete="off" />
                 </div>
                 <div class="flex flex-col gap-2 mt-2">
                     <label for="nombre-p">Nombre producto</label>
                     <input id="nombre-p" type="text" pInputText formControlName="nombre"
-                        (keyup.enter)="on_enter_nombres_producto($event)">
+                        (keyup.enter)="on_enter_nombres_producto($event)" autocomplete="off">
                 </div>
                 <div class="flex flex-col gap-2 mt-2">
                     <label for="mySelect">Proveedor</label>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="flex flex-col gap-2 mt-4">
                     <button pButton pRipple type="button" icon="pi pi-save" label="Guardar"
-                        class="p-button-success w-full" (click)="functGuardarNuevoProducto()"></button>
+                        class="p-button-success w-full" (click)="funct_registra_nuevo_producto();"></button>
                 </div>
             </form>
         </div>

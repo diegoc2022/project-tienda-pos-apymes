@@ -108,7 +108,7 @@
                             <td style="flex: 5rem 5rem 5rem" class="centered">
                                 <button pButton pRipple type="button" icon="pi pi-trash"
                                     class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2"
-                                    (click)="functEliminaItemVentas(rowData);"></button>
+                                    (click)="funct_elimina_item_yentas(rowData);"></button>
                                 <button pButton pRipple type="button" icon="pi pi-eye" *ngIf="rowData.venta_por_und"
                                     class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2"
                                     (click)="funct_show_dualog(rowData);"></button>
@@ -231,12 +231,12 @@
             </div>
         </form>
         <div class="item-4">
-            <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="mostrarDialog6 = false"
-                class="p-button-help w-full"></button>
-        </div>
-        <div class="item-4">
             <button pButton pRipple label="Guardar venta" icon="pi pi-users" [disabled]="habilitado"
                 (click)="funct_registra_ventas_x_cobrar_c();" class="p-button-success w-full"></button>
+        </div>
+        <div class="item-4">
+            <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="mostrarDialog6 = false"
+                class="p-button-help w-full"></button>
         </div>
     </div>
 

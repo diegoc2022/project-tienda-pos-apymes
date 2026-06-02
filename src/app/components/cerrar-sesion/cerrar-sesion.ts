@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
-import { BdService } from '../dexie/bd.service';
+
 
 @Component({
   selector: 'app-cerrar-sesion',
@@ -21,8 +21,7 @@ import { BdService } from '../dexie/bd.service';
 export class CerrarSesion {
   constructor(
     private router: Router,
-    private message: MessageService,
-    private db: BdService,
+    private message: MessageService
 
   ) { }
 
@@ -31,7 +30,6 @@ export class CerrarSesion {
     setTimeout(() => {
       localStorage.clear();
       this.router.navigate(['/']);
-      this.db.delete();
       //window.location.reload();
     }, 1000);
   }

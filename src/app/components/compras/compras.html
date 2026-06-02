@@ -77,14 +77,14 @@
                     <div class="flex flex-col gap-2">
                         <label for="desc">Digite descuento %</label>
                         <input id="desc" type="number" pInputText formControlName="desc"
-                            (keyup.enter)="on_enter_descuento($event)" />
+                            (keyup.enter)="on_enter_descuento($event)" autocomplete="off" />
                     </div>
                 </div>
                 <div class="item-3">
                     <div class="flex flex-col gap-2">
                         <label for="total_desc">Total descuento</label>
                         <p-inputNumber inputId="total_desc" mode="currency" currency="USD" locale="en-US"
-                            formControlName="total_desc" />
+                            formControlName="total_desc" autocomplete="off" />
                     </div>
                 </div>
             </div>

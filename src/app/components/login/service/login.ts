@@ -20,13 +20,8 @@ export class LoginService {
     return this.http.post<any>(`${this.URL}/${this.API}`, {
       "user": user,
       "clave": passw
-    },
-      {
-        withCredentials: true,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+
+    })
   }
 
 }

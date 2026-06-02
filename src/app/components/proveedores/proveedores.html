@@ -13,22 +13,22 @@
                 <div class="flex flex-col gap-2">
                     <label for="nit">Nit proveedor:</label>
                     <input id="nit" type="text" pInputText formControlName="nit"
-                        (keyup.enter)="on_enter_codigo_proveedor($event)">
+                        (keyup.enter)="on_enter_codigo_proveedor($event)" autocomplete="off" />
                 </div>
                 <div class="flex flex-col gap-2 mt-1">
                     <label for="prov">Nombre proveedor</label>
                     <input id="prov" type="text" pInputText formControlName="nombreProv"
-                        (keyup.enter)="on_enter_nombre_proveedor($event)">
+                        (keyup.enter)="on_enter_nombre_proveedor($event)" autocomplete="off" />
                 </div>
                 <div class="flex flex-col gap- mt-1">
                     <label for="dir">Dirección</label>
                     <input id="dir" type="text" pInputText formControlName="dirProv"
-                        (keyup.enter)="on_enter_dir_proveedor($event)">
+                        (keyup.enter)="on_enter_dir_proveedor($event)" autocomplete="off" />
                 </div>
                 <div class="flex flex-col gap-2 mt-1">
                     <label for="tel">Teléfono</label>
                     <input id="tel" type="text" pInputText formControlName="telProv"
-                        (keyup.enter)="on_enter_tel_proveedor($event)">
+                        (keyup.enter)="on_enter_tel_proveedor($event)" autocomplete="off" />
                 </div>
                 <div class="flex flex-col gap-2 mt-1">
                     <label for="mySelect">Ciudad</label>

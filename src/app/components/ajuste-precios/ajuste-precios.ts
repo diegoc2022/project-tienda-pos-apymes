@@ -63,7 +63,7 @@ export class AjustePrecios {
   onEnterPressed(event: KeyboardEvent) {
     this.codigo_prod = '';
     if (event.key === 'Enter') {
-      this.vinculos.funct_retorna_vinculos(this.data.value.codigo).subscribe({
+      this.vinculos.funct_retorna_codigo_inicial(this.data.value.codigo).subscribe({
         next: (data: any) => {
           const objData = JSON.stringify(data);
           const obj = JSON.parse(objData);

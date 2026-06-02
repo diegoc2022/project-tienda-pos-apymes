@@ -153,7 +153,7 @@ export class Inventario {
       this.codigo_producto = this.codigo_data;
     }
 
-    this.vinculos.funct_retorna_vinculos(this.codigo_producto).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(this.codigo_producto).subscribe({
       next: (data: any) => {
         const obj2 = JSON.parse(JSON.stringify(data));
         if (obj2.statusCode === 404) {
@@ -241,7 +241,7 @@ export class Inventario {
   }
 
   onRowSelect(event: any) {
-    this.vinculos.funct_retorna_vinculos(event.data.codProd).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(event.data.codProd).subscribe({
       next: (data: any) => {
         const data2 = JSON.parse(JSON.stringify(data));
         if (data2.statusCode == 404) {
@@ -281,7 +281,7 @@ export class Inventario {
 
     this.inventario.funct_registra_movimientos_s(this.data_movimientos).subscribe({
       next: (data: any) => {
-        this.vinculos.funct_retorna_vinculos(this.data[0][0].codigoInicial).subscribe({
+        this.vinculos.funct_retorna_codigo_inicial(this.data[0][0].codigoInicial).subscribe({
           next: (data2: any) => {
             this.data_movimientos.length = 0;
             this.num_ajuste.length = 0;

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ProgressBarModule } from 'primeng/progressbar';
-import { TableModule } from 'primeng/table';
+import { Table, TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { formatearFecha } from '../formato-fecha/formato-fecha';
 import { ProductosService } from '../productos/services/productos.service';
@@ -35,6 +35,7 @@ import { InputTextModule } from 'primeng/inputtext';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ListaProductos {
+  @ViewChild('dt1') dt1!: Table;
   data: any[] = [];
   codigo_inicial: any;
   codigo_vinculo: any;
@@ -84,7 +85,7 @@ export class ListaProductos {
       cancelButtonText: 'Cancelar'
     }).then((result: any) => {
       if (result.isConfirmed) {
-        this.vinculos.funct_retorna_vinculos(this.codigo_inicial).subscribe({
+        this.vinculos.funct_retorna_codigo_inicial(this.codigo_inicial).subscribe({
           next: (data: any) => {
             if (data.length > 0) {
               this.vinculos.funct_elimina_vinculos_s(data).subscribe({
@@ -93,6 +94,8 @@ export class ListaProductos {
                     next: (data3: any) => {
                       setTimeout(() => {
                         this.data = this.data.filter(producto => producto.codigoInicial !== this.codigo_inicial);
+                        this.globalFilter = '';
+                        this.dt1.clear();
                         this.funct_retorna_productos();
                         this.message.add({ severity: 'success', summary: 'Info:', detail: 'Se ha eliminado un producto de la base de datos.', life: 3000 });
                       }, 1000)

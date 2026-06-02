@@ -84,7 +84,7 @@ export class OtrasVentas {
       this.message.add({ severity: 'warn', summary: 'Advertencia:', detail: 'Para realizar una venta, primero debe crear apertura de caja', life: 5000 });
       return;
     }
-    this.vinculos.funct_retorna_vinculo_productos(this.data.value.dlCodProducto).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(this.data.value.dlCodProducto).subscribe({
       next: (result: any) => {
         this.objData.length = 0;
         if (result[0].producto != null) {

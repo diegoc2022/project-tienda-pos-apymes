@@ -37,6 +37,7 @@ export class Productos {
   fecha_actual?: string;
   date: Date = new Date();
   seleccionado: any = null;
+  dataVinculos: any[] = [];
 
 
   constructor(
@@ -80,7 +81,7 @@ export class Productos {
     }
   }
 
-  functGuardarNuevoProducto() {
+  funct_registra_nuevo_producto() {
     if (this.formProductos.invalid) {
       this.formProductos.markAllAsTouched();
       for (const key in this.formProductos.controls) {
@@ -90,19 +91,19 @@ export class Productos {
       return;
     }
 
+    this.dataVinculos = [];
+    this.dataVinculos.push({
+      codigoInicial: this.formProductos.value.codProd,
+      codigoVinculo: this.formProductos.value.codProd
+    })
+
     this.productos.funct_crea_productos(this.formProductos.value).subscribe({
       next: (resp: any) => {
-        const obj = JSON.stringify(resp);
-        const obj2 = JSON.parse(obj);
-        if (obj2.code == 409) {
-          this.message.add({ severity: 'error', summary: 'Advertencia:', detail: obj2.msg });
+        if (resp.code == 409) {
+          this.message.add({ severity: 'error', summary: 'Advertencia:', detail: resp.msg });
           return;
         } else {
-          const data = {
-            codigoInic: obj2.codProd,
-            codigoVinc: obj2.codProd
-          }
-          this.vinculos.funct_registra_vinculos_s(data).subscribe({
+          this.vinculos.funct_registra_vinculos_s(this.dataVinculos).subscribe({
             next: (data: any) => {
               this.message.add({ severity: 'info', summary: 'Advertencia:', detail: 'Producto guardado correctamente', life: 3000 });
               this.formProductos.reset();

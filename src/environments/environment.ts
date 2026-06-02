@@ -1,7 +1,7 @@
 const Environment = {
-    //endpoint: 'http://localhost:3009',
+    endpoint: 'http://localhost:3008',
     //production: true,
-    endpoint: '/api',
+    //endpoint: '/api',
 
 }
 

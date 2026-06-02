@@ -93,7 +93,6 @@ export class FormVentas implements OnInit {
   fecha_actual: any = '';
   date: Date = new Date();
 
-
   constructor(
     private ventas: VentasSerivice,
     private message: MessageService,
@@ -197,8 +196,10 @@ export class FormVentas implements OnInit {
       return;
     }
 
-    this.vinculos.funct_retorna_vinculo_productos(codigo).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(codigo).subscribe({
       next: (response: any) => {
+        console.log("Data: ", response);
+
         if (response.statusCode === 404 || !response?.length) {
           this.message.add({ severity: 'error', summary: 'Error:', detail: 'El producto que intenta vender no existe o no se encuentra asociado', life: 3000 });
           return;
@@ -256,7 +257,7 @@ export class FormVentas implements OnInit {
 
 
 
-  functEliminaItemVentas(product: any) {
+  funct_elimina_item_yentas(product: any) {
     this.ventas.funct_elimina_ventas_temp(product).pipe(
       switchMap(() =>
         this.ventas.funct_retorna_ventas_temp()
@@ -396,7 +397,7 @@ export class FormVentas implements OnInit {
   }
 
   onRowSelect(event: any) {
-    this.vinculos.funct_retorna_vinculos(event.data.codProd).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(event.data.codProd).subscribe({
       next: data => {
         const objData = JSON.stringify(data);
         const obj = JSON.parse(objData);
@@ -418,7 +419,7 @@ export class FormVentas implements OnInit {
 
   funct_show_dualog(product: any) {
     this.elimina_paquete_producto.length = 0;
-    this.vinculos.funct_retorna_vinculos(product.codProd).subscribe({
+    this.vinculos.funct_retorna_codigo_inicial(product.codProd).subscribe({
       next: data => {
         const objData = JSON.stringify(data);
         const obj = JSON.parse(objData);
@@ -477,7 +478,6 @@ export class FormVentas implements OnInit {
     if (this.data3.invalid) {
       this.data3.markAllAsTouched();
       Object.values(this.data3.controls).forEach(control => control.markAsDirty());
-
       this.message.add({
         severity: 'warn',
         summary: 'Advertencia:',
@@ -513,6 +513,7 @@ export class FormVentas implements OnInit {
         this.funct_retorna_factura_c();
         this.mostrarDialog6 = false;
         this.functInpuFocus();
+        this.data3.reset();
         this.cdr.detectChanges();
 
         setTimeout(() => {

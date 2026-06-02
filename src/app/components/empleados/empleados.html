@@ -13,14 +13,14 @@
                     <div class="flex flex-col gap-2">
                         <label for="nit">Cédula empleado:</label>
                         <input id="nit" type="text" pInputText formControlName="cedula" class="form-control"
-                            (keyup.enter)="on_enter_codigo_empleado($event)">
+                            (keyup.enter)="on_enter_codigo_empleado($event)" autocomplete="off">
                     </div>
                 </div>
                 <div class="item-1">
                     <div class="flex flex-col gap-2">
                         <label for="nombre">Nombre empleado</label>
                         <input id="nombre" type="text" pInputText formControlName="nombre" class="form-control"
-                            (keyup.enter)="on_enter_nombre_empleado($event)">
+                            (keyup.enter)="on_enter_nombre_empleado($event)" autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -29,14 +29,14 @@
                     <div class="flex flex-col gap-2">
                         <label for="usuario">Usuario</label>
                         <input id="usuario" type="text" pInputText formControlName="usuario" class="form-control"
-                            (keyup.enter)="on_enter_usuario($event)">
+                            (keyup.enter)="on_enter_usuario($event)" autocomplete="off">
                     </div>
                 </div>
                 <div class="item-2">
                     <div class="flex flex-col gap-2">
                         <label for="dirEmp">Dirección</label>
                         <input id="dirEmp" type="text" pInputText formControlName="dirEmp" class="form-control"
-                            (keyup.enter)="on_enter_dir_empleado($event)">
+                            (keyup.enter)="on_enter_dir_empleado($event)" autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <div class="flex flex-col gap-2">
                         <label for="telEmp">Teléfono</label>
                         <input id="telEmp" type="text" pInputText formControlName="telEmp" class="form-control"
-                            (keyup.enter)="on_enter_tel_empleado($event)">
+                            (keyup.enter)="on_enter_tel_empleado($event)" autocomplete="off">
                     </div>
                 </div>
                 <div class="item-3">

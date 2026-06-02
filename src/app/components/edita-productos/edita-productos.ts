@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Table } from 'dexie';
 import { MessageService } from 'primeng/api';
@@ -33,12 +33,14 @@ import { ToastModule } from 'primeng/toast';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EditaProductos {
+  @ViewChild('dt1') dt1!: Table;
   dataBuscaProductos: any[] = [];
   selectedProduct1?: any[];
   value: string = '';
   formData: FormGroup = new FormGroup({});
   formCheck: FormGroup = new FormGroup({});
-  globalFilter = ''
+  globalFilter = '';
+  dataVinculos: any[] = [];
 
 
   constructor(
@@ -90,9 +92,20 @@ export class EditaProductos {
           this.formData.get('codInicial')?.setValue(event.data.codProd);
           this.formData.get('codNuevo')?.setValue(event.data.codProd);
           this.formData.get('nombreProd')?.setValue(event.data.descripcion);
-          this.vinculos.funct_retorna_vinculos(event.data.codProd).subscribe({
+          localStorage.removeItem('codigoInicial');
+          this.vinculos.funct_retorna_codigo_vinculo(event.data.codProd).subscribe({
             next: (data: any) => {
-              if (data) {
+              this.dataVinculos = [];
+              if (data.length > 1) {
+                const codigos = data.map((item: any) => item.codigoInicial);
+                localStorage.setItem('codigoInicial', JSON.stringify(codigos));
+                this.vinculos.funct_elimina_vinculos_s(data).subscribe({
+                  next: (data: any) => {
+                    const nextElement = (document.querySelector(`[formControlName="codNuevo"]`) as HTMLElement);
+                    nextElement.focus();
+                  }
+                })
+              } else {
                 this.vinculos.funct_elimina_vinculos_s(data).subscribe({
                   next: (data: any) => {
                     const nextElement = (document.querySelector(`[formControlName="codNuevo"]`) as HTMLElement);
@@ -108,61 +121,69 @@ export class EditaProductos {
     });
   }
 
-  clear(table: Table) {
-    table.clear();
-  }
-
-  functEditaCodigo() {
+  funct_edita_producto_c() {
     if (this.formData.invalid) {
       this.formData.markAllAsTouched();
       for (const key in this.formData.controls) {
         this.formData.controls[key].markAsDirty();
       }
-      this.messageService.add({ severity: 'error', summary: 'Error:', detail: 'El campo lea código, es obligatorio' });
+      this.messageService.add({ severity: 'error', summary: 'Error:', detail: 'Los campos nuevo y nombre, son obligatorios' });
       return;
     }
 
+    if (this.dataVinculos.length < 1) {
+      this.messageService.add({ severity: 'warn', summary: 'Advetencia:', detail: 'Para continuar primero debe presionar enter en el segundo campo codigo producto', life: 5000 });
+      const nextElement = (document.querySelector(`[formControlName="codNuevo"]`) as HTMLElement);
+      nextElement.focus();
+      return
+    }
 
-    this.productos.funct_edita_codigo_producto_s(this.formData.value).subscribe({
+    this.productos.funct_edita_productos_s(this.formData.value).subscribe({
       next: (data: any) => {
-        const objData = JSON.stringify(data);
-        const obj = JSON.parse(objData);
-        if (obj.status != 409) {
-          const data = {
-            codigoInic: this.formData.value.codNuevo,
-            codigoVinc: this.formData.value.codNuevo
+        this.vinculos.funct_registra_vinculos_s(this.dataVinculos).subscribe({
+          next: (data2: any) => {
+            this.messageService.add({ severity: 'info', summary: 'Info:', detail: 'Datos actualizados correctamente' });
+            this.globalFilter = '';
+            this.dt1.clear();
+            this.funct_retorna_productos();
+            this.formData.get('codNuevo')?.setValue('');
+            this.formData.get('nombreProd')?.setValue('');
           }
-          this.vinculos.funct_registra_vinculos_s(data).subscribe({
-            next: (data: any) => {
-              this.messageService.add({ severity: 'info', summary: 'Informativo', detail: 'Código actualizado correctamente' });
-              this.formData.get('codInicial')?.setValue('');
-              this.formData.get('codNuevo')?.setValue('');
-            }, error: (error: any) => {
-              console.log("Error: ", error);
-            }
-          });
+        });
+        this.cdr.detectChanges();
 
-        } else {
-          this.messageService.add({ severity: 'warn', summary: 'Advertencia', detail: obj.msg });
-        }
       }
     })
-
-    this.productos.funct_edita_nombre_producto_s(this.formData.value).subscribe({
-      next: (data: any) => {
-        this.messageService.add({ severity: 'info', summary: 'Informativo', detail: 'Código actualizado correctamente' });
-        this.formData.get('codInicial')?.setValue('');
-        this.formData.get('codNuevo')?.setValue('');
-        this.funct_retorna_productos();
-      }
-    })
-
-
   }
 
   onEnterCodigoProducto(event: any): void {
     if (event.code == "Enter") {
-      const nextElement = (document.querySelector(`[formControlName="cantidad"]`) as HTMLElement);
+      const vinc = localStorage.getItem('codigoInicial');
+      const dat = JSON.parse(vinc || '[]')
+      if (dat.length > 1) {
+        this.dataVinculos = [];
+        for (let index = 0; index < dat.length; index++) {
+          if (dat[index] != this.formData.value.codInicial) {
+            this.dataVinculos.push({
+              codigoInicial: dat[index],
+              codigoVinculo: this.formData.value.codNuevo
+            })
+          } else {
+            this.dataVinculos.push({
+              codigoInicial: this.formData.value.codNuevo,
+              codigoVinculo: this.formData.value.codNuevo
+            })
+          }
+        }
+
+      } else {
+        this.dataVinculos = [];
+        this.dataVinculos.push({
+          codigoInicial: this.formData.value.codNuevo,
+          codigoVinculo: this.formData.value.codNuevo
+        })
+      }
+      const nextElement = (document.querySelector(`[formControlName="nombreProd"]`) as HTMLElement);
       nextElement.focus();
     }
   }

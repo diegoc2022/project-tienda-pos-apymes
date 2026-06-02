@@ -14,7 +14,7 @@
                         <p-iftalabel>
                             <p-iconfield>
                                 <p-inputicon class="pi pi-user" />
-                                <input type="text" #username pInputText formControlName="user" autocomplete="false"
+                                <input type="text" #username pInputText formControlName="user" autocomplete="off"
                                     class="full-width" (keydown)="onEnterPressed($event)">
                             </p-iconfield>
                             <label for="username">Username</label>
@@ -27,7 +27,7 @@
                             <p-iconfield>
                                 <p-inputicon class="pi pi-lock" />
                                 <input type="password" #password pInputText class="full-width" formControlName="passw"
-                                    autocomplete="false">
+                                    autocomplete="off">
                             </p-iconfield>
                             <label for="username">Password</label>
                         </p-iftalabel>

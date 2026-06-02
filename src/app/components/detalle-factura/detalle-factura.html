@@ -17,7 +17,7 @@
                 <form [formGroup]="form">
                     <p-inputnumber inputId="efectivo" formControlName="efectivo"
                         (keydown.enter)="funct_calcula_efectivo()" autofocus mode="currency" currency="USD"
-                        locale="en-US" [minFractionDigits]="0" [maxFractionDigits]="0" />
+                        locale="en-US" [minFractionDigits]="0" [maxFractionDigits]="0" autocomplete="off" />
                 </form>
             </div>
         </div>
