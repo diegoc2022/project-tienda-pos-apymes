@@ -111,7 +111,7 @@
                                     (click)="funct_elimina_item_yentas(rowData);"></button>
                                 <button pButton pRipple type="button" icon="pi pi-eye" *ngIf="rowData.venta_por_und"
                                     class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2"
-                                    (click)="funct_show_dualog(rowData);"></button>
+                                    (click)="funct_show_dialog_unidad(rowData);"></button>
                             </td>
                         </tr>
                     </ng-template>
@@ -160,15 +160,14 @@
 <app-otras-ventas [visible]="mostrarDialog2"></app-otras-ventas>
 <app-detalle-factura [visible]="mostrarDialog5"></app-detalle-factura>
 
-<p-dialog header="Producto unidad:" [(visible)]="mostrarDialog3" [closable]="false">
+<p-dialog header="Producto unidad:" [(visible)]="mostrarDialog3" [closable]="true" styleClass="mi-dialogo3">
     <div class="div-dialogo">
         <div class="card">
             <div class="row align-items-start">
-                <p-table #dt2 [value]="producto_unidad" selectionMode="single"
-                    styleClass="p-datatable-sm p-datatable-striped" [scrollable]="true" scrollHeight="44vh"
-                    [(selection)]="selectedProduct2" dataKey="codProd" (onRowSelect)="onRowSelect($event)"
-                    [showCurrentPageReport]="true" [paginator]="false"
-                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+                <p-table #dt2 [value]="producto_unidad" selectionMode="single" class="custom-table2"
+                    styleClass="p-datatable-sm p-datatable-striped" [scrollable]="true" [(selection)]="selectedProduct2"
+                    dataKey="codProd" (onRowSelect)="onRowSelect($event)" [showCurrentPageReport]="true"
+                    [paginator]="false" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Código</th>

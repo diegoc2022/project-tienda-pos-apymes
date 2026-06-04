@@ -55,6 +55,15 @@ export class Home {
           ]
         },
         {
+          label: 'Inventario',
+          icon: 'pi pi-objects-column',
+          styleClass: 'icon-color',
+          items: [
+            { label: 'Generar id inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['id-inventario'] },
+            { label: 'Realizar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-web'] },
+          ]
+        },
+        {
           label: 'Otros',
           icon: 'pi pi-book',
           styleClass: 'icon-color',
@@ -62,9 +71,8 @@ export class Home {
             { label: 'Asociaciar producto', icon: 'pi pi-fw pi-caret-right', routerLink: ['vinculos'] },
             { label: 'Ajuste de precio', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-precios'] },
             { label: 'Ajustar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-inventario'] },
-            { label: 'Realizar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-web'] },
             { label: 'Consultar gastos op', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-gastos'] },
-            { label: 'Consultar nómina emp', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-nomina'] },
+            { label: 'Consultar nómina', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-nomina'] },
             { label: 'Productos BD', icon: 'pi pi-fw pi-caret-right', routerLink: ['productos'] },
             { label: 'Edita productos', icon: 'pi pi-fw pi-caret-right', routerLink: ['edita-productos'] },
           ]

@@ -59,7 +59,11 @@ export class EditaProductos {
       codNuevo: ['', Validators.required],
       nombreProd: ['', Validators.required]
     });
-    this.funct_retorna_productos();
+    setTimeout(() => {
+      this.funct_retorna_productos();
+
+    }, 1000)
+
   }
 
   funct_retorna_productos() {

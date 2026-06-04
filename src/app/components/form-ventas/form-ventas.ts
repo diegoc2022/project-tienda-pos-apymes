@@ -198,7 +198,6 @@ export class FormVentas implements OnInit {
 
     this.vinculos.funct_retorna_codigo_inicial(codigo).subscribe({
       next: (response: any) => {
-        console.log("Data: ", response);
 
         if (response.statusCode === 404 || !response?.length) {
           this.message.add({ severity: 'error', summary: 'Error:', detail: 'El producto que intenta vender no existe o no se encuentra asociado', life: 3000 });
@@ -398,38 +397,39 @@ export class FormVentas implements OnInit {
 
   onRowSelect(event: any) {
     this.vinculos.funct_retorna_codigo_inicial(event.data.codProd).subscribe({
-      next: data => {
-        const objData = JSON.stringify(data);
-        const obj = JSON.parse(objData);
-        if (obj != null) {
+      next: (data: any) => {
+        if (data.length > 0) {
           this.ventas.funct_elimina_ventas_temp(this.elimina_paquete_producto[0]).subscribe({
-            next: data => {
-              this.ventas.funct_registra_ventas_temp(obj[0].producto, this.origen_venta, this.openventas, this.idApertCaja, this.factura).subscribe({
+            next: (data2: any) => {
+              this.ventas.funct_registra_ventas_temp(data[0].producto, this.origen_venta, this.openventas, this.idApertCaja, this.factura).subscribe({
                 next: data => {
                   this.funct_retorna_ventas();
+                  this.mostrarDialog3 = false;
                   this.functInpuFocus();
                 }
               });
             }
           })
         }
+        this.cdr.detectChanges();
       }
     })
   }
 
-  funct_show_dualog(product: any) {
+  funct_show_dialog_unidad(product: any) {
+    this.mostrarDialog3 = false;
+    this.cdr.detectChanges();
+    this.mostrarDialog3 = true;
     this.elimina_paquete_producto.length = 0;
     this.vinculos.funct_retorna_codigo_inicial(product.codProd).subscribe({
-      next: data => {
-        const objData = JSON.stringify(data);
-        const obj = JSON.parse(objData);
+      next: (data: any) => {
         this.producto_unidad.length = 0;
-        this.producto_unidad.push(obj[1].producto);
+        this.producto_unidad.push(data[1].producto);
         this.elimina_paquete_producto.push({
           id: product.id,
           codProd: product.codProd
         });
-
+        this.cdr.detectChanges();
       }
 
     })

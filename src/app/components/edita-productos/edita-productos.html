@@ -2,16 +2,16 @@
 <div class="div-ppal">
     <div class="content-1">
         <div class="item-1">
-            <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" [scrollable]="true" class="custom-table"
+            <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" [scrollable]="false" class="custom-table"
                 [(selection)]="selectedProduct1" dataKey="codProd" (onRowSelect)="onRowSelect($event)"
-                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']" [scrollable]="true"
-                [tableStyle]="{'min-width': '40rem'}" [rows]="30" [rowsPerPageOptions]="[30]">
-                <ng-template #caption class="custom-iconfield">
+                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']" [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="25">
+                <ng-template #caption class="custom-iconfield" [rows]="10">
                     <p-iconfield iconPosition="left" class="custom-iconfield">
                         <p-inputicon>
                             <i class="pi pi-search"></i>
                         </p-inputicon>
-                        <input pInputText #filtro type="text" [(ngModel)]="globalFilter"
+                        <input pInputText type="text" [(ngModel)]="globalFilter"
                             (input)="dt1.filterGlobal(globalFilter, 'contains')" placeholder="Digite nombre producto" />
                     </p-iconfield>
                 </ng-template>
@@ -34,7 +34,6 @@
             </p-table>
         </div>
     </div>
-
 
     <form [formGroup]="formData">
         <div class="content-2">
