@@ -1,0 +1,24 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="div-conten grid p-fluid">
+        <p class="pi pi-pen-to-square"> Generar id inventario:</p>
+        <br>
+        <span> Fecha:
+            {{fecha_actual | date:'yyyy-MM-dd'}}
+        </span>
+        <hr>
+        <div class="content">
+            <div class="flex flex-col">
+                <form [formGroup]="formId">
+                    <label for="integeronly">Id generado</label>
+                    <p-inputNumber inputId="integeronly" formControlName="id_inv" autocomplete="off"
+                        readonly="off"></p-inputNumber>
+                </form>
+            </div>
+            <div class="flex flex-col">
+                <button pButton pRipple type="button" label="Generar nuevo Id" icon="pi pi-save" iconPos="left"
+                    class="p-button-success w-full" (click)="func_genera_id_inventario();"></button>
+            </div>
+        </div>
+    </div>
+</div>

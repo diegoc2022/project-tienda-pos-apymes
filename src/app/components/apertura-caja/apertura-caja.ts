@@ -63,7 +63,7 @@ export class AperturaCaja {
             localStorage.setItem('id_caja', data.id_caja);
             localStorage.setItem('fecha_apertura', this.fecha_actual);
             this.formId.setValue({ base: 0 });
-            this.messageService.add({ severity: 'success', summary: 'Informativo:', detail: 'Se ha creado nueva caja con id: ' + data.id });
+            this.messageService.add({ severity: 'success', summary: 'Informativo:', detail: 'Se ha generado nueva Apertura de Caja número: ' + data.id });
             setTimeout(() => {
               this.router.navigate(['/menu/facturar']);
             }, 1000)

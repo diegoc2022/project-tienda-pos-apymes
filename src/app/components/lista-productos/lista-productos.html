@@ -1,7 +1,7 @@
 <p-toast></p-toast>
 <div class="container-fluid">
     <div class="div-container">
-        <p class="pi pi-objects-column mt-2"> Productos:</p>
+        <p class="pi pi-objects-column mt-2"> Productos BD:</p>
         <div class="content-2">
             <div class="item-2">
                 <p-table #dt1 [value]="data" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
@@ -35,8 +35,8 @@
                             <td style="width: 300px;">{{dataProductos.descripcion}}</td>
                             <td style="width: 50px;" class="centered">{{dataProductos.existencia}}</td>
                             <td style="width: 150px;">{{dataProductos.precio_venta | currency: 'USD'}}</td>
-                            <td style="width: 150px;">{{dataProductos.createAt}}</td>
-                            <td style="width: 150px;">{{dataProductos.updated_at}}</td>
+                            <td style="width: 150px;">{{dataProductos.createAt | date:'dd-MM-yyyy'}}</td>
+                            <td style="width: 150px;">{{dataProductos.updated_at | date:'dd-MM-yyyy'}}</td>
                             <td style="flex: 5rem 5rem 5rem" class="centered">
                                 <button pButton pRipple type="button"
                                     class="p-button-rounded p-button-text p-button-plain p-button-sm p-button2 pi pi-trash"

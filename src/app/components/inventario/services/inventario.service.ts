@@ -17,6 +17,12 @@ export class InventarioService {
     this.API2 = 'movimientos';
   }
 
+  funct_registra_inventario(data: any[]) {
+    console.log("dATA: ", data[0]);
+
+    return this.http.post<any[]>(`${this.URL}/${this.API}`, data[0]);
+  }
+
   funct_edita_ventas_inventario(data: any[]): Observable<any[]> {
     return this.http.post<any[]>(`${this.URL}/${this.API}/editaVentaInv`, data);
   }
@@ -36,4 +42,5 @@ export class InventarioService {
   funct_registra_movimientos_s(data: any): Observable<any> {
     return this.http.post<any>(`${this.URL}/${this.API2}/stock`, data)
   }
+
 }

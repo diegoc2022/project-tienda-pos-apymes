@@ -27,6 +27,8 @@ import { ConsultarConsumos } from './components/consultar-consumos/consultar-con
 import { FormVentas } from './components/form-ventas/form-ventas';
 import { ListaProductos } from './components/lista-productos/lista-productos';
 import { EditaProductos } from './components/edita-productos/edita-productos';
+import { AperturaInventario } from './components/apertura-inventario/apertura-inventario';
+import { InventarioActual } from './components/inventario-actual/inventario-actual';
 
 
 export const routes: Routes = [
@@ -109,6 +111,12 @@ export const routes: Routes = [
             },
             {
                 path: 'edita-productos', title: 'Editar código', component: EditaProductos
+            },
+            {
+                path: 'apertura-inventario', title: 'Generar Id inventario', component: AperturaInventario
+            },
+            {
+                path: 'inventario-actual', title: 'Generar Id inventario', component: InventarioActual
             },
         ]
     }

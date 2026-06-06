@@ -162,30 +162,28 @@
 
 <p-dialog header="Producto unidad:" [(visible)]="mostrarDialog3" [closable]="true" styleClass="mi-dialogo3">
     <div class="div-dialogo">
-        <div class="card">
-            <div class="row align-items-start">
-                <p-table #dt2 [value]="producto_unidad" selectionMode="single" class="custom-table2"
-                    styleClass="p-datatable-sm p-datatable-striped" [scrollable]="true" [(selection)]="selectedProduct2"
-                    dataKey="codProd" (onRowSelect)="onRowSelect($event)" [showCurrentPageReport]="true"
-                    [paginator]="false" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th>Código</th>
-                            <th>Descripción</th>
-                            <th>Existencia</th>
-                            <th>Precio venta</th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-dataProductos>
-                        <tr [pSelectableRow]="dataProductos">
-                            <td>{{dataProductos.codProd}}</td>
-                            <td>{{dataProductos.descripcion}}</td>
-                            <td>{{dataProductos.existencia}}</td>
-                            <td>{{dataProductos.precio_venta | currency}}</td>
-                        </tr>
-                    </ng-template>
-                </p-table>
-            </div>
+        <div class="row align-items-start">
+            <p-table #dt2 [value]="producto_unidad" selectionMode="single" class="custom-table2"
+                styleClass="p-datatable-sm p-datatable-striped" [scrollable]="true" [(selection)]="selectedProduct2"
+                dataKey="codProd" (onRowSelect)="onRowSelect($event)" [showCurrentPageReport]="true" [paginator]="false"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Existencia</th>
+                        <th>Precio venta</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-dataProductos>
+                    <tr [pSelectableRow]="dataProductos">
+                        <td>{{dataProductos.codProd}}</td>
+                        <td>{{dataProductos.descripcion}}</td>
+                        <td>{{dataProductos.existencia}}</td>
+                        <td>{{dataProductos.precio_venta | currency}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </div>
     </div>
 </p-dialog>

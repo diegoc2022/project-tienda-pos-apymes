@@ -404,14 +404,14 @@ export class FormVentas implements OnInit {
               this.ventas.funct_registra_ventas_temp(data[0].producto, this.origen_venta, this.openventas, this.idApertCaja, this.factura).subscribe({
                 next: data => {
                   this.funct_retorna_ventas();
-                  this.mostrarDialog3 = false;
                   this.functInpuFocus();
                 }
               });
             }
           })
+          this.mostrarDialog3 = false;
+          this.cdr.detectChanges();
         }
-        this.cdr.detectChanges();
       }
     })
   }

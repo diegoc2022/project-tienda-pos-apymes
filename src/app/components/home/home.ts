@@ -59,8 +59,9 @@ export class Home {
           icon: 'pi pi-objects-column',
           styleClass: 'icon-color',
           items: [
-            { label: 'Generar id inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['id-inventario'] },
-            { label: 'Realizar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-web'] },
+            { label: '1. Apertura inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['apertura-inventario'] },
+            { label: '2. Cargar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-actual'] },
+            { label: '3. Realizar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-web'] },
           ]
         },
         {

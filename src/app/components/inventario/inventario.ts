@@ -14,6 +14,10 @@ import { SelectModule } from 'primeng/select';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { MenuModule } from 'primeng/menu';
+import { InventarioActualService } from '../inventario-actual/services/inventario-actual.service';
+import { AperturaInventarioService } from '../apertura-inventario/services/apertura-inventario.service';
+import { InputIconModule } from 'primeng/inputicon';
+import { IconFieldModule } from 'primeng/iconfield';
 
 @Component({
   selector: 'app-inventario',
@@ -31,9 +35,11 @@ import { MenuModule } from 'primeng/menu';
     FormsModule,
     CommonModule,
     ToastModule,
-    MenuModule
+    MenuModule,
+    InputIconModule,
+    IconFieldModule
   ],
-  providers: [MessageService, InventarioService],
+  providers: [MessageService, InventarioActualService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Inventario {
@@ -50,37 +56,37 @@ export class Inventario {
   visible2: boolean = false;
   dataBuscaProductos: any[] = [];
   selectedProduct2?: any[];
-  tipo_inventario: string = '';
-  id_tipo: number = 1;
+  id_tipo: any = '';
   data_movimientos: any[] = [];
   tipo_motivo: string = 'inventario';
   formAjuste: FormGroup = new FormGroup({});
   formTipo: FormGroup = new FormGroup({});
   formCodigo: FormGroup = new FormGroup({});
   num_ajuste: any[] = [];
-  name_ajuste: any = '';
+  tipo_ajuste: any = '';
+  id_inventario: number = 0;
+  user: any = '';
+  globalFilter: any = '';
 
   opciones = [
-    { label: 'Producto vencido', value: 'Producto vencido' },
-    { label: 'Producto dañado', value: 'Producto dañado' },
-    { label: 'Producto perdido', value: 'Producto perdido' },
-    { label: 'Ajuste de inventario', value: 'Ajuste inventario' }
+    { label: 'Stock completo', value: 'SC' },
+    { label: 'Producto vencido', value: 'PV' },
+    { label: 'Producto dañado', value: 'PD' },
+    { label: 'Producto perdido', value: 'PP' },
+    { label: 'Ajuste de inventario', value: 'AI' }
   ];
 
   constructor(
     private vinculos: VinculosService,
     private products: ProductosService,
     private inventario: InventarioService,
+    private inv_actual: AperturaInventarioService,
     private message: MessageService,
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
-    this.visible = false;
-    this.visible2 = false;
-    this.funct_retorna_todos_los_productos();
-    this.opcionSeleccionado = null
 
     this.formAjuste = this.fb.group({
       ajuste: [null, Validators.required]
@@ -93,6 +99,13 @@ export class Inventario {
     this.formCodigo = this.fb.group({
       codigo: [null, Validators.required]
     });
+
+    this.visible = false;
+    this.visible2 = false;
+    this.funct_retorna_id_inventario();
+    this.user = localStorage.getItem('user');
+    this.funct_retorna_todos_los_productos();
+    this.opcionSeleccionado = null
 
   }
 
@@ -145,6 +158,16 @@ export class Inventario {
     }, 1000);
   }
 
+  funct_retorna_id_inventario() {
+    this.inv_actual.funct_retorna_id_inventario().subscribe({
+      next: (data: any) => {
+        this.id_inventario = 0;
+        this.id_inventario = Number(data[0].id_inventario);
+        this.cdr.detectChanges();
+      }
+    })
+  }
+
   funct_retorna_producto() {
     const codigo = this.formCodigo.value.codigo;
     if (codigo) {
@@ -155,8 +178,9 @@ export class Inventario {
 
     this.vinculos.funct_retorna_codigo_inicial(this.codigo_producto).subscribe({
       next: (data: any) => {
-        const obj2 = JSON.parse(JSON.stringify(data));
-        if (obj2.statusCode === 404) {
+        console.log("data: ", data);
+
+        if (data.statusCode === 404) {
           this.message.add({ severity: 'warn', summary: 'Adventencia:', detail: 'El producto que acaba de leer, no existe o no se encuentra asociado', life: 3000 });
           this.formCodigo.reset();
           return;
@@ -166,7 +190,7 @@ export class Inventario {
         this.num_ajuste.length = 0;
         this.data.length = 0;
         this.formCodigo.reset();
-        this.data.push(obj2);
+        this.data.push(data);
       }, error: (err: any) => {
         console.error('Error al consultar producto', err);
 
@@ -186,33 +210,36 @@ export class Inventario {
 
   onOpcionChange(event: any) {
     switch (event.value) {
-      case 'Producto vencido':
-        this.tipo_inventario = 'Producto vencido';
+      case 'SC':
         this.tipo_motivo = 'Merma';
         this.visible2 = true;
-        this.id_tipo = 1;
-        this.name_ajuste = 'Producto vencido';
+        this.id_tipo = 'SC';
+        this.tipo_ajuste = 'Stock completo';
         break;
-      case 'Producto dañado':
-        this.tipo_inventario = 'Producto dañado';
+      case 'PV':
+        console.log("Data: ", event.value);
         this.tipo_motivo = 'Merma';
         this.visible2 = true;
-        this.id_tipo = 2;
-        this.name_ajuste = 'Producto dañado';
+        this.id_tipo = 'PV';
+        this.tipo_ajuste = 'Producto vencido';
         break;
-      case 'Producto perdido':
-        this.tipo_inventario = 'Producto robado';
+      case 'PD':
         this.tipo_motivo = 'Merma';
         this.visible2 = true;
-        this.id_tipo = 3;
-        this.name_ajuste = 'Producto perdido';
+        this.id_tipo = 'PD';
+        this.tipo_ajuste = 'Producto dañado';
         break;
-      case 'Ajuste inventario':
-        this.tipo_inventario = 'Ajuste inventario';
+      case 'PP':
+        this.tipo_motivo = 'Merma';
+        this.visible2 = true;
+        this.id_tipo = 'PP';
+        this.tipo_ajuste = 'Producto perdido';
+        break;
+      case 'AI':
         this.tipo_motivo = 'Ajuste';
         this.visible2 = true;
-        this.id_tipo = 4;
-        this.name_ajuste = 'Ajuste de inventario';
+        this.id_tipo = 'AI';
+        this.tipo_ajuste = 'Ajuste de inventario';
         break;
     }
   }
@@ -230,12 +257,11 @@ export class Inventario {
   funct_retorna_todos_los_productos() {
     this.products.funct_retorna_full_productos().subscribe({
       next: (data: any) => {
-        const objData = JSON.stringify(data);
-        const obj = JSON.parse(objData);
         this.dataBuscaProductos = []
-        for (let index = 0; index < obj.length; index++) {
-          this.dataBuscaProductos.push(obj[index]);
+        for (let index = 0; index < data.length; index++) {
+          this.dataBuscaProductos.push(data[index]);
         }
+        this.cdr.detectChanges();
       }
     })
   }
@@ -243,22 +269,20 @@ export class Inventario {
   onRowSelect(event: any) {
     this.vinculos.funct_retorna_codigo_inicial(event.data.codProd).subscribe({
       next: (data: any) => {
-        const data2 = JSON.parse(JSON.stringify(data));
-        if (data2.statusCode == 404) {
+        if (data.statusCode == 404) {
           this.message.clear();
           this.message.add({ severity: 'warn', summary: 'Adventencia:', detail: 'El producto que intenta agregar no existe o no se encuentra asociado', life: 3000 });
           return;
         }
-
         this.data_movimientos.length = 0;
         this.num_ajuste.length = 0;
         this.data.length = 0;
-        this.data.push(data2);
+        this.data.push(data);
         this.visible = false;
         this.cdr.detectChanges();
       }
-
     });
+    this.cdr.detectChanges();
   }
 
   funct_actualiza_inventario() {
@@ -270,16 +294,16 @@ export class Inventario {
 
     this.data_movimientos.length = 0;
     this.data_movimientos.push({
-      "codProd": this.data[0][0].producto.codProd,
-      "existencia": this.data[0][0].producto.existencia,
-      "tipo": this.tipo_inventario,
+      "id_inventario": this.id_inventario,
+      "codprod": this.data[0][0].producto.codProd,
+      "stock_actual": this.data[0][0].producto.existencia,
+      "stock_despues": this.num_ajuste[0].ajuste,
       "id_tipo": this.id_tipo,
-      "motivo": this.tipo_motivo,
-      "ajuste": this.num_ajuste[0].ajuste,
-
+      "nombre_tipo": this.tipo_ajuste,
+      "vendedor": this.user
     })
 
-    this.inventario.funct_registra_movimientos_s(this.data_movimientos).subscribe({
+    this.inventario.funct_registra_inventario(this.data_movimientos).subscribe({
       next: (data: any) => {
         this.vinculos.funct_retorna_codigo_inicial(this.data[0][0].codigoInicial).subscribe({
           next: (data2: any) => {

@@ -1,12 +1,13 @@
 <p-toast></p-toast>
 <div class="div-ppal">
     <div class="content-1">
+        <p class="pi pi-pen-to-square mt-1"> Editar productos:</p>
         <div class="item-1">
-            <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" [scrollable]="false" class="custom-table"
+            <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" [scrollable]="true" class="custom-table"
                 [(selection)]="selectedProduct1" dataKey="codProd" (onRowSelect)="onRowSelect($event)"
-                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']" [rowsPerPageOptions]="[5, 10, 20]"
-                [rows]="25">
-                <ng-template #caption class="custom-iconfield" [rows]="10">
+                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']"
+                [rowsPerPageOptions]="[25, 50, 100]" [rows]="25">
+                <ng-template #caption class="custom-iconfield">
                     <p-iconfield iconPosition="left" class="custom-iconfield">
                         <p-inputicon>
                             <i class="pi pi-search"></i>
@@ -19,7 +20,7 @@
                     <tr>
                         <th style="width: 100px;">Código</th>
                         <th style="width: 400px;">Descripción</th>
-                        <th style="width: 50px;" class="centered">Exist.</th>
+                        <th style="width: 50px;">Exist.</th>
                         <th style="width: 150px;">Precio venta</th>
                     </tr>
                 </ng-template>
@@ -27,7 +28,7 @@
                     <tr [pSelectableRow]="dataProductos">
                         <td style="width: 100px;">{{dataProductos.codProd}}</td>
                         <td style="width: 400px;">{{dataProductos.descripcion}}</td>
-                        <td style="width: 50px;" class="centered">{{dataProductos.existencia}}</td>
+                        <td style="width: 50px;">{{dataProductos.existencia}}</td>
                         <td style="width: 150px;">{{dataProductos.precio_venta | currency}}</td>
                     </tr>
                 </ng-template>
