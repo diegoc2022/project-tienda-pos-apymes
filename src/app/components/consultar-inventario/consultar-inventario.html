@@ -46,7 +46,12 @@
                             <th>Id tipo</th>
                             <th>Nombre tipo</th>
                             <th>Colaborador</th>
-                            <th>Fecha inventario</th>
+                            <th pSortableColumn="created_at">
+                                <div class="flex items-center gap-2">
+                                    Fecha inventario
+                                    <p-sortIcon field="created_at" />
+                                </div>
+                            </th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-data>

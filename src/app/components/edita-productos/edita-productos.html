@@ -5,8 +5,7 @@
         <div class="item-1">
             <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single" [scrollable]="true" class="custom-table"
                 [(selection)]="selectedProduct1" dataKey="codProd" (onRowSelect)="onRowSelect($event)"
-                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']"
-                [rowsPerPageOptions]="[25, 50, 100]" [rows]="25">
+                [paginator]="true" [globalFilterFields]="['codProd', 'descripcion']" [rows]="25">
                 <ng-template #caption class="custom-iconfield">
                     <p-iconfield iconPosition="left" class="custom-iconfield">
                         <p-inputicon>

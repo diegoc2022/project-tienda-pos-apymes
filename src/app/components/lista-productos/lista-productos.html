@@ -6,8 +6,8 @@
             <div class="item-2">
                 <p-table #dt1 [value]="data" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
                     class="custom-table" [tableStyle]="{ 'min-width':'50rem'}" [scrollable]="true" dataKey="codProd"
-                    [paginator]="true" [rows]="50" [rowsPerPageOptions]="[50]" [showCurrentPageReport]="true"
-                    [globalFilterFields]="['codProd', 'descripcion']" selectionMode="single">
+                    [paginator]="true" [rows]="50" [globalFilterFields]="['codProd', 'descripcion']"
+                    selectionMode="single">
                     <ng-template #caption class="custom-iconfield">
                         <p-iconfield iconPosition="left" class="custom-iconfield">
                             <p-inputicon>
@@ -25,7 +25,12 @@
                             <th style="width: 50px;" class="centered">Existencia</th>
                             <th style="width: 150px;">Precio venta</th>
                             <th style="width: 150px;">Fecha creación</th>
-                            <th style="width: 150px;">Fecha ultimo toque</th>
+                            <th pSortableColumn="updated_at">
+                                <div class="flex items-center gap-2">
+                                    Fecha ultimo toque
+                                    <p-sortIcon field="updated_at" />
+                                </div>
+                            </th>
                             <th style="width: 100px;" class="centered">Acción</th>
                         </tr>
                     </ng-template>

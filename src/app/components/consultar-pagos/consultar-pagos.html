@@ -41,7 +41,7 @@
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Id cliente</th>
-                            <th class="centered">Id venta</th>
+                            <th>Id venta</th>
                             <th>Consumo actual</th>
                             <th>Otros pagos realiz.</th>
                             <th>Último pago realiz.</th>
@@ -49,13 +49,18 @@
                             <th>Debe</th>
                             <th>Tipo pago</th>
                             <th>Estado id ventas</th>
-                            <th>Fecha ult. pago</th>
+                            <th pSortableColumn="fecha">
+                                <div class="flex items-center gap-2">
+                                    Fecha ult. pago
+                                    <p-sortIcon field="fecha" />
+                                </div>
+                            </th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-pagos>
                         <tr>
                             <td>{{pagos.cedula}}</td>
-                            <td class="centered">{{pagos.codigo_venta}}</td>
+                            <td>{{pagos.codigo_venta}}</td>
                             <td>{{consumo_actual | currency: 'USD'}}</td>
                             <td>{{pagos.otros_pagos | currency: 'USD'}}</td>
                             <td>{{pagos.ultimo_pago | currency: 'USD'}}</td>

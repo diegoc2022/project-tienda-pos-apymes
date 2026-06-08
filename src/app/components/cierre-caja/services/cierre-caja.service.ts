@@ -31,15 +31,15 @@ export class CierreCajaService {
       next: (data: any) => {
         doc.setFontSize(14);
         doc.setFont("Courier", "Bold");
-        doc.text(data[0].razon_social, 12, 10);
+        doc.text(data[0].razon_social, data[0].posicion_x1, data[0].posicion_y1);
         doc.setFontSize(10)
-        doc.text(data[0].direcion, 25, 26);
+        doc.text(data[0].direcion, data[0].posicion_x2, data[0].posicion_y2);
         doc.setFontSize(10)
-        doc.text('NIT: ' + data[0].nit, 32, 21);
+        doc.text('NIT: ' + data[0].nit, data[0].posicion_x3, data[0].posicion_y3);
         doc.setFontSize(10)
-        doc.text(data[0].nombre_titular, 30, 15);
+        doc.text(data[0].nombre_titular, data[0].posicion_x4, data[0].posicion_y4);
         doc.setFontSize(10)
-        doc.text('TEL: ' + data[0].Celular, 32, 31);
+        doc.text('TEL: ' + data[0].Celular, data[0].posicion_x5, data[0].posicion_y5);
         doc.setFont("Courier", " ");
         doc.text('=======================================================', 3, 40);
 

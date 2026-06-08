@@ -50,10 +50,10 @@
                         <tr>
                             <th>Id cliente</th>
                             <th>Nombre cliente</th>
-                            <th class="centered">Id venta</th>
+                            <th>Id venta</th>
                             <th>Estado id ventas</th>
                             <th>Consumo</th>
-                            <th class="centered">Num pagos</th>
+                            <th>Num pagos</th>
                             <th>Total pagos realiz.</th>
                             <th>Debe</th>
                         </tr>
@@ -62,10 +62,10 @@
                         <tr>
                             <td>{{dataVentas.id_cliente}}</td>
                             <td>{{dataVentas.nombre}}</td>
-                            <td class="centered">{{dataVentas.id_venta}}</td>
+                            <td>{{dataVentas.id_venta}}</td>
                             <td>{{dataVentas.estado}}</td>
                             <td>{{dataVentas.monto | currency: 'USD'}}</td>
-                            <td class="centered">{{num_pagos}}</td>
+                            <td>{{num_pagos}}</td>
                             <td>{{pagos | currency: 'USD'}}</td>
                             <td>{{monto_restante | currency: 'USD'}}</td>
                         </tr>

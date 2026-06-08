@@ -52,7 +52,12 @@
                                 <th>Número mes</th>
                                 <th>Año actual</th>
                                 <th>Total gastos</th>
-                                <th>Fecha registro</th>
+                                <th pSortableColumn="fecha_registro">
+                                    <div class="flex items-center gap-2">
+                                        Fecha registro
+                                        <p-sortIcon field="fecha_registro" />
+                                    </div>
+                                </th>
                             </tr>
                         </ng-template>
                         <ng-template pTemplate="body" let-gastos>

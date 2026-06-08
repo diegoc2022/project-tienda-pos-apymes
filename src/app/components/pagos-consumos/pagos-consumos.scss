@@ -364,22 +364,24 @@ hr {
     color: white;
 }
 
-.custom-table tr,
-td {
-    background-color: white;
-    color: black;
-    border: 1px solid rgb(160, 154, 154) !important;
+:host ::ng-deep .p-button2:hover {
+    border-radius: 3px;
+    margin-right: .2rem;
+    background-color: red;
+    color: white;
+    font: bold;
+}
+
+.custom-table tr {
+    color: white;
+    border: 1px solid white !important;
     height: 5px !important;
+    background: #304772;
 }
 
 .custom-table th {
-    background-color: rgb(211, 205, 205);
+    background: #c9caca;
     color: black;
-    border: 1px solid rgb(160, 154, 154) !important;
     height: 5px !important;
-}
-
-.centered {
-    text-align: center;
-    vertical-align: middle;
+    text-align: left;
 }

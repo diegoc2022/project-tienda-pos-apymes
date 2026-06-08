@@ -27,7 +27,7 @@ export class Home {
             { label: 'Realizar pagos', icon: 'pi pi-fw pi-caret-right', routerLink: ['realizar-pagos'] },
             { label: 'Consultar pagos', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-pagos'] },
             { label: 'Consultar consumos', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-consumo'] },
-            { label: 'Facturación', icon: 'pi pi-fw pi-caret-right', routerLink: ['facturar'] }
+            { label: 'Facturación', icon: 'pi pi-fw pi-caret-right', routerLink: ['facturar'] },
 
           ]
         },
@@ -37,7 +37,7 @@ export class Home {
           styleClass: 'icon-color',
           items: [
             { label: 'Entradas', icon: 'pi pi-fw pi-caret-right', routerLink: ['compras'] },
-            { label: 'Factura proveedor', icon: 'pi pi-fw pi-caret-right', routerLink: ['factura-proveedor'] }
+            { label: 'Factura proveedor', icon: 'pi pi-fw pi-caret-right', routerLink: ['factura-proveedor'] },
           ]
         },
         {
@@ -46,12 +46,12 @@ export class Home {
           styleClass: 'icon-color',
           items: [
             { label: 'Nuevo producto', icon: 'pi pi-fw pi-caret-right', routerLink: ['nuevo-producto'] },
-            { label: 'Nuevo proveedor', icon: 'pi pi-fw pi-caret-right', routerLink: ['nuevo-proveedor'] },
             { label: 'Nuevo cliente', icon: 'pi pi-fw pi-caret-right', routerLink: ['nuevo-cliente'] },
+            { label: 'Nuevo proveedor', icon: 'pi pi-fw pi-caret-right', routerLink: ['nuevo-proveedor'] },
             { label: 'Nuevo empleado', icon: 'pi pi-fw pi-caret-right', routerLink: ['nuevo-empleado'] },
             { label: 'Movimientos x mes', icon: 'pi pi-fw pi-caret-right', routerLink: ['movimientos'] },
             { label: 'Registrar gastos op', icon: 'pi pi-fw pi-caret-right', routerLink: ['registrar-gastos'] },
-            { label: 'Pago nómina emp', icon: 'pi pi-fw pi-caret-right', routerLink: ['nomina'] }
+            { label: 'Pago nómina emp', icon: 'pi pi-fw pi-caret-right', routerLink: ['nomina'] },
           ]
         },
         {

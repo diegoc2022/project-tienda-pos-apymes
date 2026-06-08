@@ -112,11 +112,10 @@ export class ConsultarConsumos {
             this.monto_total += data[index].subtotal;
             this.productos.push(data[index]);
           }
-          this.cdr.detectChanges();
         } else {
           this.message.add({ severity: 'warn', summary: 'Error:', detail: 'Este cliente aún no tiene consumo registrado con este id ventas: ' + this.data.value.codigo_venta, life: 5000 });
         }
-
+        this.cdr.detectChanges();
       }
     })
   }

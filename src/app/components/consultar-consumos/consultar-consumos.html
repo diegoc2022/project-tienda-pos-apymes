@@ -48,7 +48,12 @@
                             <th class="centered">Cant.</th>
                             <th>Sub total</th>
                             <th>Estado id venta</th>
-                            <th>Fecha reg.</th>
+                            <th pSortableColumn="fecha_registro">
+                                <div class="flex items-center gap-2">
+                                    Fecha registro
+                                    <p-sortIcon field="fecha_registro" />
+                                </div>
+                            </th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-dataVentas>
