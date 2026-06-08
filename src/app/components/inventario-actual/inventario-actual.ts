@@ -6,8 +6,9 @@ import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ToastModule } from 'primeng/toast';
 import * as Swal from 'sweetalert2';
-import { InventarioService } from '../inventario/services/inventario.service';
 import { ProductosService } from '../productos/services/productos.service';
+import { InventarioActualService } from './services/inventario-actual.service';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-inventario-actual',
@@ -33,8 +34,8 @@ export class InventarioActual {
   inventario_actual: any[] = [];
 
   constructor(
-    private messageService: MessageService,
-    private inventario: InventarioService,
+    private message: MessageService,
+    private inv_actual: InventarioActualService,
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef,
     private productos: ProductosService
@@ -44,17 +45,16 @@ export class InventarioActual {
     this.formId = this.fb.group({
       id_inv: [null, Validators.required]
     });
-    //this.funct_retorna_id_inventario();
     this.funct_retorna_productos();
   }
 
   funct_retorna_productos() {
     this.productos.funct_retorna_full_productos().subscribe({
       next: (data: any) => {
-        this.inventario_actual = []
+        this.inventario_actual = [];
         for (let index = 0; index < data.length; index++) {
           this.inventario_actual.push({
-            codProd: data[index].codProd,
+            codprod: data[index].codProd,
             descripcion: data[index].descripcion,
             stock_actual: data[index].existencia
           });
@@ -77,7 +77,20 @@ export class InventarioActual {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-
+        this.inv_actual.funct_elima_inventario_actual_s().subscribe({
+          next: (data: any) => {
+            const fecha_created = format(this.date, 'yyyy-MM-dd');
+            localStorage.setItem('fecha_stock_actual', fecha_created);
+            setTimeout(() => {
+              this.inv_actual.funct_registra_inventario_actual_s(this.inventario_actual).subscribe({
+                next: (data: any) => {
+                  this.fecha_actual = localStorage.getItem('fecha_stock_actual');
+                  this.message.add({ severity: 'success', summary: 'Info:', detail: 'El stock actual se ha cargado corectamente, ya puede iniciar con el inventarios', life: 3000 });
+                }
+              })
+            }, 2000)
+          }
+        })
       }
     });
   }

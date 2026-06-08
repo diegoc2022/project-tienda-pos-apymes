@@ -99,7 +99,7 @@ export class BuscaProductos {
       next: (result: any) => {
         if (result.statusCode == 404) {
           this.message.clear();
-          this.message.add({ severity: 'error', summary: 'Error:', detail: 'El producto que intenta vender no existe o no se encuentra asociado', life: 3000 });
+          this.message.add({ severity: 'error', summary: 'Error:', detail: 'El producto que intenta agregar en el carrito, no se encuentra asociado', life: 3000 });
           return;
         }
 

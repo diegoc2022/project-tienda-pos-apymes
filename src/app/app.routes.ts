@@ -29,6 +29,7 @@ import { ListaProductos } from './components/lista-productos/lista-productos';
 import { EditaProductos } from './components/edita-productos/edita-productos';
 import { AperturaInventario } from './components/apertura-inventario/apertura-inventario';
 import { InventarioActual } from './components/inventario-actual/inventario-actual';
+import { ConsultarInventario } from './components/consultar-inventario/consultar-inventario';
 
 
 export const routes: Routes = [
@@ -117,6 +118,9 @@ export const routes: Routes = [
             },
             {
                 path: 'inventario-actual', title: 'Generar Id inventario', component: InventarioActual
+            },
+            {
+                path: 'consultar-inventario', title: 'Generar Id inventario', component: ConsultarInventario
             },
         ]
     }

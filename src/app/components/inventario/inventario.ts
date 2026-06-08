@@ -69,11 +69,11 @@ export class Inventario {
   globalFilter: any = '';
 
   opciones = [
-    { label: 'Stock completo', value: 'SC' },
-    { label: 'Producto vencido', value: 'PV' },
-    { label: 'Producto dañado', value: 'PD' },
-    { label: 'Producto perdido', value: 'PP' },
-    { label: 'Ajuste de inventario', value: 'AI' }
+    { label: 'Stock completo', value: '1-SC' },
+    { label: 'Ajuste por vencimiento', value: '2-APV' },
+    { label: 'Ajuste por daños', value: '3-APD' },
+    { label: 'Ajuste por robo', value: '4-APR' },
+    { label: 'Ajuste por diferencias', value: '5-APD' }
   ];
 
   constructor(
@@ -105,7 +105,8 @@ export class Inventario {
     this.funct_retorna_id_inventario();
     this.user = localStorage.getItem('user');
     this.funct_retorna_todos_los_productos();
-    this.opcionSeleccionado = null
+    this.opcionSeleccionado = null;
+    this.cdr.detectChanges();
 
   }
 
@@ -207,45 +208,42 @@ export class Inventario {
     });
   }
 
-
   onOpcionChange(event: any) {
     switch (event.value) {
-      case 'SC':
-        this.tipo_motivo = 'Merma';
+      case '1-SC':
         this.visible2 = true;
-        this.id_tipo = 'SC';
+        this.id_tipo = '1-SC';
         this.tipo_ajuste = 'Stock completo';
         break;
-      case 'PV':
-        console.log("Data: ", event.value);
-        this.tipo_motivo = 'Merma';
+      case '2-APV':
         this.visible2 = true;
-        this.id_tipo = 'PV';
-        this.tipo_ajuste = 'Producto vencido';
+        this.id_tipo = '2-APV';
+        this.tipo_ajuste = 'Ajuste por vencimiento';
         break;
-      case 'PD':
-        this.tipo_motivo = 'Merma';
+      case '3-APD':
         this.visible2 = true;
-        this.id_tipo = 'PD';
-        this.tipo_ajuste = 'Producto dañado';
+        this.id_tipo = '3-APD';
+        this.tipo_ajuste = 'Ajuste por daños';
         break;
-      case 'PP':
-        this.tipo_motivo = 'Merma';
+      case '4-APR':
         this.visible2 = true;
-        this.id_tipo = 'PP';
-        this.tipo_ajuste = 'Producto perdido';
+        this.id_tipo = '4-APR';
+        this.tipo_ajuste = 'Ajuste por robo';
         break;
-      case 'AI':
-        this.tipo_motivo = 'Ajuste';
+      case '5-APD':
         this.visible2 = true;
-        this.id_tipo = 'AI';
-        this.tipo_ajuste = 'Ajuste de inventario';
+        this.id_tipo = '5-AD';
+        this.tipo_ajuste = 'Ajuste por diferencias';
         break;
     }
   }
 
-  showDialog() {
+  funct_show_dialog_producto() {
     this.visible = true;
+  }
+
+  funct_close_dialog_producto() {
+    this.visible = false;
   }
 
   closeDialog() {
@@ -267,21 +265,21 @@ export class Inventario {
   }
 
   onRowSelect(event: any) {
+    this.data = [];
     this.vinculos.funct_retorna_codigo_inicial(event.data.codProd).subscribe({
       next: (data: any) => {
         if (data.statusCode == 404) {
           this.message.clear();
-          this.message.add({ severity: 'warn', summary: 'Adventencia:', detail: 'El producto que intenta agregar no existe o no se encuentra asociado', life: 3000 });
+          this.message.add({ severity: 'warn', summary: 'Adventencia:', detail: 'El producto que intenta agregar no se encuentra asociado', life: 3000 });
           return;
         }
         this.data_movimientos.length = 0;
         this.num_ajuste.length = 0;
-        this.data.length = 0;
         this.data.push(data);
         this.visible = false;
-        this.cdr.detectChanges();
       }
     });
+    this.visible = false;
     this.cdr.detectChanges();
   }
 
@@ -305,22 +303,24 @@ export class Inventario {
 
     this.inventario.funct_registra_inventario(this.data_movimientos).subscribe({
       next: (data: any) => {
-        this.vinculos.funct_retorna_codigo_inicial(this.data[0][0].codigoInicial).subscribe({
-          next: (data2: any) => {
-            this.data_movimientos.length = 0;
-            this.num_ajuste.length = 0;
-            this.data.length = 0;
-            this.opcionSeleccionado = null;
-            this.formAjuste.reset();
-            setTimeout(() => {
+
+        setTimeout(() => {
+          const codigo_inic = this.data[0][0].codigoInicial
+          this.vinculos.funct_retorna_codigo_inicial(codigo_inic).subscribe({
+            next: (data2: any) => {
+              this.data_movimientos.length = 0;
+              this.num_ajuste.length = 0;
+              this.data.length = 0;
+              this.opcionSeleccionado = null;
+              this.formAjuste.reset();
               this.data.push(data2);
-              this.message.add({ severity: 'success', summary: 'Adventencia:', detail: 'Ajuste corregido exitasamente en el inventario', life: 3000 });
               const nextElement = (document.querySelector(`[formControlName="codigo"]`) as HTMLElement);
               nextElement.focus();
-            }, 1000);
-            this.cdr.detectChanges();
-          }
-        })
+              this.message.add({ severity: 'success', summary: 'Adventencia:', detail: 'Ajuste corregido exitasamente en el inventario', life: 3000 });
+              this.cdr.detectChanges();
+            }
+          })
+        }, 1000)
       }
     })
   }

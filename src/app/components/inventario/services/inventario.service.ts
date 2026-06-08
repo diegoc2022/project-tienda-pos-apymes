@@ -18,8 +18,6 @@ export class InventarioService {
   }
 
   funct_registra_inventario(data: any[]) {
-    console.log("dATA: ", data[0]);
-
     return this.http.post<any[]>(`${this.URL}/${this.API}`, data[0]);
   }
 
@@ -33,6 +31,10 @@ export class InventarioService {
 
   funct_retorna_inventario() {
     return this.http.get(`${this.URL}/${this.API}`);
+  }
+
+  funct_retorna_inventario_x_id(id: number, tipo: any) {
+    return this.http.get(`${this.URL}/${this.API}/inv_actual/${id}/${tipo}`);
   }
 
   funct_registra_salidas_s(data: any): Observable<any> {

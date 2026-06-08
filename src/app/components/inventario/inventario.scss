@@ -1,13 +1,48 @@
 @media screen and (max-width: 1366px) {
-    :host ::ng-deep .p-dialog {
-        width: 35% !important;
-        height: 85vh !important;
+    :host ::ng-deep .mi-dialogo2 {
+        width: 37% !important;
+        min-height: 97vh !important;
         border: 1px solid white;
         overflow: hidden;
         color: white;
         background: #1e3c72;
         background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
         background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 20% !important;
+        height: 45vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-int {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    .content-int-2 {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item-2 {
+        margin: 0;
     }
 
     .content {
@@ -70,15 +105,50 @@
 }
 
 @media screen and (min-width: 1440px) {
-    :host ::ng-deep .p-dialog {
+    :host ::ng-deep .mi-dialogo2 {
         width: 35% !important;
-        height: 85vh !important;
+        min-height: 82vh !important;
         border: 1px solid white;
         overflow: hidden;
         color: white;
         background: #1e3c72;
         background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
         background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 19% !important;
+        height: 40vh !important;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    .content-int {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    .content-int-2 {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item-2 {
+        margin: 0;
     }
 
     .content {
@@ -145,11 +215,20 @@
 }
 
 @media screen and (min-width: 1600px) {
-    :host ::ng-deep .p-dialog {
-        width: 35% !important;
-        height: 85vh !important;
+    :host ::ng-deep .mi-dialogo2 {
+        width: 32% !important;
+        min-height: 80vh !important;
         border: 1px solid white;
         overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 18% !important;
+        height: 40vh !important;
         color: white;
         background: #1e3c72;
         background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
@@ -175,6 +254,33 @@
         padding: 10px;
         display: flex;
         justify-content: center;
+    }
+
+
+    .content-int {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    .content-int-2 {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item-2 {
+        margin: 0;
     }
 
     :host ::ng-deep .p-datatable {
@@ -218,11 +324,20 @@
 }
 
 @media screen and (min-width: 1920px) {
-    :host ::ng-deep .p-dialog {
-        width: 23% !important;
-        height: 70vh !important;
+    :host ::ng-deep .mi-dialogo2 {
+        width: 28% !important;
+        height: 40vh !important;
         border: 1px solid white;
         overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 15% !important;
+        height: 32vh !important;
         color: white;
         background: #1e3c72;
         background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
@@ -237,6 +352,32 @@
         height: 30vw;
         padding: 20px;
         border: 1px solid white;
+    }
+
+    .content-int {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    .content-int-2 {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item-2 {
+        margin: 0;
     }
 
     .conten-ppal {
@@ -296,13 +437,22 @@
 
 }
 
-@media screen and (max-width:576px) {
-
-    :host ::ng-deep .p-dialog {
+@media screen and (max-width:768px) {
+    :host ::ng-deep .mi-dialogo2 {
         width: 100% !important;
-        height: 70vh !important;
+        min-height: 100vh !important;
         border: 1px solid white;
+        padding: 0;
         overflow: hidden;
+        color: white;
+        background: #1e3c72;
+        background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
+        background: linear-gradient(to bottom, #663e68, #1e3c72);
+    }
+
+    :host ::ng-deep .mi-dialogo {
+        width: 70% !important;
+        height: 40vh !important;
         color: white;
         background: #1e3c72;
         background: -webkit-linear-gradient(to bottom, #663e68, #1e3c72);
@@ -312,7 +462,7 @@
     .conten-ppal {
         position: absolute;
         border-radius: 5px;
-        width: 93%;
+        width: 100%;
         min-height: 93vh;
         left: 0px;
     }
@@ -324,9 +474,36 @@
         min-height: 99%;
         width: 100%;
         padding: 10px;
-        margin: 0 auto;
         border: 1px solid white;
     }
+
+    .content-int {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    .content-int-2 {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .item-2 {
+        margin: 0;
+    }
+
 
     .w-full4 {
         width: 100%;

@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="flex flex-col gap-2 mt-1">
-            <button class="w-full" (click)="showDialog()">
+            <button class="w-full" (click)="funct_show_dialog_producto()">
                 <i class="pi pi-search"> Buscar producto</i>
             </button>
         </div>
@@ -64,62 +64,58 @@
     </div>
 </div>
 <p-dialog header={{tipo_ajuste}} [(visible)]="visible2" styleClass="mi-dialogo" [closable]="false">
-    <div class="card">
-        <div class="caja-2">
-            <div class="row">
-                <div class="field col-12">
-                    <label for="titulo">Digite cantidad física</label>
-                    <form [formGroup]="formAjuste">
-                        <input #ajuste type="number" pInputText [style]="{'width':'100%','height':'5vh'}"
-                            formControlName="ajuste" autocomplete="off" autofocus />
-                    </form>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="field col-12">
-                    <button pButton pRipple label="Guardar" icon="pi pi-save" (click)="funct_agrega_ajuste();"
-                        class="p-button-success b-full"></button>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="field col-12">
-                    <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="closeDialog();"
-                        class="p-button-help b-full"></button>
-                </div>
-            </div>
+    <div class="content-int">
+        <div class="item">
+            <label for="titulo">Digite cantidad física</label>
+            <form [formGroup]="formAjuste">
+                <input #ajuste type="number" pInputText [style]="{'width':'100%','height':'5vh'}"
+                    formControlName="ajuste" autocomplete="off" autofocus />
+            </form>
+        </div>
+
+        <div class="item">
+            <button pButton pRipple label="Guardar" icon="pi pi-save" (click)="funct_agrega_ajuste();"
+                class="p-button-success b-full"></button>
+        </div>
+
+        <div class="item">
+            <button pButton pRipple label="Cerrar" icon="pi pi-times-circle" (click)="closeDialog();"
+                class="p-button-help b-full"></button>
         </div>
     </div>
+
 </p-dialog>
 
 
-<p-dialog header="Buscar producto" [modal]="true" [(visible)]="visible">
-    <div class="row align-items-start">
-        <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single"
-            styleClass="p-datatable-sm p-datatable-striped" [scrollable]="false" [(selection)]="selectedProduct2"
-            dataKey="codProd" [rows]="9" (onRowSelect)="onRowSelect($event)" [paginator]="true"
-            [rowsPerPageOptions]="[10]" [showCurrentPageReport]="true"
-            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" class="custom-table">
-            <ng-template #caption>
-                <p-iconfield iconPosition="left">
-                    <p-inputicon>
-                        <i class="pi pi-search"></i>
-                    </p-inputicon>
-                    <input pInputText type="text" [(ngModel)]="globalFilter"
-                        (input)="dt1.filterGlobal(globalFilter, 'contains')" placeholder="Digite nombre producto" />
-                </p-iconfield>
-            </ng-template>
-            <ng-template pTemplate="header">
-                <tr>
-                    <th style="width:300px;">Descripción</th>
-                    <th style="width: 50px;">Existencia</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-dataProductos>
-                <tr [pSelectableRow]="dataProductos">
-                    <td style="width: 50px;">{{dataProductos.descripcion}}</td>
-                    <td style="width: 100px;">{{dataProductos.existencia}}</td>
-                </tr>
-            </ng-template>
-        </p-table>
+<p-dialog header="Buscar producto" [modal]="true" [(visible)]="visible" [closable]="true" styleClass="mi-dialogo2">
+    <div class="content-int-2">
+        <div class="item-2">
+            <p-table #dt1 [value]="dataBuscaProductos" selectionMode="single"
+                styleClass="p-datatable-sm p-datatable-striped" [scrollable]="false" [(selection)]="selectedProduct2"
+                dataKey="codProd" [rows]="9" (onRowSelect)="onRowSelect($event)" [paginator]="true"
+                [showCurrentPageReport]="false" class="custom-table">
+                <ng-template #caption>
+                    <p-iconfield iconPosition="left">
+                        <p-inputicon>
+                            <i class="pi pi-search"></i>
+                        </p-inputicon>
+                        <input pInputText type="text" [(ngModel)]="globalFilter"
+                            (input)="dt1.filterGlobal(globalFilter, 'contains')" placeholder="Digite nombre producto" />
+                    </p-iconfield>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width:300px;">Descripción</th>
+                        <th style="width: 50px;">Existencia</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-dataProductos>
+                    <tr [pSelectableRow]="dataProductos">
+                        <td style="width: 50px;">{{dataProductos.descripcion}}</td>
+                        <td style="width: 100px;">{{dataProductos.existencia}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
     </div>
 </p-dialog>

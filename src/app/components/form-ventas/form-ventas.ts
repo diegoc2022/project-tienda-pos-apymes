@@ -222,7 +222,7 @@ export class FormVentas implements OnInit {
         });
       }, error: (error) => {
         console.error('Error consultando producto:', error);
-        this.message.add({ severity: 'error', summary: 'Error', detail: 'El producto que intenta vender no existe o no se encuentra asociado', life: 3000 });
+        this.message.add({ severity: 'error', summary: 'Error', detail: 'El producto que intenta agregar en el carrito, no existe o no se encuentra asociado', life: 3000 });
       }
     });
   }

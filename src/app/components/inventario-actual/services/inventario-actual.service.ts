@@ -23,8 +23,16 @@ export class InventarioActualService {
     return this.http.get(`${this.URL}/${this.API}`);
   }
 
-  funct_registra_inventario_actual_s(data: any): Observable<any> {
+  funct_retorna_inventario_x_id(id: number, id_tipo: any) {
+    return this.http.get(`${this.URL}/${this.API}`);
+  }
+
+  funct_registra_inventario_actual_s(data: any[]): Observable<any> {
     return this.http.post<any>(`${this.URL}/${this.API}`, data)
+  }
+
+  funct_elima_inventario_actual_s() {
+    return this.http.delete(`${this.URL}/${this.API}`);
   }
 
 }

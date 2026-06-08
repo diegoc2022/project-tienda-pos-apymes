@@ -60,8 +60,9 @@ export class Home {
           styleClass: 'icon-color',
           items: [
             { label: '1. Apertura inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['apertura-inventario'] },
-            { label: '2. Cargar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-actual'] },
+            { label: '2. Cargar stock actual', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-actual'] },
             { label: '3. Realizar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-web'] },
+            { label: '4. Consultar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-inventario'] },
           ]
         },
         {

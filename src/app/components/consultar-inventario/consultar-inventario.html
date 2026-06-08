@@ -1,0 +1,69 @@
+<p-toast></p-toast>
+<div class="container-fluid">
+    <div class="conten-ppal">
+        <div class="content-int">
+            <p class="pi pi-search-plus"> Consultar inventario:</p>
+            <form [formGroup]="data">
+                <div class="content-1">
+                    <div class="item-1-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Id ventas</label>
+                            <p-inputNumber #codigo formControlName="id_invent" autocomplete="off"></p-inputNumber>
+                        </div>
+                    </div>
+                    <div class="item-1">
+                        <div class="flex flex-col">
+                            <label for="codigo">Tipo</label>
+                            <p-select [options]="opciones" [(ngModel)]="seleccionado" optionValue="value"
+                                optionLabel="label" placeholder="Elija tipo"
+                                [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
+                                formControlName="nombre_tipo" (onChange)="funct_reset_formulario($event)" />
+                        </div>
+                    </div>
+                    <div class="item-2">
+                        <div class="flex flex-col">
+                            <label for="codigo">.</label>
+                            <button pButton pRipple label="Consultar" icon="pi pi-search"
+                                class="p-button-success w-full" (click)="funct_retorna_inventario_actual();"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-12 field">
+                <p-table #dt2 [value]="inventario_actual" styleClass="p-datatable-sm p-datatable-striped"
+                    [scrollable]="true" class="custom-table">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Id inventario</th>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Stock antes</th>
+                            <th>Stock actual</th>
+                            <th>Id tipo</th>
+                            <th>Nombre tipo</th>
+                            <th>Colaborador</th>
+                            <th>Fecha inventario</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-data>
+                        <tr>
+                            <td>{{data.id_inventario}}</td>
+                            <td class="centered">{{data.codprod}}</td>
+                            <td>Nombre</td>
+                            <td>{{data.stock_actual}}</td>
+                            <td>{{data.stock_despues}}</td>
+                            <td>{{data.id_tipo}}</td>
+                            <td>{{data.nombre_tipo}}</td>
+                            <td>{{data.vendedor}}</td>
+                            <td>{{data.created_at | date:'dd-MM-yyyy'}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>
