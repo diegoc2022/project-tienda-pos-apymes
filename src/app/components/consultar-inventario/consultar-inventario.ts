@@ -1,8 +1,6 @@
 import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ClientesService } from '../clientes/services/clientes.service';
 import { MessageService } from 'primeng/api';
-import { PagosConsumosServices } from '../pagos-consumos/services/pagos-consumos.services';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { SelectModule } from 'primeng/select';
@@ -10,8 +8,8 @@ import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { AperturaInventarioService } from '../apertura-inventario/services/apertura-inventario.service';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { InventarioActualService } from '../inventario-actual/services/inventario-actual.service';
 import { InventarioService } from '../inventario/services/inventario.service';
+import { DownloadService } from '../download/download.service';
 
 @Component({
   selector: 'app-consultar-inventario',
@@ -57,14 +55,14 @@ export class ConsultarInventario {
     private message: MessageService,
     private cdr: ChangeDetectorRef,
     private apert_inv: AperturaInventarioService,
-    private inv_actual: InventarioActualService,
+    private download: DownloadService,
     private inventario: InventarioService
   ) { }
 
   ngOnInit() {
     this.data = this.fb.group({
-      nombre_tipo: ['', Validators.required],
-      id_invent: [null, Validators.required]
+      id_invent: [null, Validators.required],
+      id_tipo: ['', Validators.required]
     });
     this.funct_retorna_id_inventario();
   }
@@ -100,7 +98,7 @@ export class ConsultarInventario {
       return;
     }
 
-    this.inventario.funct_retorna_inventario_x_id(this.data.value.id_invent, this.data.value.nombre_tipo).subscribe({
+    this.inventario.funct_retorna_inventario_x_id(this.data.value.id_invent, this.data.value.id_tipo).subscribe({
       next: (data: any) => {
         this.inventario_actual = [];
         for (let index = 0; index < data.length; index++) {
@@ -113,5 +111,9 @@ export class ConsultarInventario {
 
   funct_reset_formulario(event: any) {
     this.inventario_actual = [];
+  }
+
+  funct_descarcar_inventario() {
+    this.download.funct_descarga_inventario(this.data.value.id_invent, this.data.value.id_tipo);
   }
 }

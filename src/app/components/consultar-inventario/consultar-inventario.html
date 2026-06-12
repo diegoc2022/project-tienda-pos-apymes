@@ -5,22 +5,22 @@
             <p class="pi pi-search-plus"> Consultar inventario:</p>
             <form [formGroup]="data">
                 <div class="content-1">
-                    <div class="item-1-1">
+                    <div class="item-1">
                         <div class="flex flex-col">
-                            <label for="codigo">Id ventas</label>
+                            <label for="codigo">Id inventario</label>
                             <p-inputNumber #codigo formControlName="id_invent" autocomplete="off"></p-inputNumber>
                         </div>
                     </div>
-                    <div class="item-1">
+                    <div class="item-1-1">
                         <div class="flex flex-col">
                             <label for="codigo">Tipo</label>
                             <p-select [options]="opciones" [(ngModel)]="seleccionado" optionValue="value"
                                 optionLabel="label" placeholder="Elija tipo"
                                 [panelStyle]="{'max-height': '500px', 'overflow-x': 'auto'}" [showClear]="true"
-                                formControlName="nombre_tipo" (onChange)="funct_reset_formulario($event)" />
+                                formControlName="id_tipo" (onChange)="funct_reset_formulario($event)" />
                         </div>
                     </div>
-                    <div class="item-2">
+                    <div class="item-1-2">
                         <div class="flex flex-col">
                             <label for="codigo">.</label>
                             <button pButton pRipple label="Consultar" icon="pi pi-search"
@@ -31,11 +31,18 @@
 
             </form>
         </div>
-        <hr>
-        <div class="row mt-2">
-            <div class="col-12 field">
+        <div class="content-2">
+            <div class="content-3">
+                <div class="item-3">
+                    <div class="flex flex-col">
+                        <p-button label="Download" icon="pi pi-download" variant="outlined" severity="contrast"
+                            (click)="funct_descarcar_inventario();" />
+                    </div>
+                </div>
+            </div>
+            <div class="item-2">
                 <p-table #dt2 [value]="inventario_actual" styleClass="p-datatable-sm p-datatable-striped"
-                    [scrollable]="true" class="custom-table">
+                    [scrollable]="true" class="custom-table" [tableStyle]="{'min-width': '40rem'}">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Id inventario</th>

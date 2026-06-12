@@ -1192,8 +1192,9 @@ label {
 
 .custom-table tr {
     background: #304772;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    //box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     color: #e7e5e5;
     min-height: 7px !important;
 }

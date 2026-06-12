@@ -37,9 +37,7 @@ export class CierreCajaService {
         doc.setFontSize(10)
         doc.text('NIT: ' + data[0].nit, data[0].posicion_x3, data[0].posicion_y3);
         doc.setFontSize(10)
-        doc.text(data[0].nombre_titular, data[0].posicion_x4, data[0].posicion_y4);
-        doc.setFontSize(10)
-        doc.text('TEL: ' + data[0].Celular, data[0].posicion_x5, data[0].posicion_y5);
+        doc.text('TEL: ' + data[0].telefono, data[0].posicion_x4, data[0].posicion_y4);
         doc.setFont("Courier", " ");
         doc.text('=======================================================', 3, 40);
 

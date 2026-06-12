@@ -26,7 +26,7 @@ export class CerrarSesion {
   ) { }
 
   functCerrarSesion() {
-    this.message.add({ severity: 'warn', summary: 'Error:', detail: 'Sesion cerrada exitosamente', life: 5000 });
+    this.message.add({ severity: 'succes', summary: 'Info:', detail: 'Sesion cerrada exitosamente', life: 5000 });
     setTimeout(() => {
       localStorage.clear();
       this.router.navigate(['/']);

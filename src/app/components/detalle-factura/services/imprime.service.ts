@@ -51,9 +51,7 @@ export class ImprimeService {
             doc.setFontSize(10)
             doc.text('NIT: ' + data2[0].nit, data2[0].posicion_x3, data2[0].posicion_y3);
             doc.setFontSize(10)
-            doc.text(data2[0].nombre_titular, data2[0].posicion_x4, data2[0].posicion_y4);
-            doc.setFontSize(10)
-            doc.text('TEL: ' + data2[0].Celular, data2[0].posicion_x5, data2[0].posicion_y5);
+            doc.text('TEL: ' + data2[0].telefono, data2[0].posicion_x4, data2[0].posicion_y4);
             doc.setFont("Courier", " ");
             doc.text('=======================================================', 3, 40);
 
