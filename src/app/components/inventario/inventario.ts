@@ -179,8 +179,6 @@ export class Inventario {
 
     this.vinculos.funct_retorna_codigo_inicial(this.codigo_producto).subscribe({
       next: (data: any) => {
-        console.log("data: ", data);
-
         if (data.statusCode === 404) {
           this.message.add({ severity: 'warn', summary: 'Adventencia:', detail: 'El producto que acaba de leer, no existe o no se encuentra asociado', life: 3000 });
           this.formCodigo.reset();
@@ -294,6 +292,7 @@ export class Inventario {
     this.data_movimientos.push({
       "id_inventario": this.id_inventario,
       "codprod": this.data[0][0].producto.codProd,
+      "descripcion": this.data[0][0].producto.descripcion,
       "stock_actual": this.data[0][0].producto.existencia,
       "stock_despues": this.num_ajuste[0].ajuste,
       "id_tipo": this.id_tipo,

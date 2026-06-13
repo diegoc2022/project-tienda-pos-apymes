@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import { InventarioService } from '../inventario/services/inventario.service';
 import { EncabezadosServices } from '../encabezados/encabezados';
+import { formatearFecha } from '../formato-fecha/formato-fecha';
 
 @Injectable({
   providedIn: 'root',
@@ -56,15 +57,19 @@ export class DownloadService {
               doc.setFontSize(14);
               doc.text('Fecha inventario:', 5, 50);
               doc.setFontSize(12);
-              doc.text(data[0].created_at, 42, 50);
+              doc.text(formatearFecha(data[0].created_at), 42, 50);
               doc.setFontSize(14);
-              doc.text('Id inventario:', 110, 50);
-              doc.setFontSize(12);
-              doc.text(String(data[0].id_inventario), 140, 50);
+              doc.text('|', 70, 50);
               doc.setFontSize(14);
-              doc.text('Colaborador:', 160, 50);
+              doc.text('Id inventario:', 80, 50);
               doc.setFontSize(12);
-              doc.text(String(data[0].vendedor), 190, 50);
+              doc.text(String(data[0].id_inventario), 110, 50);
+              doc.setFontSize(14);
+              doc.text('|', 120, 50);
+              doc.setFontSize(14);
+              doc.text('Colaborador:', 130, 50);
+              doc.setFontSize(12);
+              doc.text(String(data[0].vendedor), 160, 50);
               doc.text('=====================================================================================================', 5, 60);
 
               // Encabezado tabla
@@ -72,20 +77,20 @@ export class DownloadService {
               doc.setFont("Courier", "Bold");
               doc.text("Código", 5, 70);
               doc.text("Nombre", 50, 70);
-              doc.text("Id tipo", 100, 70);
-              doc.text("Nombre tipo", 130, 70);
-              doc.text("Stock antes", 200, 70);
-              doc.text("Stock despues", 235, 70);
+              doc.text("Id tipo", 120, 70);
+              doc.text("Tipo inventario", 145, 70);
+              doc.text("Stock ant.", 210, 70);
+              doc.text("Stock desp.", 240, 70);
             }
             funct_crea_encabezado();
 
             data.map((resp: any) => {
               doc.text(resp.codprod, 5, yPos);
-              doc.text('Prueba', 50, yPos);
-              doc.text(resp.id_tipo, 100, yPos);
-              doc.text(resp.nombre_tipo, 130, yPos);
-              doc.text(String(resp.stock_actual), 200, yPos);
-              doc.text(String(resp.stock_despues), 235, yPos);
+              doc.text(resp.descripcion.length > 25 ? resp.descripcion.substring(0, 22) + '...' : resp.descripcion, 50, yPos);
+              doc.text(resp.id_tipo, 120, yPos);
+              doc.text(resp.nombre_tipo, 145, yPos);
+              doc.text(String(resp.stock_actual), 210, yPos);
+              doc.text(String(resp.stock_despues), 240, yPos);
               yPos += 7;
               if (yPos > pageHeight - 20) {
                 doc.addPage();

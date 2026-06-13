@@ -25,6 +25,10 @@ export class ProductosService {
     return this.http.delete(`${this.URL}/${this.API}/${data}`)
   }
 
+  funct_retorna_producto_x_codigo(data: any[]) {
+    return this.http.post<any>(`${this.URL}/${this.API}`, data)
+  }
+
   funct_crea_productos(products: any): Observable<any> {
     return this.http.post<any>(`${this.URL}/${this.API}`, {
       "codProd": products.codProd.toUpperCase(),
