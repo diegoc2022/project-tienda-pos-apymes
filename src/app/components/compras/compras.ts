@@ -13,7 +13,6 @@ import { ToastModule } from 'primeng/toast';
 import { ComprasService } from './services/compras.service';
 import { InventarioService } from '../inventario/services/inventario.service';
 import { VinculosService } from '../vinculos/services/vinculos.service';
-import { ProductosService } from '../productos/services/productos.service';
 import { of, switchMap, tap } from 'rxjs';
 
 @Component({
@@ -40,7 +39,8 @@ export class Compras {
   @ViewChild('varios') select?: Select;
   @ViewChild('codigo') codigo!: ElementRef;
   @ViewChild('miInputNumber') inputNumberRef!: InputNumber;
-  @ViewChild('precioVenta') inputNumberRef2?: any;
+  @ViewChild('utilidad') inputNumberRef2?: InputNumber;
+  @ViewChild('precioVenta') inputNumberRef3?: InputNumber;
 
   formCompras!: FormGroup;
   formCompras2!: FormGroup;
@@ -279,8 +279,8 @@ export class Compras {
         this.total_form_iva = Math.round(this.total_item_iva) + Math.round(this.total_iva2);
         this.total_form_icui = Math.round(this.total_item_icui) + Math.round(this.total_icui);
         this.total_form_factura = Math.round(this.total_item_factura) + Math.round(this.costo_total_con_iva)
-        const nextElement = (document.querySelector(`[formControlName="utilidad"]`) as HTMLElement);
-        nextElement.focus();
+        const nativeInput = this.inputNumberRef2?.input?.nativeElement;
+        nativeInput?.focus();
       }
 
     }
@@ -298,11 +298,13 @@ export class Compras {
   }
 
   on_enter_utilidad(event: any): void {
+    console.log("Event: ", event);
+
     if (event.key == 'Enter' || event.code == 'Enter') {
       this.utilidad = this.consto_unidad_con_iva * parseInt(this.formCompras2.value.utilidad) / 100
       this.precio_venta = this.consto_unidad_con_iva + this.utilidad;
       this.formCompras2.get('precioVenta')?.setValue(Math.round(this.precio_venta));
-      const nativeInput = this.inputNumberRef2?.input?.nativeElement;
+      const nativeInput = this.inputNumberRef3?.input?.nativeElement;
       nativeInput?.focus();
     }
   }

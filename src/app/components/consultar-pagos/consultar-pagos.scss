@@ -329,10 +329,13 @@ p {
 }
 
 .custom-table tr {
-    color: white;
-    border: 1px solid white !important;
+    color: rgba(255, 255, 255, 0.7);
     height: 5px !important;
-    background: #304772;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    background: #1e3c72;
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+    background: linear-gradient(to right, #2a5298, #1e3c72);
 }
 
 .custom-table th {

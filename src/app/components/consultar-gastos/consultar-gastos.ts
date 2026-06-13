@@ -126,7 +126,7 @@ export class ConsultarGastos {
               observacion: data[index].observacion,
               num_mes: data[index].num_mes,
               num_year: data[index].num_year,
-              valor_gasto: data[index].valor_gasto,
+              valor_gasto: data[index].valor_gastos,
               fecha_registro: formatearFecha(data[index].fecha_registro)
             });
           }

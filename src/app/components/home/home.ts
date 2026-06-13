@@ -36,7 +36,7 @@ export class Home {
           icon: 'pi pi-fw pi-folder-open',
           styleClass: 'icon-color',
           items: [
-            { label: 'Entradas', icon: 'pi pi-fw pi-caret-right', routerLink: ['compras'] },
+            { label: 'Compras', icon: 'pi pi-fw pi-caret-right', routerLink: ['compras'] },
             { label: 'Factura proveedor', icon: 'pi pi-fw pi-caret-right', routerLink: ['factura-proveedor'] },
           ]
         },
@@ -63,6 +63,7 @@ export class Home {
             { label: '2. Cargar stock actual', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-actual'] },
             { label: '3. Realizar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['inventario-web'] },
             { label: '4. Consultar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-inventario'] },
+            { label: '5. Ajustar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-inventario'] },
           ]
         },
         {
@@ -72,7 +73,6 @@ export class Home {
           items: [
             { label: 'Asociaciar producto', icon: 'pi pi-fw pi-caret-right', routerLink: ['vinculos'] },
             { label: 'Ajuste de precio', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-precios'] },
-            { label: 'Ajustar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-inventario'] },
             { label: 'Consultar gastos op', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-gastos'] },
             { label: 'Consultar nómina', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-nomina'] },
             { label: 'Productos BD', icon: 'pi pi-fw pi-caret-right', routerLink: ['productos'] },

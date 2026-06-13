@@ -290,11 +290,13 @@ hr {
 }
 
 .custom-table tr {
-    background: #304772;
-    color: #e7e5e5;
+    color: rgba(255, 255, 255, 0.7);
     height: 5px !important;
-    border: 1px solid white;
-    border-top-left-radius: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    background: #1e3c72;
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+    background: linear-gradient(to right, #2a5298, #1e3c72);
 }
 
 .custom-table th {

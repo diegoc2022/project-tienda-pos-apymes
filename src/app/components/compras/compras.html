@@ -54,8 +54,8 @@
                     <div class="flex flex-col gap-2">
                         <label for="miInputNumber">Digite precio unitario</label>
                         <p-inputNumber #miInputNumber inputId="currency-us" mode="currency" currency="USD"
-                            locale="en-US" formControlName="precio_und" (keyup.enter)="on_enter_precio_unitario($event)"
-                            autocomplete="off" class="mi-numero" />
+                            locale="en-US" [minFractionDigits]="0" [maxFractionDigits]="0" formControlName="precio_und"
+                            (keyup.enter)="on_enter_precio_unitario($event)" autocomplete="off" class="mi-numero" />
                     </div>
                 </div>
                 <div class="item-3">
@@ -68,8 +68,8 @@
                 <div class="item-3">
                     <div class="flex flex-col gap-2">
                         <label for="costo_sin_iva">Subtotal sin iva</label>
-                        <p-inputNumber inputId="costo_sin_iva" mode="currency" currency="USD" locale="en-US"
-                            formControlName="costo_sin_iva" (keyup.enter)="on_enter_sub_total($event)"
+                        <p-inputNumber #costoSinIva inputId="costo_sin_iva" mode="currency" currency="USD"
+                            locale="en-US" formControlName="costo_sin_iva" (keyup.enter)="on_enter_sub_total($event)"
                             autocomplete="off" />
                     </div>
                 </div>
@@ -138,15 +138,16 @@
                 <div class="item-5">
                     <div class="flex flex-col">
                         <label for="utilidad">Digite utilidad</label>
-                        <input id="utilidad" type="number" pInputText formControlName="utilidad"
+                        <p-inputNumber #utilidad inputId="utilidad" formControlName="utilidad"
                             (keyup.enter)="on_enter_utilidad($event)" autocomplete="off" />
                     </div>
                 </div>
                 <div class="item-5">
                     <div class="flex flex-col">
-                        <label for="precioVenta">Digite utilidad</label>
-                        <p-inputNumber id="precioVenta" inputId="currency-us" mode="currency" currency="USD"
-                            locale="en-US" formControlName="precioVenta" autocomplete="off" />
+                        <label for="precioVenta">Precio venta</label>
+                        <p-inputNumber #precioVenta inputId="precioVenta" mode="currency" mode="currency" currency="USD"
+                            locale="en-US" [minFractionDigits]="0" [maxFractionDigits]="0" formControlName="precioVenta"
+                            autocomplete="off" />
                     </div>
                 </div>
             </div>
@@ -178,15 +179,16 @@
                 <div class="item-6">
                     <div class="flex flex-col">
                         <label for="total_icui">Total icui:</label>
-                        <p-inputNumber inputId="total_icui" [(ngModel)]="total_form_icui" mode="currency" currency="USD"
-                            locale="en-US" formControlName="total_icui" autocomplete="off" />
+                        <p-inputNumber #icui inputId="total_icui" [(ngModel)]="total_form_icui" mode="currency"
+                            currency="USD" locale="en-US" formControlName="total_icui" autocomplete="off" />
                     </div>
                 </div>
                 <div class="item-6">
                     <div class="flex flex-col">
                         <label for="total_factura">Total factura:</label>
-                        <p-inputNumber inputId="total_factura" [(ngModel)]="total_form_factura" mode="currency"
-                            currency="USD" locale="en-US" formControlName="total_factura" autocomplete="off" />
+                        <p-inputNumber #valorVenta inputId="total_factura" [(ngModel)]="total_form_factura"
+                            mode="currency" currency="USD" locale="en-US" formControlName="total_factura"
+                            autocomplete="off" />
                     </div>
                 </div>
             </div>
