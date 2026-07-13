@@ -72,7 +72,7 @@ export class ConsultarNomina {
       { name: 'Pago dia festivo', code: '4 - PAGO DIA FESTIVO' }
     ];
 
-    this.fecha_actual = format(this.date, 'd-M-yyyy');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
     this.num_mes = format(this.date, 'M');
     this.num_year = format(this.date, 'yyyy');
     this.hora_actual = format(this.date, 'HH:mm');

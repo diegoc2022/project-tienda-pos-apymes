@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { Subscription, switchMap, tap } from 'rxjs';
+import { switchMap, tap } from 'rxjs';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { VinculosService } from '../vinculos/services/vinculos.service';
@@ -66,13 +66,10 @@ export class FormVentas implements OnInit {
   total_venta: number = 0;
   total_articulos: number = 1;
   origen_venta: string = 'Ventas-1';
-  dataService$?: Subscription;
   openventas: string = 'abierto1';
   idApertCaja: any = 0;
   factura: any = 0;
-  habilitado: boolean = false;
-  visible2: boolean = false;
-  visible3: boolean = false;
+  habilitado: boolean = false;  
   producto_unidad: any[] = [];
   elimina_paquete_producto: any[] = [];
   idSecuencia: any[] = [];
@@ -338,7 +335,7 @@ export class FormVentas implements OnInit {
 
     if (this.idSecuencia[0].numero_factura != '' || this.idSecuencia[0].numero_factura != 0) {
       this.reimprime.funct_imprime_facturas(this.idSecuencia[0].numero_factura);
-      this.visible2 = false;
+      //this.visible2 = false;
       this.functInpuFocus();
     } else {
       this.message.add({ severity: 'error', summary: 'Error:', detail: 'Para reimprimir debe ingresar un número de ticket', life: 3000 });
@@ -346,9 +343,6 @@ export class FormVentas implements OnInit {
 
   }
 
-  ngOnDestroy() {
-    this.dataService$?.unsubscribe();
-  }
 
   funct_elimina_id_ventas() {
     Swal.fire({

@@ -73,7 +73,8 @@ export class Home {
           items: [
             { label: 'Asociaciar producto', icon: 'pi pi-fw pi-caret-right', routerLink: ['vinculos'] },
             { label: 'Ajuste de precio', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-precios'] },
-            { label: 'Consultar gastos op', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-gastos'] },
+            //{ label: 'Ajustar inventario', icon: 'pi pi-fw pi-caret-right', routerLink: ['ajustar-inventario'] },
+            { label: 'Consultar gastos', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-gastos'] },
             { label: 'Consultar nómina', icon: 'pi pi-fw pi-caret-right', routerLink: ['consultar-nomina'] },
             { label: 'Productos BD', icon: 'pi pi-fw pi-caret-right', routerLink: ['productos'] },
             { label: 'Edita productos', icon: 'pi pi-fw pi-caret-right', routerLink: ['edita-productos'] },

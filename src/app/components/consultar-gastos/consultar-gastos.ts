@@ -8,7 +8,6 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ConsultarGastosService } from './services/consultar-gastos.service';
 import { format } from 'date-fns';
-import { formatearFecha } from '../formato-fecha/formato-fecha';
 
 @Component({
   selector: 'app-consultar-gastos',
@@ -60,7 +59,7 @@ export class ConsultarGastos {
       { name: 'Gastos opertivos', code: '1-GASTOS OPERATIVOS' }
     ];
 
-    this.fecha_actual = format(this.date, 'yyyy-MM-dd HH:mm:ss');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
     this.num_mes = format(this.date, 'M');
     this.num_year = format(this.date, 'yyyy');
     this.hora_actual = format(this.date, 'HH:mm');
@@ -127,7 +126,7 @@ export class ConsultarGastos {
               num_mes: data[index].num_mes,
               num_year: data[index].num_year,
               valor_gasto: data[index].valor_gastos,
-              fecha_registro: formatearFecha(data[index].fecha_registro)
+              fecha_registro: data[index].fecha_registro
             });
           }
           this.cdr.detectChanges();

@@ -9,6 +9,8 @@ import { SelectModule } from 'primeng/select';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { GastosService } from './services/gastos.service';
+import { DatePickerModule } from 'primeng/datepicker';
+import { FluidModule } from 'primeng/fluid';
 
 @Component({
   selector: 'app-gastos',
@@ -23,7 +25,9 @@ import { GastosService } from './services/gastos.service';
     SelectModule,
     CommonModule,
     InputNumberModule,
-    TableModule
+    TableModule,
+    DatePickerModule,
+    FluidModule
   ],
   providers: [MessageService, GastosService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -32,17 +36,13 @@ export class Gastos {
   @ViewChild('gastos') inputNumberRef?: any;
   data!: FormGroup;
   tipo_gastos: any[] = [];
-  num_mes: any;
-  num_year: any;
   option_m: any[] = [];
   option_y: any[] = [];
   date: Date = new Date();
-  fecha_actual?: string;
-  hora_actual?: string;
+  fecha_actual?: any;
+  hora_actual?: any;
   data_op: any[] = [];
   seleccionado: any = null;
-  seleccionado2: any = null;
-  seleccionado3: any = null;
 
   constructor(
     private fb: FormBuilder,
@@ -55,18 +55,15 @@ export class Gastos {
       valor_gastos: [0, Validators.required],
       tipo_concepto: ['', Validators.required],
       observ: ['', Validators.required],
-      num_mes: [null],
-      num_year: [null],
+      fecha: ['', Validators.required]
     });
 
     this.tipo_gastos = [
-      { name: 'Gastos opertivos', code: '1-GASTOS OPERATIVOS' }
-    ];
+      { name: 'Gastos opertivos', code: '1-GASTOS OPERATIVOS' }];
 
-    this.fecha_actual = format(this.date, 'yyyy-MM-dd HH:mm:ss');
-    this.num_mes = format(this.date, 'M');
-    this.num_year = format(this.date, 'yyyy');
+
     this.hora_actual = format(this.date, 'HH:mm');
+    this.fecha_actual = format(this.date, 'yyyy-MM-dd');
 
     this.option_m = [
       { nombre: 'Enero', value: 1 },
@@ -106,16 +103,18 @@ export class Gastos {
 
 
   funct_registra_gastos_operativos_c() {
-    this.data_op.length = 0;
+    const data = this.data.value.fecha;
+    this.data_op = [];
     this.data_op.push({
       valor_gastos: this.data.value.valor_gastos,
       tipo_concepto: this.data.value.tipo_concepto,
-      observacion: this.data.value.observ,
-      num_mes: this.num_mes,
-      num_year: this.num_year,
+      observacion: this.data.value.observ?.toUpperCase(),
+      num_mes: data.getMonth() + 1,
+      num_year: data.getFullYear(),
       fecha_registro: this.fecha_actual,
       hora_registro: this.hora_actual
     });
+
 
     if (this.data.invalid) {
       this.data.markAllAsTouched();
@@ -128,14 +127,8 @@ export class Gastos {
 
     this.gastos_op.funct_registra_gastos_operativos_s(this.data_op).subscribe({
       next: (data: any) => {
-        this.data.get('valor_gastos')?.setValue('');
-        this.data.get('tipo_concepto')?.setValue('');
-        this.data.get('observ')?.setValue('');
-        this.data.get('num_mes')?.setValue('');
-        this.data.get('num_year')?.setValue('');
+        this.data.reset();
         this.seleccionado = null;
-        this.seleccionado2 = null;
-        this.seleccionado3 = null;
         this.message.add({ severity: 'success', summary: 'Informativo', detail: 'Registro guardado exitosamente', life: 3000 });
         const nativeInput = this.inputNumberRef?.input?.nativeElement;
         nativeInput?.focus();

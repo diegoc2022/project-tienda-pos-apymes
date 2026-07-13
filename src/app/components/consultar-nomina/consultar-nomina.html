@@ -68,8 +68,8 @@
                                 <td>{{nombre}}</td>
                                 <td>{{dataNomina.concepto}}</td>
                                 <td>{{dataNomina.valor_pago | currency: 'USD'}}</td>
-                                <td>{{dataNomina.fecha_desde}}</td>
-                                <td>{{dataNomina.fecha_hasta}}</td>
+                                <td>{{dataNomina.fecha_desde | date:'yyyy-MM-dd'}}</td>
+                                <td>{{dataNomina.fecha_hasta | date:'yyyy-MM-dd'}}</td>
                             </tr>
                         </ng-template>
                     </p-table>

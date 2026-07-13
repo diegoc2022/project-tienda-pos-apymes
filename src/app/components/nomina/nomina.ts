@@ -34,12 +34,9 @@ import { EmpleadosService } from '../empleados/services/empleados.service';
 export class Nomina {
   @ViewChild('gastos') inputNumberRef?: any;
   data!: FormGroup;
-  data2!: FormGroup;
   tipo_concepto: any[] = [];
   pago_nomina: any[] = [];
   data_empleados: any[] = [];
-  num_mes: any;
-  num_year: any;
   nombre: any;
   date: Date = new Date();
   fecha_actual?: string;
@@ -47,9 +44,6 @@ export class Nomina {
   total_nomina: number = 0;
   seleccionado: any = null;
   seleccionado2: any = null;
-  seleccionado3: any = null;
-  seleccionado4: any = null;
-  seleccionado5: any = null;
   date1: Date | undefined;
   date2: Date | undefined;
 
@@ -70,12 +64,6 @@ export class Nomina {
       fecha_hasta: ['', Validators.required]
     });
 
-    this.data2 = this.fb.group({
-      cedula: ['', Validators.required],
-      fecha_d: ['', Validators.required],
-      fecha_h: ['', Validators.required]
-    });
-
     this.tipo_concepto = [
       { name: 'Pago nómina', code: '1 - PAGO NOMINA' },
       { name: 'Pago horas extras', code: '2 - PAGO HORAS EXTRAS' },
@@ -84,8 +72,6 @@ export class Nomina {
     ];
 
     this.fecha_actual = format(this.date, 'yyyy-MM-dd HH:mm:ss');
-    this.num_mes = format(this.date, 'M');
-    this.num_year = format(this.date, 'yyyy');
     this.hora_actual = format(this.date, 'HH:mm');
     this.funct_retorna_empleados_c();
 
@@ -114,23 +100,20 @@ export class Nomina {
       return;
     }
 
+    const dataFecha = this.data.value.fecha_desde;
     const data = {
       cedula: this.data.get('ced_empleado')?.value,
       valor_pago: this.data.get('valor_pago')?.value,
       concepto: this.data.get('tipo_concepto')?.value,
       fecha_desde: this.data.get('fecha_desde')?.value,
       fecha_hasta: this.data.get('fecha_hasta')?.value,
-      num_mes: this.num_mes,
-      num_year: this.num_year
+      num_mes: dataFecha.getMonth() + 1,
+      num_year: dataFecha.getFullYear(),
     }
 
     this.nomina.funct_registra_nomina_s(data).subscribe({
       next: (data: any) => {
-        this.data.get('ced_empleado')?.setValue('');
-        this.data.get('valor_pago')?.setValue('');
-        this.data.get('tipo_concepto')?.setValue('');
-        this.data.get('fecha_desde')?.setValue('');
-        this.data.get('fecha_hasta')?.setValue('');
+        this.data.reset();
         this.seleccionado = null;
         this.seleccionado2 = null;
         this.message.add({ severity: 'success', summary: 'Informativo', detail: 'Registro guardado exitosamente', life: 3000 });
