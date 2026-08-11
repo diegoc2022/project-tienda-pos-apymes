@@ -31,6 +31,10 @@ export class VinculosService {
     return this.http.delete(`${this.URL}/${this.API}/${data[0].codigoVinculo}`);
   }
 
+  funct_elimina_vinculo_asociacion_s(data: any): Observable<any> {
+    return this.http.delete(`${this.URL}/${this.API}/${data[0].codigoInicial}/${data[0].codigoVinculo}`);
+  }
+
   funct_retorna_codigo_inicial(codProducto: any): Observable<any> {
     return this.http.get(`${this.URL}/${this.API}/${codProducto}`);
   }

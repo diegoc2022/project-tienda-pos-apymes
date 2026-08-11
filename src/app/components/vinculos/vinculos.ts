@@ -149,7 +149,7 @@ export class Vinculos {
       codigoInicial: this.data.value.codigoInic,
       codigoVinculo: this.data.value.codigoVinc
     })
-    this.vinculos.funct_elimina_vinculos_s(this.codigosVinculos).subscribe({
+    this.vinculos.funct_elimina_vinculo_asociacion_s(this.codigosVinculos).subscribe({
       next: (obj2: any) => {
         if (obj2.affected > 0) {
           this.data.get('codigoInic')?.setValue('');
